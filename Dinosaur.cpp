@@ -153,17 +153,17 @@ bool Dinosaur::validGender(char const* gender) {
 }
 
 bool Dinosaur::validEra(char const* _era) {
-    return array_find_str(Dinosaur::era, _era);
+    return MySpace::array_find_str(Dinosaur::era, _era);
 }
 
 bool Dinosaur::validType(char const* _type) {
-    return array_find_str(Dinosaur::type, _type);
+    return MySpace::array_find_str(Dinosaur::type, _type);
 }
 
 bool Dinosaur::validSpecies(char const* _species) {
-    return array_find_str(Dinosaur::species, _species);
+    return MySpace::array_find_str(Dinosaur::species, _species);
 }
 
 bool Dinosaur::validFood(char const* _food) {
-    return array_find_str(Dinosaur::food, _food);
+    return MySpace::array_find_str(Dinosaur::food, _food);
 }
