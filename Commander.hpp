@@ -27,6 +27,7 @@ public:
     friend bool cmd_help(RunnerType&, std::istringstream&);// uses ONLY cmd_count and outUsage()
     static void add(Command const& item);
     static void run(RunnerType& runner);
+    static bool call(char const* cmd, RunnerType& runner, std::istringstream& iss);
 };
 
 /*

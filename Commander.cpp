@@ -46,7 +46,8 @@ void commander_error(bool print_help = true){
 }
 
 void Commander::run(RunnerType& runner) {
-    while (true){
+    bool running = true;
+    do {
         char buffer[Commander::BUFFER_SIZE];
         //char* buffer = new char[Commander::BUFFER_SIZE];
         std::cin.getline(buffer, Commander::BUFFER_SIZE);
@@ -54,17 +55,22 @@ void Commander::run(RunnerType& runner) {
         //delete[] buffer;
         char* cmd = buffer;
         iss >> cmd;
-        int index = Commander::findIndex(cmd);
-        if(index >= 0){
-            if(!Commander::cmd_list[index].call(runner, iss)){
-                commander_error(false);
-                Commander::outUsage(index, std::cout);
-            }
-            if(index == Commander::EXIT){
-                break;
-            }
-        } else {
-            commander_error();
+        running = call(cmd, runner, iss);
+    } while (running);
+}
+
+bool Commander::call(char const* cmd, RunnerType& runner, std::istringstream& iss) {
+    int index = Commander::findIndex(cmd);
+    if(index >= 0){
+        if(!Commander::cmd_list[index].call(runner, iss)){
+            commander_error(false);
+            Commander::outUsage(index, std::cout);
         }
+        if(index == Commander::EXIT){
+            return false;
+        }
+    } else {
+        commander_error();
     }
+    return true;
 }
