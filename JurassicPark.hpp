@@ -15,11 +15,12 @@ class JurassicPark {
     unsigned m_list_limit;// max cages count
 
     Storehouse m_storehouse;
-public:
     JurassicPark(unsigned limit = 4);
-    JurassicPark(const JurassicPark& other) = delete;// TODO: temporary solution
+    JurassicPark(const JurassicPark& other) = delete;
     JurassicPark& operator=(const JurassicPark& other) = delete;
+public:
     ~JurassicPark();
+    static JurassicPark& self(unsigned limit = 4);
 
     void buildCage(char const* climate, char const* size);
     void buildCage(const Cage& cage);

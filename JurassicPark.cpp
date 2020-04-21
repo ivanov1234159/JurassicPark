@@ -26,6 +26,10 @@ JurassicPark::~JurassicPark(){
     }
 }
 
+JurassicPark& JurassicPark::self(unsigned limit) {
+    static JurassicPark park(limit);
+    return park;
+}
 
 void JurassicPark::buildCage(char const* climate, char const* size){
     buildCage(Cage(climate, size));
