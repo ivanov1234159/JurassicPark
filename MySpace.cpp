@@ -94,6 +94,9 @@ unsigned MySpace::intToCharPointer(int num, char*& pointer){
 }
 
 bool MySpace::serialize(std::ofstream& ofs, char const* data){
+    if(!ofs){
+        return false;
+    }
     unsigned len = 0;
     if(data != nullptr){
         len = std::strlen(data) + 1;
@@ -106,6 +109,9 @@ bool MySpace::serialize(std::ofstream& ofs, char const* data){
 }
 
 bool MySpace::unserialize(std::ifstream &ifs, char *&data) {
+    if(!ifs){
+        return false;
+    }
     if(data != nullptr){
         return false;
     }
