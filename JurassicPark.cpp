@@ -45,7 +45,7 @@ bool JurassicPark::serialize(std::ofstream &ofs) const {
             break;
         }
     }
-    return ofs;
+    return !(!ofs);
 }
 
 void JurassicPark::buildCage(char const* climate, char const* size){

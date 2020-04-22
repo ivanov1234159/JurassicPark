@@ -111,7 +111,7 @@ bool Cage::serialize(std::ofstream &ofs) const {
             break;
         }
     }
-    return ofs;
+    return !(!ofs);
 }
 
 void Cage::clear(){

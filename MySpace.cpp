@@ -105,7 +105,7 @@ bool MySpace::serialize(std::ofstream& ofs, char const* data){
     if(len != 0){
         ofs.write((char const*) data, len);
     }
-    return ofs;
+    return !(!ofs);
 }
 
 bool MySpace::unserialize(std::ifstream &ifs, char *&data) {
@@ -121,7 +121,7 @@ bool MySpace::unserialize(std::ifstream &ifs, char *&data) {
         data = new char[len];
         ifs.read(data, len);
     }
-    return ifs;
+    return !(!ifs);
 }
 
 /*
