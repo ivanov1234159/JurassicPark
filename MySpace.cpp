@@ -93,6 +93,31 @@ unsigned MySpace::intToCharPointer(int num, char*& pointer){
     return length;
 }
 
+bool MySpace::serialize(std::ofstream& ofs, char const* data){
+    unsigned len = 0;
+    if(data != nullptr){
+        len = std::strlen(data) + 1;
+    }
+    ofs.write((char const*) &len, sizeof(len));
+    if(len != 0){
+        ofs.write((char const*) data, len);
+    }
+    return ofs;
+}
+
+bool MySpace::unserialize(std::ifstream &ifs, char *&data) {
+    if(data != nullptr){
+        return false;
+    }
+    unsigned len = 0;
+    ifs.read((char*) &len, sizeof(len));
+    if(len != 0){
+        data = new char[len];
+        ifs.read(data, len);
+    }
+    return ifs;
+}
+
 /*
 // local (help) function
 char* extractOneWord(const char*& str, char split_by){

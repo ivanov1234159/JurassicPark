@@ -7,6 +7,9 @@
 
 #include <iostream>
 //for: istream, cin
+#include <fstream>
+//for: ofstream, ifstream
+
 namespace MySpace {
     bool array_find_str(char const *arr[], char const *str);
 
@@ -17,6 +20,10 @@ namespace MySpace {
     unsigned rand(unsigned max, unsigned min = 0);
 
     unsigned intToCharPointer(int num, char*& pointer);
+
+    bool serialize(std::ofstream& ofs, char const* data);
+
+    bool unserialize(std::ifstream& ifs, char*& data);
 
     //unsigned str_split(const char* str, char**& output, char split_by = ' ')
 }
