@@ -125,6 +125,11 @@ char const* Dinosaur::getType() const { return m_type; }
 char const* Dinosaur::getSpecies() const { return m_species; }
 char const* Dinosaur::getFood() const { return m_food; }
 
+bool Dinosaur::serialize(std::ofstream &ofs) const {
+    return MySpace::serialize(ofs, m_name) && MySpace::serialize(ofs, m_gender) && MySpace::serialize(ofs, m_era)
+        && MySpace::serialize(ofs, m_type) && MySpace::serialize(ofs, m_species) && MySpace::serialize(ofs, m_food);
+}
+
 void Dinosaur::clear(){
     setName(nullptr);
     setGender(nullptr);

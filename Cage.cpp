@@ -97,6 +97,23 @@ Dinosaur* Cage::find(const char* dinosaur_name) const {
     return nullptr;
 }
 
+bool Cage::serialize(std::ofstream &ofs) const {
+    if(!MySpace::serialize(ofs, m_climate)){
+        return false;
+    }
+    if(!MySpace::serialize(ofs, m_era)){
+        return false;
+    }
+    ofs.write((char const*) &m_size, sizeof(m_size));
+    ofs.write((char const*) &m_list_count, sizeof(m_list_count));
+    for(unsigned i = 0; i < m_list_count; i++){
+        if(!m_list[i].serialize(ofs)){
+            break;
+        }
+    }
+    return ofs;
+}
+
 void Cage::clear(){
     if(m_climate != nullptr){
         delete[] m_climate;

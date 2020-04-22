@@ -5,6 +5,9 @@
 #ifndef JURASSICPARK_DINOSAUR_HPP
 #define JURASSICPARK_DINOSAUR_HPP
 
+#include <fstream>
+//for: ofstream
+
 class Dinosaur {
     char* m_name;
     char* m_gender;
@@ -38,6 +41,8 @@ public:
     char const* getType() const;
     char const* getSpecies() const;
     char const* getFood() const;
+
+    bool serialize(std::ofstream& ofs) const;
 
 private:
     void clear();

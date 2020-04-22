@@ -6,8 +6,10 @@
 #define JURASSICPARK_CAGE_HPP
 
 #include "Dinosaur.hpp"
+#include <fstream>
+//for: ofstream
 
-enum class CageClimate {
+/*enum class CageClimate {
     UNKNOWN = -1,
     MEDITERRANEAN,
     SUBTROPICAL,
@@ -19,7 +21,7 @@ enum class CageSize {
     SMALL, // size for 1
     MEDIUM, // size for 3
     LARGE // size for 10
-};
+};*/
 
 class Cage {
     char* m_climate;
@@ -44,6 +46,7 @@ public:
     bool add(const Dinosaur& dinosaur);
     bool remove(const char* dinosaur_name);
     Dinosaur* find(const char* dinosaur_name) const;
+    bool serialize(std::ofstream& ofs) const;
 
 private:
     void clear();

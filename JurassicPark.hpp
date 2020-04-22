@@ -8,6 +8,8 @@
 #include "Dinosaur.hpp"
 #include "Cage.hpp"
 #include "Storehouse.hpp"
+#include <fstream>
+//for: ofstream, ios::binary
 
 class JurassicPark {
     Cage* m_list;
@@ -21,7 +23,10 @@ class JurassicPark {
 public:
     ~JurassicPark();
     static JurassicPark& self(unsigned limit = 4);
+    static const char* FILE_PATH;
 
+    bool save() const;
+    bool serialize(std::ofstream& ofs) const;
     void buildCage(char const* climate, char const* size);
     void buildCage(const Cage& cage);
     bool addAnimal(const Dinosaur& dinosaur);
