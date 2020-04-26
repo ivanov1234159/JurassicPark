@@ -123,6 +123,10 @@ bool Cage::unserialize(std::ifstream &ifs) {
     }
     ifs.read((char*) &m_size, sizeof(m_size));
     ifs.read((char*) &m_list_count, sizeof(m_list_count));
+    if(m_list != nullptr){
+        delete[] m_list;// I'm sure that this won't be needed; (never used)
+    }
+    m_list = new Dinosaur[m_size];
     for(unsigned i = 0; i < m_list_count; i++){
         if(!m_list[i].unserialize(ifs)){
             break;

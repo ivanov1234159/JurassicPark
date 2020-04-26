@@ -64,6 +64,11 @@ bool JurassicPark::serialize(std::ofstream &ofs) const {
 
 bool JurassicPark::unserialize(std::ifstream &ifs) {
     ifs.read((char*) &m_list_size, sizeof(m_list_size));
+    m_list_limit = m_list_size;
+    if(m_list != nullptr){
+        delete[] m_list;
+    }
+    m_list = new Cage[m_list_limit];
     for(unsigned i = 0; i < m_list_size; i++){
         if(!m_list[i].unserialize(ifs)){
             break;
