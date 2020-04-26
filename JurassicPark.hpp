@@ -9,7 +9,7 @@
 #include "Cage.hpp"
 #include "Storehouse.hpp"
 #include <fstream>
-//for: ofstream, ios::binary
+//for: ifstream, ofstream, ios::binary, ios::end
 
 class JurassicPark {
     Cage* m_list;
@@ -25,8 +25,10 @@ public:
     static JurassicPark& self(unsigned limit = 4);
     static const char* FILE_PATH;
 
+    bool open();
     bool save() const;
     bool serialize(std::ofstream& ofs) const;
+    bool unserialize(std::ifstream& ifs);
     void buildCage(char const* climate, char const* size);
     void buildCage(const Cage& cage);
     bool addAnimal(const Dinosaur& dinosaur);

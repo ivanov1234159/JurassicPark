@@ -114,6 +114,23 @@ bool Cage::serialize(std::ofstream &ofs) const {
     return !(!ofs);
 }
 
+bool Cage::unserialize(std::ifstream &ifs) {
+    if(!MySpace::unserialize(ifs, m_climate)){
+        return false;
+    }
+    if(!MySpace::unserialize(ifs, m_era)){
+        return false;
+    }
+    ifs.read((char*) &m_size, sizeof(m_size));
+    ifs.read((char*) &m_list_count, sizeof(m_list_count));
+    for(unsigned i = 0; i < m_list_count; i++){
+        if(!m_list[i].unserialize(ifs)){
+            break;
+        }
+    }
+    return !(!ifs);
+}
+
 void Cage::clear(){
     if(m_climate != nullptr){
         delete[] m_climate;

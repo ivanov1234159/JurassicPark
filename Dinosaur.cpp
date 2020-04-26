@@ -127,7 +127,12 @@ char const* Dinosaur::getFood() const { return m_food; }
 
 bool Dinosaur::serialize(std::ofstream &ofs) const {
     return MySpace::serialize(ofs, m_name) && MySpace::serialize(ofs, m_gender) && MySpace::serialize(ofs, m_era)
-        && MySpace::serialize(ofs, m_type) && MySpace::serialize(ofs, m_species) && MySpace::serialize(ofs, m_food);
+           && MySpace::serialize(ofs, m_type) && MySpace::serialize(ofs, m_species) && MySpace::serialize(ofs, m_food);
+}
+
+bool Dinosaur::unserialize(std::ifstream &ifs) {
+    return MySpace::unserialize(ifs, m_name) && MySpace::unserialize(ifs, m_gender) && MySpace::unserialize(ifs, m_era)
+           && MySpace::unserialize(ifs, m_type) && MySpace::unserialize(ifs, m_species) && MySpace::unserialize(ifs, m_food);
 }
 
 void Dinosaur::clear(){

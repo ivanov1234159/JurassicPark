@@ -6,7 +6,7 @@
 #define JURASSICPARK_DINOSAUR_HPP
 
 #include <fstream>
-//for: ofstream
+//for: ifstream, ofstream
 
 class Dinosaur {
     char* m_name;
@@ -43,6 +43,7 @@ public:
     char const* getFood() const;
 
     bool serialize(std::ofstream& ofs) const;
+    bool unserialize(std::ifstream& ifs);
 
 private:
     void clear();

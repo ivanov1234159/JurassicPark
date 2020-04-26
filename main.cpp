@@ -1,14 +1,15 @@
 #include "Commander.hpp"
 #include "JurassicPark.hpp"
-//#include <sstream>
-//for: istringstream
+#include <iostream>
+//for: cout, endl
 
 int main() {
-    //runAllTests();
     build_commands();
-    //std::istringstream iss;
-    //Commander::call("open", JurassicPark::self(), iss);
-    //TODO: if has saved file, restore it
+    if(!JurassicPark::self().open()){
+        std::cout << "Couldn't restore the data." << std::endl;
+        return 1;
+    }
+    std::cout << "The data was successfully restored." << std::endl;
     Commander::run(JurassicPark::self());
     return 0;
 }

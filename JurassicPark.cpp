@@ -33,6 +33,20 @@ JurassicPark& JurassicPark::self(unsigned limit) {
 
 const char* JurassicPark::FILE_PATH = "data.bin";
 
+bool JurassicPark::open() {
+    std::ifstream ifs(JurassicPark::FILE_PATH, std::ios::binary);
+    if(!ifs){// if (no such file) then { create one }
+        std::ofstream ofs(JurassicPark::FILE_PATH, std::ios::binary);
+        return true;
+    }
+    int temp_pos = ifs.tellg();
+    if(ifs.seekg(0, std::ios::end).tellg() == 0){
+        return true;// empty file
+    }
+    ifs.seekg(temp_pos);
+    return unserialize(ifs);
+}
+
 bool JurassicPark::save() const {
     std::ofstream ofs(JurassicPark::FILE_PATH, std::ios::binary);
     return serialize(ofs);
@@ -46,6 +60,16 @@ bool JurassicPark::serialize(std::ofstream &ofs) const {
         }
     }
     return !(!ofs);
+}
+
+bool JurassicPark::unserialize(std::ifstream &ifs) {
+    ifs.read((char*) &m_list_size, sizeof(m_list_size));
+    for(unsigned i = 0; i < m_list_size; i++){
+        if(!m_list[i].unserialize(ifs)){
+            break;
+        }
+    }
+    return !(!ifs);
 }
 
 void JurassicPark::buildCage(char const* climate, char const* size){

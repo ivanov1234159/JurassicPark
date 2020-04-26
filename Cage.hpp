@@ -7,7 +7,7 @@
 
 #include "Dinosaur.hpp"
 #include <fstream>
-//for: ofstream
+//for: ifstream, ofstream
 
 /*enum class CageClimate {
     UNKNOWN = -1,
@@ -47,6 +47,7 @@ public:
     bool remove(const char* dinosaur_name);
     Dinosaur* find(const char* dinosaur_name) const;
     bool serialize(std::ofstream& ofs) const;
+    bool unserialize(std::ifstream& ifs);
 
 private:
     void clear();
