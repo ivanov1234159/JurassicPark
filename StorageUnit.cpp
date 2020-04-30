@@ -76,7 +76,7 @@ void StorageUnit::copy(const StorageUnit &other) {
 
 void StorageUnit::copy(const char *name, const unsigned name_size, const UnitAmount amount) {
     m_name_size = name_size;
-    m_amount = m_amount;
+    m_amount = amount;
     if(m_name != nullptr){
         delete[] m_name;
         m_name = nullptr;
