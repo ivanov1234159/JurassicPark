@@ -10,6 +10,8 @@
 #include "Storehouse.hpp"
 #include <fstream>
 //for: ifstream, ofstream, ios::binary, ios::end
+#include <iostream>
+//for: ostream, endl
 
 class JurassicPark {
     Cage* m_list;
@@ -35,6 +37,7 @@ public:
     bool removeAnimal(const char* dinosaur_name);
     bool addFood(const char* food_name, const UnitAmount food_amount);
 
+    friend std::ostream& operator<<(std::ostream& out, JurassicPark const& obj);
 private:
     bool empty() const;
     bool full() const;
@@ -42,5 +45,7 @@ private:
     Cage* findCage(const Dinosaur& dinosaur);
     Cage* findDinosaursCage(const char* dinosaur_name);
 };
+
+std::ostream& operator<<(std::ostream& out, JurassicPark const& obj);
 
 #endif //JURASSICPARK_JURASSICPARK_HPP

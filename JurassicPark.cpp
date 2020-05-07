@@ -6,7 +6,7 @@
 //#include <ctime>
 
 
-JurassicPark::JurassicPark(unsigned limit): m_list_limit(limit), m_list_size(0) {
+JurassicPark::JurassicPark(unsigned limit): m_list_size(0), m_list_limit(limit) {
     m_list = new Cage[limit];
     /*unsigned max = limit;
     srand(time(0));
@@ -144,4 +144,14 @@ Cage* JurassicPark::findDinosaursCage(const char* dinosaur_name){
         }
     }
     return nullptr;
+}
+
+std::ostream& operator<<(std::ostream& out, JurassicPark const& obj){
+    for(unsigned i = 0; i < obj.m_list_size; i++){
+        out << "Cage No." << i+1 << std::endl;
+        out << obj.m_list[i];
+        out << "-----------------------------------------------------------------------------------------------" << std::endl;
+        out << std::endl;
+    }
+    return out;
 }
