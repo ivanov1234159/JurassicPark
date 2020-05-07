@@ -9,9 +9,9 @@
 //for: ostream, cout, endl
 #include <sstream>
 //for: istringstream
-#include "Program.hpp"
+#include "JurassicPark.hpp"
 
-typedef Program RunnerType;
+typedef JurassicPark RunnerType;
 
 class Command {
     char* m_name;
