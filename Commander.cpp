@@ -4,73 +4,45 @@
 
 #include "Commander.hpp"
 
-unsigned Commander::cmd_count = 0;
-unsigned Commander::cmd_count_max = 2;
-Command* Commander::cmd_list = new Command[Commander::cmd_count_max];
+Vector<Command*> Commander::cmd_list = Vector<Command*>();
 
-void Commander::resize() {
-    Commander::cmd_count_max *= 2;
-    Command* temp = Commander::cmd_list;
-    Commander::cmd_list = new Command[Commander::cmd_count_max];
-    for(unsigned i = 0; i < Commander::cmd_count; i++){
-        Commander::cmd_list[i] = temp[i];
-    }
-}
-
-int Commander::findIndex(char const* cmd){
-    for (unsigned i = 0; i < Commander::cmd_count; i++){
-        if(Commander::cmd_list[i] == cmd){
-            return i;
+Command* Commander::find(char const* cmd){
+    for (unsigned i = 0; i < Commander::cmd_list.size(); i++){
+        if(*Commander::cmd_list[i] == cmd){
+            return Commander::cmd_list[i];
         }
     }
-    return -1;
+    return nullptr;
 }
 
-void Commander::outUsage(unsigned index, std::ostream& out){
-    out << Commander::cmd_list[index];
-}
-
-void Commander::add(Command const& item) {
-    if(Commander::cmd_count == Commander::cmd_count_max){
-        Commander::resize();
-    }
-    Commander::cmd_list[Commander::cmd_count++] = item;
-}
-
-void commander_error(bool print_help = true){
-    std::cout << "Invalid command!";
-    if(print_help){
-        std::cout << " Type 'help' for more information.";
-    }
-    std::cout << std::endl;
+void Commander::add(Command* item) {
+    Commander::cmd_list.push(item);
 }
 
 void Commander::run(RunnerType& runner) {
-    bool running = true;
-    do {
+    for (;;){
         char buffer[Commander::BUFFER_SIZE];
-        //char* buffer = new char[Commander::BUFFER_SIZE];
         std::cin.getline(buffer, Commander::BUFFER_SIZE);
         std::istringstream iss(buffer);
-        //delete[] buffer;
         char* cmd = buffer;
         iss >> cmd;
-        running = call(cmd, runner, iss);
-    } while (running);
-}
-
-bool Commander::call(char const* cmd, RunnerType& runner, std::istringstream& iss) {
-    int index = Commander::findIndex(cmd);
-    if(index >= 0){
-        if(!Commander::cmd_list[index].call(runner, iss)){
-            commander_error(false);
-            Commander::outUsage(index, std::cout);
+        Command* search = Commander::find(cmd);
+        bool found = search != nullptr;
+        if(!found){
+            search = new Command();
         }
-        if(index == Commander::EXIT){
-            return false;
+        if(!search->action(runner, iss)){
+            std::cout << "Wrong command format! Action is NOT done." << std::endl;
+            std::cout << *search;
         }
-    } else {
-        commander_error();
+        if(search->canQuit()){
+            if(!found){// never
+                delete search;
+            }
+            break;
+        }
+        if(!found){
+            delete search;
+        }
     }
-    return true;
 }

@@ -7,14 +7,13 @@
 #include <cstring>
 //for: strcmp()
 
-Command::Command(): m_name(nullptr), m_params(nullptr), m_notes(nullptr), m_func(nullptr) {}
+Command::Command(): m_name(nullptr), m_params(nullptr), m_notes(nullptr), m_quit_when_done(false) {}
 
-Command::Command(char const *name, char const *params, char const *notes, FuncCMD func)
-        : m_name(nullptr), m_params(nullptr), m_notes(nullptr), m_func(nullptr) {
+Command::Command(char const *name, char const *params, char const *notes, bool quit)
+        : m_name(nullptr), m_params(nullptr), m_notes(nullptr), m_quit_when_done(quit) {
     MySpace::mem_copy(m_name, name);
     MySpace::mem_copy(m_params, params);
     MySpace::mem_copy(m_notes, notes);
-    m_func = func;
 }
 
 Command::Command(Command const &other) {
@@ -37,8 +36,13 @@ bool Command::operator==(char const* cmd){
     return std::strcmp(m_name, cmd) == 0;
 }
 
-bool Command::call(RunnerType &runner, std::istringstream &iss) const {
-    return m_func(runner, iss);
+bool Command::canQuit() const {
+    return m_quit_when_done;
+}
+
+bool Command::action(RunnerType&, std::istringstream&) const {
+    std::cout << "Invalid command! Type 'help' for more information." << std::endl;
+    return true;
 }
 
 void Command::clear() {
@@ -54,17 +58,18 @@ void Command::clear() {
         delete[] m_notes;
         m_notes = nullptr;
     }
-    m_func = nullptr;
 }
 
 void Command::copy(Command const &other) {
     MySpace::mem_copy(m_name, other.m_name);
     MySpace::mem_copy(m_params, other.m_params);
     MySpace::mem_copy(m_notes, other.m_notes);
-    m_func = other.m_func;
 }
 
 std::ostream& operator<<(std::ostream& out, Command const& obj){
+    if(obj.m_name == nullptr){
+        return out;
+    }
     return out << obj.m_name << ' ' << obj.m_params << std::endl
            << '\t' << obj.m_notes << std::endl;
 }

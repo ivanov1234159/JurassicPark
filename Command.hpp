@@ -6,30 +6,29 @@
 #define JURASSICPARK_COMMAND_HPP
 
 #include <iostream>
-//for: ostream, endl
+//for: ostream, cout, endl
 #include <sstream>
 //for: istringstream
-#include "JurassicPark.hpp"
+#include "Program.hpp"
 
-typedef JurassicPark RunnerType;
-
-typedef bool (*FuncCMD)(RunnerType&, std::istringstream&);
+typedef Program RunnerType;
 
 class Command {
     char* m_name;
     char* m_params;
     char* m_notes;
-    FuncCMD m_func;
+    bool m_quit_when_done;
 public:
     Command();
-    Command(char const* name, char const* params, char const* notes, FuncCMD func);
+    Command(char const* name, char const* params, char const* notes, bool quit = false);
     Command(Command const& other);
     Command& operator=(Command const& other);
-    ~Command();
+    virtual ~Command();
 
     bool operator==(char const* cmd);
+    bool canQuit() const;
 
-    bool call(RunnerType& runner, std::istringstream& iss) const;
+    virtual bool action(RunnerType& runner, std::istringstream& iss) const;
 
     friend std::ostream& operator<<(std::ostream& out, Command const& obj);
 
