@@ -176,3 +176,16 @@ void Cage::copy(char const* climate, const unsigned size, char const* era,
         }
     }
 }
+
+std::ostream& operator<<(std::ostream& out, Cage const& obj){
+    out << "Climate: " << (obj.m_climate == nullptr ? "<no-info>" : obj.m_climate) << std::endl;
+    out << "Era: " << (obj.m_climate == nullptr ? "no era" : obj.m_climate) << std::endl;
+    out << "Has: " << obj.m_list_count << "/" << obj.m_size << std::endl;
+    if(obj.m_list == nullptr){
+        return out << "Empty cage." << std::endl;
+    }
+    for(unsigned i = 0; i < obj.m_list_count; i++){
+        out << obj.m_list[i] << std::endl;
+    }
+    return out;
+}

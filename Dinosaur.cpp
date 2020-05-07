@@ -177,3 +177,12 @@ bool Dinosaur::validSpecies(char const* _species) {
 bool Dinosaur::validFood(char const* _food) {
     return MySpace::array_find_str(Dinosaur::food, _food);
 }
+
+std::ostream& operator<<(std::ostream& out, Dinosaur const& obj){
+    return out << "Dino named " << obj.getName()
+                     << " is " << obj.getGender()
+                     << ", from " << obj.getEra()
+                     << " era, " << obj.getSpecies()
+                     << ", eats " << obj.getFood()
+                     << " (" << obj.getType() << ")";
+}

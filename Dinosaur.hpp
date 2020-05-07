@@ -7,6 +7,8 @@
 
 #include <fstream>
 //for: ifstream, ofstream
+#include <iostream>
+//for: ostream
 
 class Dinosaur {
     char* m_name;
@@ -45,6 +47,7 @@ public:
     bool serialize(std::ofstream& ofs) const;
     bool unserialize(std::ifstream& ifs);
 
+    friend std::ostream& operator<<(std::ostream& out, Dinosaur const& obj);
 private:
     void clear();
     void copy(Dinosaur const& other);
@@ -57,5 +60,7 @@ private:
     static bool validSpecies(char const* species);
     static bool validFood(char const* food);
 };
+
+std::ostream& operator<<(std::ostream& out, Dinosaur const& obj);
 
 #endif //JURASSICPARK_DINOSAUR_HPP

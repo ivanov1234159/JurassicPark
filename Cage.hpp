@@ -8,6 +8,8 @@
 #include "Dinosaur.hpp"
 #include <fstream>
 //for: ifstream, ofstream
+#include <iostream>
+//for: ostream, endl
 
 /*enum class CageClimate {
     UNKNOWN = -1,
@@ -49,11 +51,14 @@ public:
     bool serialize(std::ofstream& ofs) const;
     bool unserialize(std::ifstream& ifs);
 
+    friend std::ostream& operator<<(std::ostream& out, Cage const& obj);
 private:
     void clear();
     void copy(const Cage &other);
     void copy(char const* climate, const unsigned size, char const* era,
             const Dinosaur* list, const unsigned list_count);
 };
+
+std::ostream& operator<<(std::ostream& out, Cage const& obj);
 
 #endif //JURASSICPARK_CAGE_HPP
