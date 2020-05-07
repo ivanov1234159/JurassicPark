@@ -2,12 +2,12 @@
 // Created by toi on 19/04/2020.
 //
 
-#include "Array.hpp"
+#include "Vector.hpp"
 #include <iostream>
 //for: cout, endl
 
-void arrayTest(){
-    Array<char> test;
+void vectorTest(){
+    Vector<char> test;
     test.push('o');
     test.push('e');
     test.push('l');
@@ -29,7 +29,7 @@ void arrayTest(){
     if(test.full()){
         std::cout << vary << "; " << temp << std::endl;
     }
-    Array<char> lastCheck = test;
+    Vector<char> lastCheck = test;
     lastCheck.remove(-1);
     test = lastCheck;
     std::cout << "All tests were passed successfully!" << std::endl;

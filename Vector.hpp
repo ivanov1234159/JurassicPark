@@ -2,23 +2,23 @@
 // Created by toi on 30/03/2020.
 //
 
-#ifndef ___MYSPACE_ARRAY_HPP___
-#define ___MYSPACE_ARRAY_HPP___
+#ifndef ___MYSPACE_VECTOR_HPP___
+#define ___MYSPACE_VECTOR_HPP___
 
 #include <ostream>
 //for: ostream
 
 template<typename T>
-class Array {
+class Vector {
     T* m_list;
     unsigned m_size;
     unsigned m_limit;
     bool m_resizable;
 public:
-    Array(unsigned limit = 2, bool resizable = true);
-    Array(Array<T> const& other);
-    Array& operator=(Array<T> const& other);
-    ~Array();
+    Vector(unsigned limit = 2, bool resizable = true);
+    Vector(Vector<T> const& other);
+    Vector& operator=(Vector<T> const& other);
+    ~Vector();
 
     bool shift(T const& item);
     T unshift();
@@ -41,25 +41,25 @@ public:
 private:
     unsigned normalizeIndex(int index) const;
     void clear();
-    void copy(Array<T> const& other);
+    void copy(Vector<T> const& other);
     bool resize();
 };
 
 template<typename T>
-std::ostream& operator<<(std::ostream& out, Array<T> const& obj);
+std::ostream& operator<<(std::ostream& out, Vector<T> const& obj);
 
 template<typename T>
-Array<T>::Array(unsigned limit, bool resizable): m_list(nullptr), m_size(0), m_limit(limit), m_resizable(resizable) {
+Vector<T>::Vector(unsigned limit, bool resizable): m_list(nullptr), m_size(0), m_limit(limit), m_resizable(resizable) {
     m_list = new T[m_limit];
 }
 
 template<typename T>
-Array<T>::Array(Array<T> const &other): m_list(nullptr) {
+Vector<T>::Vector(Vector<T> const &other): m_list(nullptr) {
     copy(other);
 }
 
 template<typename T>
-Array<T>& Array<T>::operator=(Array<T> const &other) {
+Vector<T>& Vector<T>::operator=(Vector<T> const &other) {
     if(this != &other){
         clear();
         copy(other);
@@ -68,12 +68,12 @@ Array<T>& Array<T>::operator=(Array<T> const &other) {
 }
 
 template<typename T>
-Array<T>::~Array() {
+Vector<T>::~Vector() {
     clear();
 }
 
 template<typename T>
-bool Array<T>::shift(const T &item) {
+bool Vector<T>::shift(const T &item) {
     if(full() && !resize()){
         return false;
     }
@@ -89,7 +89,7 @@ bool Array<T>::shift(const T &item) {
 }
 
 template<typename T>
-T Array<T>::unshift() {
+T Vector<T>::unshift() {
     if(empty()){
         return T();
     }
@@ -99,7 +99,7 @@ T Array<T>::unshift() {
 }
 
 template<typename T>
-bool Array<T>::push(T const &item) {
+bool Vector<T>::push(T const &item) {
     if(full() && !resize()){
         return false;
     }
@@ -109,7 +109,7 @@ bool Array<T>::push(T const &item) {
 }
 
 template<typename T>
-T Array<T>::pop() {
+T Vector<T>::pop() {
     if(empty()){
         return T();
     }
@@ -119,7 +119,7 @@ T Array<T>::pop() {
 }
 
 template<typename T>
-void Array<T>::remove(int index) {
+void Vector<T>::remove(int index) {
     if(empty()){
         return;
     }
@@ -134,52 +134,52 @@ void Array<T>::remove(int index) {
 }
 
 template<typename T>
-bool Array<T>::empty() const {
+bool Vector<T>::empty() const {
     return m_size == 0;
 }
 
 template<typename T>
-bool Array<T>::full() const {
+bool Vector<T>::full() const {
     return m_size == m_limit;
 }
 
 template<typename T>
-unsigned Array<T>::free() const {
+unsigned Vector<T>::free() const {
     return m_limit - m_size;
 }
 
 template<typename T>
-unsigned Array<T>::size() const {
+unsigned Vector<T>::size() const {
     return m_size;
 }
 
 template <typename T>
-bool Array<T>::fixed() const {
+bool Vector<T>::fixed() const {
     return !m_resizable;
 }
 
 template<typename T>
-T& Array<T>::at(int index) {
+T& Vector<T>::at(int index) {
     return m_list[normalizeIndex(index)];
 }
 
 template<typename T>
-T& Array<T>::operator[](int index) {
+T& Vector<T>::operator[](int index) {
     return at(index);
 }
 
 template<typename T>
-T const& Array<T>::at(int index) const {
+T const& Vector<T>::at(int index) const {
     return m_list[normalizeIndex(index)];
 }
 
 template<typename T>
-T const& Array<T>::operator[](int index) const {
+T const& Vector<T>::operator[](int index) const {
     return at(index);
 }
 
 template<typename T>
-unsigned Array<T>::normalizeIndex(int index) const {
+unsigned Vector<T>::normalizeIndex(int index) const {
     if(index < 0){
         return m_size - ((-index) % m_size);
     }
@@ -187,7 +187,7 @@ unsigned Array<T>::normalizeIndex(int index) const {
 }
 
 template<typename T>
-void Array<T>::clear() {
+void Vector<T>::clear() {
     if(m_list != nullptr){
         delete[] m_list;
         m_list = nullptr;
@@ -195,7 +195,7 @@ void Array<T>::clear() {
 }
 
 template<typename T>
-void Array<T>::copy(Array<T> const& other){
+void Vector<T>::copy(Vector<T> const& other){
     m_size = other.m_size;
     m_limit = other.m_limit;
     m_list = new T[m_limit];
@@ -205,7 +205,7 @@ void Array<T>::copy(Array<T> const& other){
 }
 
 template<typename T>
-bool Array<T>::resize(){
+bool Vector<T>::resize(){
     if(fixed()){
         return false;
     }
@@ -220,11 +220,11 @@ bool Array<T>::resize(){
 }
 
 template<typename T>
-std::ostream& operator<<(std::ostream& out, Array<T> const& obj){
+std::ostream& operator<<(std::ostream& out, Vector<T> const& obj){
     for(unsigned i = 0; i < obj.size(); i++){
         out << obj[i];
     }
     return out;
 }
 
-#endif //___MYSPACE_ARRAY_HPP___
+#endif //___MYSPACE_VECTOR_HPP___
