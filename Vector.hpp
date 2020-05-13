@@ -31,6 +31,7 @@ public:
     bool full() const;
     unsigned size() const;
     unsigned free() const;
+    unsigned maxSize() const;
     bool fixed() const;// fixed size = !resizable
 
     T& at(int index);
@@ -167,6 +168,11 @@ bool Vector<T>::full() const {
 template<typename T>
 unsigned Vector<T>::free() const {
     return m_limit - m_size;
+}
+
+template<typename T>
+unsigned Vector<T>::maxSize() const {
+    return m_limit;
 }
 
 template<typename T>
