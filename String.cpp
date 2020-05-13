@@ -5,6 +5,7 @@
 #include <cstring>
 //for: strlen(), strcpy(), strcmp()
 #include "String.hpp"
+#include "MySpace.hpp"
 
 String::String(const char *str) {
     set(str);
@@ -80,4 +81,12 @@ bool String::operator<=(String const &other) const {
 String& String::operator+=(String const &other) {
     append(other);
     return *this;
+}
+
+bool String::serialize(std::ofstream &ofs) const {
+    return MySpace::serialize(ofs, list());
+}
+
+bool String::unserialize(std::ifstream &ifs) {
+    return MySpace::unserialize(ifs, list());
 }
