@@ -9,56 +9,29 @@
 //for: ifstream, ofstream
 #include <iostream>
 //for: ostream
+#include "DinoBasic.hpp"
+#include "String.hpp"
 
-class Dinosaur {
-    char* m_name;
-    char* m_gender;
-    char* m_era;
-    char* m_type;
-    char* m_species;
-    char* m_food;
+class Dinosaur : public DinoBasic {
+    String m_name;
+    String m_gender;
 public:
-    static char const* era[];
-    static char const* type[];
-    static char const* species[];
-    static char const* food[];
-
-    Dinosaur();
+    //Dinosaur() = default;
     /*Dino(char const* name, char const* gender, char const* era,
          char const* type, char const* species, char const* food);*/
-    Dinosaur(Dinosaur const& other);
-    Dinosaur& operator=(Dinosaur const& other);
-    ~Dinosaur();
 
-    bool setName(char const* name);
-    bool setGender(char const* gender);
-    bool setEra(char const* era);
-    bool setType(char const* type);
-    bool setSpecies(char const* species);
-    bool setFood(char const* food);
+    bool setName(String const& name);
+    bool setGender(String const& gender);
 
-    char const* getName() const;
-    char const* getGender() const;
-    char const* getEra() const;
-    char const* getType() const;
-    char const* getSpecies() const;
-    char const* getFood() const;
+    String const& getName() const;
+    String const& getGender() const;
 
-    bool serialize(std::ofstream& ofs) const;
-    bool unserialize(std::ifstream& ifs);
+    virtual bool serialize(std::ofstream& ofs) const override final;
+    virtual bool unserialize(std::ifstream& ifs) override final;
 
     friend std::ostream& operator<<(std::ostream& out, Dinosaur const& obj);
 private:
-    void clear();
-    void copy(Dinosaur const& other);
-    void copy(char const* name, char const* gender, char const* era,
-              char const* type, char const* species, char const* food);
-
-    static bool validGender(char const* gender);
-    static bool validEra(char const* era);
-    static bool validType(char const* type);
-    static bool validSpecies(char const* species);
-    static bool validFood(char const* food);
+    static bool validGender(String const& gender);
 };
 
 std::ostream& operator<<(std::ostream& out, Dinosaur const& obj);
