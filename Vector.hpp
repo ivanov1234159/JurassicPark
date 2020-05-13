@@ -208,11 +208,13 @@ Vector<T>::operator T const*() const {
 
 template<typename T>
 T* Vector<T>::list() {
+    static char temp = reserveMemory();
     return m_list;
 }
 
 template<typename T>
 T const* Vector<T>::list() const {
+    static char temp = reserveMemory();
     return m_list;
 }
 
