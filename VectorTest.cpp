@@ -31,7 +31,7 @@ void vectorTest(){
     }
 
     Vector<char> str = Vector<char>("hello there", 11 + 1);
-    std::cout << (char const*)str;
+    std::cout << str;
 
     Vector<char> lastCheck = test;
     lastCheck.remove(-1);

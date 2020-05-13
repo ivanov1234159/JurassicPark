@@ -39,18 +39,16 @@ public:
     T const& at(int index) const;
     T const& operator[](int index) const;
 
-    operator T const*() const;
-
 protected:
-    T* list();
-    T const* list() const;
+    T*& list();
+    T const*& list() const;
 
 private:
     unsigned normalizeIndex(int index) const;
     void clear();
     void copy(Vector<T> const& other);
     bool resize();
-    bool reserveMemory();// reserve the memory here instead in a constructor
+    bool reserveMemory() const;// reserve the memory here instead in a constructor
 };
 
 template<typename T>
@@ -202,20 +200,15 @@ T const& Vector<T>::operator[](int index) const {
 }
 
 template<typename T>
-Vector<T>::operator T const*() const {
-    return m_list;
-}
-
-template<typename T>
-T* Vector<T>::list() {
+T*& Vector<T>::list() {
     static char temp = reserveMemory();
     return m_list;
 }
 
 template<typename T>
-T const* Vector<T>::list() const {
-    static char temp = reserveMemory();
-    return m_list;
+T const*& Vector<T>::list() const {
+    static T const* tempList = reserveMemory() ? m_list : nullptr;
+    return tempList;// !!! reserveMemory() MUST return true; normally it does
 }
 
 template<typename T>
@@ -261,9 +254,12 @@ bool Vector<T>::resize(){
 }
 
 template<typename T>
-bool Vector<T>::reserveMemory() {
+bool Vector<T>::reserveMemory() const {
     if(m_list == nullptr){
-        m_list = new T[m_limit];
+        Vector<T>* self = const_cast<Vector<T>*>(this);
+        // !!! To use reserveMemory() in a "const" methods like:
+        //      normalizeIndex(int), empty(), full(), list()
+        self->m_list = new T[m_limit];
     }
     return true;
 }
