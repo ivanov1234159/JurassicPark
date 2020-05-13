@@ -16,6 +16,7 @@ class Vector {
     bool m_resizable;
 public:
     Vector(unsigned limit = 2, bool resizable = true);
+    Vector(T const* other, unsigned size, bool resizable = true);
     Vector(Vector<T> const& other);
     Vector& operator=(Vector<T> const& other);
     ~Vector();
@@ -38,6 +39,12 @@ public:
     T const& at(int index) const;
     T const& operator[](int index) const;
 
+    operator T const*() const;
+
+protected:
+    T* list();
+    T const* list() const;
+
 private:
     unsigned normalizeIndex(int index) const;
     void clear();
@@ -51,6 +58,16 @@ std::ostream& operator<<(std::ostream& out, Vector<T> const& obj);
 template<typename T>
 Vector<T>::Vector(unsigned limit, bool resizable): m_list(nullptr), m_size(0), m_limit(limit), m_resizable(resizable) {
     m_list = new T[m_limit];
+}
+
+template<typename T>
+Vector<T>::Vector(T const* other, unsigned size, bool resizable): m_list(nullptr), m_size(size), m_limit(size), m_resizable(resizable) {
+    m_list = new T[m_limit];
+    if(other != nullptr){
+        for(unsigned i = 0; i < m_size; i++){
+            m_list[i] = other[i];
+        }
+    }
 }
 
 template<typename T>
@@ -176,6 +193,21 @@ T const& Vector<T>::at(int index) const {
 template<typename T>
 T const& Vector<T>::operator[](int index) const {
     return at(index);
+}
+
+template<typename T>
+Vector<T>::operator T const*() const {
+    return m_list;
+}
+
+template<typename T>
+T* Vector<T>::list() {
+    return m_list;
+}
+
+template<typename T>
+T const* Vector<T>::list() const {
+    return m_list;
 }
 
 template<typename T>

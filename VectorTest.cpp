@@ -29,6 +29,10 @@ void vectorTest(){
     if(test.full()){
         std::cout << vary << "; " << temp << std::endl;
     }
+
+    Vector<char> str = Vector<char>("hello there", 11 + 1);
+    std::cout << (char const*)str;
+
     Vector<char> lastCheck = test;
     lastCheck.remove(-1);
     test = lastCheck;
