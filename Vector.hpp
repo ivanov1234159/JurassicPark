@@ -50,20 +50,24 @@ private:
     void clear();
     void copy(Vector<T> const& other);
     bool resize();
+    bool reserveMemory();// reserve the memory here instead in a constructor
 };
 
 template<typename T>
 std::ostream& operator<<(std::ostream& out, Vector<T> const& obj);
 
 template<typename T>
-Vector<T>::Vector(unsigned limit, bool resizable): m_list(nullptr), m_size(0), m_limit(limit), m_resizable(resizable) {
-    m_list = new T[m_limit];
+Vector<T>::Vector(unsigned limit, bool resizable)
+    : m_list(nullptr), m_size(0), m_limit(limit), m_resizable(resizable) {
+    //m_list = new T[m_limit]; // !!! for this reason I use reserveMemory() method
 }
 
 template<typename T>
-Vector<T>::Vector(T const* other, unsigned size, bool resizable): m_list(nullptr), m_size(size), m_limit(size), m_resizable(resizable) {
-    m_list = new T[m_limit];
+Vector<T>::Vector(T const* other, unsigned size, bool resizable)
+    : m_list(nullptr), m_size(size), m_limit(size), m_resizable(resizable) {
+    //m_list = new T[m_limit];
     if(other != nullptr){
+        m_list = new T[m_limit];
         for(unsigned i = 0; i < m_size; i++){
             m_list[i] = other[i];
         }
@@ -152,11 +156,13 @@ void Vector<T>::remove(int index) {
 
 template<typename T>
 bool Vector<T>::empty() const {
+    static char temp = reserveMemory();
     return m_size == 0;
 }
 
 template<typename T>
 bool Vector<T>::full() const {
+    static char temp = reserveMemory();
     return m_size == m_limit;
 }
 
@@ -212,6 +218,7 @@ T const* Vector<T>::list() const {
 
 template<typename T>
 unsigned Vector<T>::normalizeIndex(int index) const {
+    static char temp = reserveMemory();
     if(index < 0){
         return m_size - ((-index) % m_size);
     }
@@ -248,6 +255,14 @@ bool Vector<T>::resize(){
         m_list[i] = temp[i];
     }
     delete[] temp;
+    return true;
+}
+
+template<typename T>
+bool Vector<T>::reserveMemory() {
+    if(m_list == nullptr){
+        m_list = new T[m_limit];
+    }
     return true;
 }
 
