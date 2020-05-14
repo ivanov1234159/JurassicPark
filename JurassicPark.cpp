@@ -6,8 +6,8 @@
 //#include <ctime>
 
 
-JurassicPark::JurassicPark(unsigned limit): m_list_size(0), m_list_limit(limit) {
-    m_list = new Cage[limit];
+JurassicPark::JurassicPark(unsigned limit) {
+    m_list = Vector<Cage>(limit);
     /*unsigned max = limit;
     srand(time(0));
     if(limit > 0){
@@ -18,12 +18,6 @@ JurassicPark::JurassicPark(unsigned limit): m_list_size(0), m_list_limit(limit) 
         m_list[i] = Cage("TODO", "large");
     }*/
     m_storehouse = Storehouse();
-}
-
-JurassicPark::~JurassicPark(){
-    if(m_list != nullptr){
-        delete[] m_list;
-    }
 }
 
 JurassicPark& JurassicPark::self(unsigned limit) {
@@ -53,8 +47,9 @@ bool JurassicPark::save() const {
 }
 
 bool JurassicPark::serialize(std::ofstream &ofs) const {
-    ofs.write((char const*) &m_list_size, sizeof(m_list_size));
-    for(unsigned i = 0; i < m_list_size; i++){
+    unsigned size = m_list.size();
+    ofs.write((char const*) &size, sizeof(size));
+    for(unsigned i = 0; i < size; i++){
         if(!m_list[i].serialize(ofs)){
             break;
         }
@@ -63,13 +58,11 @@ bool JurassicPark::serialize(std::ofstream &ofs) const {
 }
 
 bool JurassicPark::unserialize(std::ifstream &ifs) {
-    ifs.read((char*) &m_list_size, sizeof(m_list_size));
-    m_list_limit = m_list_size;
-    if(m_list != nullptr){
-        delete[] m_list;
-    }
-    m_list = new Cage[m_list_limit];
-    for(unsigned i = 0; i < m_list_size; i++){
+    unsigned size;
+    ifs.read((char*) &size, sizeof(size));
+    m_list = Vector<Cage>(size);
+    for(unsigned i = 0; i < size; i++){
+        m_list.push(Cage());
         if(!m_list[i].unserialize(ifs)){
             break;
         }
@@ -78,15 +71,7 @@ bool JurassicPark::unserialize(std::ifstream &ifs) {
 }
 
 void JurassicPark::buildCage(char const* climate, char const* size){
-    buildCage(Cage(climate, size));
-}
-
-void JurassicPark::buildCage(const Cage& cage){
-    if(full()){
-        resize();
-    }
-    m_list[m_list_size] = cage;
-    m_list_size++;
+    m_list.push(Cage(climate, size));
 }
 
 bool JurassicPark::addAnimal(const Dinosaur& dinosaur){
@@ -109,26 +94,8 @@ bool JurassicPark::addFood(const char* food_name, const UnitAmount food_amount){
     return m_storehouse.add(food_name, food_amount);
 }
 
-bool JurassicPark::empty() const {
-    return m_list_size == 0;
-}
-
-bool JurassicPark::full() const {
-    return m_list_size == m_list_limit;
-}
-
-void JurassicPark::resize(){
-    m_list_limit *= 2;
-    Cage* temp = m_list;
-    m_list = new Cage[m_list_limit];
-    for(unsigned i = 0; i < m_list_size; i++){
-        m_list[i] = temp[i];
-    }
-    delete[] temp;
-}
-
 Cage* JurassicPark::findCage(const Dinosaur& dinosaur){
-    for(unsigned i = 0; i < m_list_size; i++){
+    for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].canHandle(dinosaur)){
             return &m_list[i];
         }
@@ -137,9 +104,9 @@ Cage* JurassicPark::findCage(const Dinosaur& dinosaur){
 }
 
 Cage* JurassicPark::findDinosaursCage(const char* dinosaur_name){
-    for(unsigned i = 0; i < m_list_size; i++){
-        Dinosaur* search = m_list[i].find(dinosaur_name);
-        if(search != nullptr){
+    for(unsigned i = 0; i < m_list.size(); i++){
+        int search = m_list[i].findIndex(dinosaur_name);
+        if(search >= 0){
             return &m_list[i];
         }
     }
@@ -147,7 +114,7 @@ Cage* JurassicPark::findDinosaursCage(const char* dinosaur_name){
 }
 
 std::ostream& operator<<(std::ostream& out, JurassicPark const& obj){
-    for(unsigned i = 0; i < obj.m_list_size; i++){
+    for(unsigned i = 0; i < obj.m_list.size(); i++){
         out << "Cage No." << i+1 << std::endl;
         out << obj.m_list[i];
         out << "-----------------------------------------------------------------------------------------------" << std::endl;
