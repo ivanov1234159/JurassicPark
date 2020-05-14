@@ -231,6 +231,7 @@ template<typename T>
 void Vector<T>::copy(Vector<T> const& other){
     m_size = other.m_size;
     m_limit = other.m_limit;
+    m_resizable = other.m_resizable;
     m_list = new T[m_limit];
     for(unsigned i = 0; i < m_size; i++){
         m_list[i] = other.m_list[i];
