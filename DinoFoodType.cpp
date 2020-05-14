@@ -20,7 +20,7 @@ bool DinoFoodType::setFood(String const &food) {
     if(!DinoFoodType::validFood(food)){
         return false;
     }
-    m_food == food;
+    m_food = food;
     return true;
 }
 

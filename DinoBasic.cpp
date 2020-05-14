@@ -54,7 +54,7 @@ bool DinoBasic::setSpecies(String const &species){
     if(!DinoBasic::validSpecies(species)){
         return false;
     }
-    m_species == species;
+    m_species = species;
     return true;
 }
 
