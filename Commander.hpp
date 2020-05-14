@@ -18,6 +18,7 @@ private:
     Commander& operator=(Commander const& other) = delete;
 
     static Command* find(char const* cmd);// returns nullptr if not found
+    static void clear();
 public:
     static const unsigned BUFFER_SIZE = 256;
     friend class CmdHelp;

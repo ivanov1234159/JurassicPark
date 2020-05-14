@@ -15,6 +15,12 @@ Command* Commander::find(char const* cmd){
     return nullptr;
 }
 
+void Commander::clear() {
+    for(unsigned i = 0; i < cmd_list.size(); i++){
+        delete cmd_list[i];
+    }
+}
+
 void Commander::add(Command* item) {
     Commander::cmd_list.push(item);
 }
@@ -30,6 +36,7 @@ void Commander::run(RunnerType& runner) {
             break;
         }
     }
+    Commander::clear();
 }
 
 bool Commander::call(char const* cmd, RunnerType& runner, std::istringstream& iss) {
