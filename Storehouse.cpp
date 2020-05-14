@@ -22,7 +22,7 @@ bool Storehouse::has(String const& unit_name, const UnitAmount unit_amount) cons
     if(search == nullptr){
         return false;
     }
-    if(search->getAmount() > unit_amount){
+    if(search->getAmount() < unit_amount){
         return false;
     }
     return StorageUnit::areEqual(search->getAmount(), unit_amount);

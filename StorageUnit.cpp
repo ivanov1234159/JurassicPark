@@ -7,7 +7,7 @@
 const UnitAmount StorageUnit::EPS = 1E-4;
 
 bool StorageUnit::areEqual(const UnitAmount amount1, const UnitAmount amount2){
-    return ((amount2 - amount1) >= -EPS) && ((amount1 - amount2) <= EPS);
+    return std::abs(amount1 - amount2) <= EPS;
 }
 
 StorageUnit::StorageUnit(String const& name, UnitAmount amount): m_name(name), m_amount(amount) {}
