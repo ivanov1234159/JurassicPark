@@ -16,8 +16,6 @@
 
 class JurassicPark {
     Vector<Cage> m_list;
-    //unsigned m_list_size;// current cages count
-    //unsigned m_list_limit;// max cages count
 
     Storehouse m_storehouse;
     JurassicPark(unsigned limit = 4);
