@@ -19,7 +19,7 @@ unsigned Cage::getCageSize(String const& size) {
 Cage::Cage(String const& climate, String const& size): m_climate(climate) {
     unsigned capacity = Cage::getCageSize(size);
     if(capacity != Cage::DEFAULT_CAGE_SIZE){
-        m_list = Vector<Dinosaur>(capacity, true);
+        m_list = Vector<Dinosaur>(capacity, false);
     }
 }
 
@@ -92,6 +92,7 @@ bool Cage::unserialize(std::ifstream &ifs) {
     ifs.read((char*) &capacity, sizeof(capacity));
     m_list = Vector<Dinosaur>(capacity, false);
     for(unsigned i = 0; i < size; i++){
+        m_list.push(Dinosaur());
         if(!m_list[i].unserialize(ifs)){
             break;
         }
@@ -100,8 +101,8 @@ bool Cage::unserialize(std::ifstream &ifs) {
 }
 
 std::ostream& operator<<(std::ostream& out, Cage const& obj){
-    out << "Climate: " << (obj.m_climate.empty() ? "<no-info>" : obj.m_climate) << std::endl;
-    out << "Era: " << (obj.m_era.empty() ? "no era" : obj.m_era) << std::endl;
+    out << "Climate: " << (!obj.m_climate ? "no info" : obj.m_climate) << std::endl;
+    out << "Era: " << (!obj.m_era ? "unknown" : obj.m_era) << std::endl;
     out << "Has: " << obj.m_list.size() << "/" << obj.m_list.capacity() << std::endl;
     for(unsigned i = 0; i < obj.m_list.size(); i++){
         out << obj.m_list[i] << std::endl;
