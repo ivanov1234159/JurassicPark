@@ -5,6 +5,8 @@
 #ifndef ___MYSPACE_STRING_HPP___
 #define ___MYSPACE_STRING_HPP___
 
+#include <fstream>
+//for: ofstream, ifstream
 #include "Vector.hpp"
 
 class String : public Vector<char> {
@@ -17,6 +19,8 @@ public:
     bool get(char*& str) const;
 
     void append(String const& other);
+
+    bool operator!() const;
 
     bool operator==(String const& other) const;
     bool operator!=(String const& other) const;
@@ -32,5 +36,7 @@ public:
     bool serialize(std::ofstream& ofs) const;
     bool unserialize(std::ifstream& ifs);
 };
+
+std::ostream& operator<<(std::ostream& out, String const& obj);
 
 #endif //___MYSPACE_STRING_HPP___

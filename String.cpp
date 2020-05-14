@@ -26,11 +26,14 @@ bool String::set(char const *str) {
 }
 
 char const* String::get() const {
+    if(empty()){
+        return "";
+    }
     return list();
 }
 
 bool String::get(char*& str) const {
-    if(str != nullptr){
+    if(str != nullptr || empty()){
         return false;
     }
     str = new char[size()];
@@ -52,6 +55,10 @@ void String::append(String const &other) {
     if(zeroAtEnd && at(-1) != '\0'){
         push('\0');
     }
+}
+
+bool String::operator!() const {
+    return empty();
 }
 
 bool String::operator==(String const &other) const {
@@ -88,5 +95,14 @@ bool String::serialize(std::ofstream &ofs) const {
 }
 
 bool String::unserialize(std::ifstream &ifs) {
-    return MySpace::unserialize(ifs, list());
+    char* str = nullptr;
+    bool result = MySpace::unserialize(ifs, str);
+    if(str != nullptr){
+        *this = str;
+    }
+    return result;
+}
+
+std::ostream& operator<<(std::ostream& out, String const& obj){
+    return out << obj.get();
 }
