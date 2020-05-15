@@ -29,22 +29,19 @@ bool Storehouse::has(String const& unit_name, const UnitAmount unit_amount) cons
 }
 
 bool Storehouse::add(const StorageUnit& unit){
-    if(add(unit.getName(), unit.getAmount())){
-        return true;
-    }
-    return false;
+    return add(unit.getName(), unit.getAmount());
 }
 
 bool Storehouse::add(String const& unit_name, const UnitAmount unit_amount){
     if(unit_amount < 0){
         return remove(unit_name, -unit_amount);
     }
-    StorageUnit* search = const_cast<StorageUnit*>(find(unit_name));
+    StorageUnit const* search = find(unit_name);
     if(search == nullptr){
         m_list.push(StorageUnit(unit_name, unit_amount));
         return true;
     }
-    return search->add(unit_amount);
+    return const_cast<StorageUnit*>(search)->add(unit_amount);
 }
 
 bool Storehouse::remove(const StorageUnit& unit){
@@ -69,4 +66,13 @@ StorageUnit const* Storehouse::find(String const& unit_name) const {
         }
     }
     return nullptr;
+}
+
+std::ostream& operator<<(std::ostream& out, Storehouse const& obj){
+    if(!obj.m_list.empty()){
+        out << obj.m_list;
+    }else{
+        out << "Empty store.";
+    }
+    return out << std::endl;
 }

@@ -5,6 +5,8 @@
 #ifndef JURASSICPARK_STOREHOUSE_HPP
 #define JURASSICPARK_STOREHOUSE_HPP
 
+#include <iostream>
+//for: ostream, endl
 #include "StorageUnit.hpp"
 #include "Vector.hpp"
 
@@ -23,8 +25,11 @@ public:
     bool remove(const StorageUnit& unit);// same as remove(String const& unit_name, const UnitAmount unit_amount)
     bool remove(String const& unit_name, const UnitAmount unit_amount);// returns false if(!has(unit_name, unit_amount))
 
+    friend std::ostream& operator<<(std::ostream& out, Storehouse const& obj);
 private:
     StorageUnit const* find(String const& unit_name) const;
 };
+
+std::ostream& operator<<(std::ostream& out, Storehouse const& obj);
 
 #endif //JURASSICPARK_STOREHOUSE_HPP

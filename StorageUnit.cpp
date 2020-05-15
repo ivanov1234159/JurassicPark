@@ -35,3 +35,7 @@ bool StorageUnit::remove(const UnitAmount amount){
     m_amount -= amount;
     return true;
 }
+
+std::ostream& operator<<(std::ostream& out, StorageUnit const& obj){
+    return out << obj.getName() << ": " << obj.getAmount() << std::endl;
+}

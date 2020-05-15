@@ -5,6 +5,8 @@
 #ifndef JURASSICPARK_STORAGEUNIT_HPP
 #define JURASSICPARK_STORAGEUNIT_HPP
 
+#include <iostream>
+//for: ostream, endl
 #include "String.hpp"
 
 typedef double UnitAmount;
@@ -24,5 +26,7 @@ public:
     bool add(const UnitAmount amount);
     bool remove(const UnitAmount amount);
 };
+
+std::ostream& operator<<(std::ostream& out, StorageUnit const& obj);
 
 #endif //JURASSICPARK_STORAGEUNIT_HPP
