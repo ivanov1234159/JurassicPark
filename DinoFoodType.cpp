@@ -24,12 +24,21 @@ bool DinoFoodType::setFood(String const &food) {
     return true;
 }
 
+bool DinoFoodType::setFoodAmount(FoodAmount const &amount) {
+    m_food_per_day = amount;
+    return true;
+}
+
 String const& DinoFoodType::getType() const {
     return m_type;
 }
 
 String const& DinoFoodType::getFood() const {
     return m_food;
+}
+
+FoodAmount const& DinoFoodType::getFoodAmount() const {
+    return m_food_per_day;
 }
 
 bool DinoFoodType::validType(String const& _type) {
