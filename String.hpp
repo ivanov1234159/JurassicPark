@@ -7,6 +7,8 @@
 
 #include <fstream>
 //for: ofstream, ifstream
+#include <iostream>
+//for: istraem, ostream
 #include "Vector.hpp"
 
 class String : public Vector<char> {
@@ -38,5 +40,6 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& out, String const& obj);
+std::istream& operator>>(std::istream& in, String& obj);
 
 #endif //___MYSPACE_STRING_HPP___

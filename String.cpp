@@ -106,3 +106,8 @@ bool String::unserialize(std::ifstream &ifs) {
 std::ostream& operator<<(std::ostream& out, String const& obj){
     return out << obj.get();
 }
+
+std::istream& operator>>(std::istream& in, String& obj){
+    obj.set(MySpace::read_stream(in, ' '));
+    return in;
+}
