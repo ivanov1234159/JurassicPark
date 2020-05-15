@@ -4,6 +4,7 @@
 
 #include "Cage.hpp"
 #include "MySpace.hpp"
+#include "Storehouse.hpp"
 
 unsigned Cage::getCageSize(String const& size) {
     if(size == "small"){
@@ -43,7 +44,7 @@ bool Cage::add(const Dinosaur& dinosaur){
     return m_list.push(dinosaur);
 }
 
-bool Cage::remove(const char* dinosaur_name){
+bool Cage::remove(String const& dinosaur_name){
     int search = findIndex(dinosaur_name);
     if(search < 0){
         return false;
@@ -52,13 +53,25 @@ bool Cage::remove(const char* dinosaur_name){
     return true;
 }
 
-int Cage::findIndex(const char* dinosaur_name) const {
+int Cage::findIndex(String const& dinosaur_name) const {
     for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getName() == dinosaur_name){
             return i;
         }
     }
     return -1;
+}
+
+bool Cage::feedAnimals(Storehouse& store) const {
+    bool all = true;
+    for(unsigned i = 0; i < m_list.size(); i++){
+        if(!store.has(m_list[i].getFood(), m_list[i].getFoodAmount())){
+            all = false;
+            continue;
+        }
+        store.remove(m_list[i].getFood(), m_list[i].getFoodAmount());
+    }
+    return all;
 }
 
 bool Cage::serialize(std::ofstream &ofs) const {

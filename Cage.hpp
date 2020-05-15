@@ -12,6 +12,7 @@
 #include "Dinosaur.hpp"
 #include "String.hpp"
 #include "Vector.hpp"
+#include "Storehouse.hpp"
 
 class Cage {
     String m_climate;
@@ -25,8 +26,11 @@ public:
 
     bool canHandle(const Dinosaur& dinosaur);
     bool add(const Dinosaur& dinosaur);
-    bool remove(const char* dinosaur_name);
-    int findIndex(const char* dinosaur_name) const;
+    bool remove(String const& dinosaur_name);
+    int findIndex(String const& dinosaur_name) const;
+
+    bool feedAnimals(Storehouse& store) const;
+
     bool serialize(std::ofstream& ofs) const;
     bool unserialize(std::ifstream& ifs);
 
