@@ -12,6 +12,7 @@
 #include "Dinosaur.hpp"
 #include "Cage.hpp"
 #include "Storehouse.hpp"
+#include "StorageUnit.hpp"
 #include "Vector.hpp"
 
 class JurassicPark {
@@ -29,15 +30,19 @@ public:
     bool save() const;
     bool serialize(std::ofstream& ofs) const;
     bool unserialize(std::ifstream& ifs);
-    void buildCage(char const* climate, char const* size);
+    void buildCage(String const& climate, String const& size);
     bool addAnimal(const Dinosaur& dinosaur);
-    bool removeAnimal(const char* dinosaur_name);
-    bool addFood(const char* food_name, const UnitAmount food_amount);
+    bool removeAnimal(String const& dinosaur_name);
+    bool addFood(String const& food_name, const UnitAmount food_amount);
+    bool hasDinosaur(String const& name) const;
+
+    bool supply(StorageUnit const& food);
+    bool feedAllAnimals();
 
     friend std::ostream& operator<<(std::ostream& out, JurassicPark const& obj);
 private:
     Cage* findCage(const Dinosaur& dinosaur);
-    Cage* findDinosaursCage(const char* dinosaur_name);
+    Cage const* findDinosaursCage(String const& dinosaur_name) const;
 };
 
 std::ostream& operator<<(std::ostream& out, JurassicPark const& obj);

@@ -70,7 +70,7 @@ bool JurassicPark::unserialize(std::ifstream &ifs) {
     return !(!ifs);
 }
 
-void JurassicPark::buildCage(char const* climate, char const* size){
+void JurassicPark::buildCage(String const& climate, String const& size){
     m_list.push(Cage(climate, size));
 }
 
@@ -82,16 +82,36 @@ bool JurassicPark::addAnimal(const Dinosaur& dinosaur){
     return search->add(dinosaur);
 }
 
-bool JurassicPark::removeAnimal(const char* dinosaur_name){
-    Cage* search = findDinosaursCage(dinosaur_name);
+bool JurassicPark::removeAnimal(String const& dinosaur_name){
+    Cage const* search = findDinosaursCage(dinosaur_name);
     if(search == nullptr){
         return false;
     }
-    return search->remove(dinosaur_name);
+    return const_cast<Cage*>(search)->remove(dinosaur_name);
 }
 
-bool JurassicPark::addFood(const char* food_name, const UnitAmount food_amount){
+bool JurassicPark::addFood(String const& food_name, const UnitAmount food_amount){
     return m_storehouse.add(food_name, food_amount);
+}
+
+bool JurassicPark::hasDinosaur(String const &name) const {
+    return findDinosaursCage(name) != nullptr;
+}
+
+bool JurassicPark::supply(StorageUnit const &food) {
+    if(!Dinosaur::validFood(food.getName())){
+        return false;
+    }
+    return m_storehouse.add(food);
+}
+
+bool JurassicPark::feedAllAnimals() {
+    for(unsigned i = 0; i < m_list.size(); i++){
+        if(!m_list[i].feedAnimals(m_storehouse)){
+            return false;
+        }
+    }
+    return true;
 }
 
 Cage* JurassicPark::findCage(const Dinosaur& dinosaur){
@@ -103,7 +123,7 @@ Cage* JurassicPark::findCage(const Dinosaur& dinosaur){
     return nullptr;
 }
 
-Cage* JurassicPark::findDinosaursCage(const char* dinosaur_name){
+Cage const* JurassicPark::findDinosaursCage(String const& dinosaur_name) const{
     for(unsigned i = 0; i < m_list.size(); i++){
         int search = m_list[i].findIndex(dinosaur_name);
         if(search >= 0){
@@ -114,11 +134,18 @@ Cage* JurassicPark::findDinosaursCage(const char* dinosaur_name){
 }
 
 std::ostream& operator<<(std::ostream& out, JurassicPark const& obj){
-    for(unsigned i = 0; i < obj.m_list.size(); i++){
-        out << "Cage No." << i+1 << std::endl;
-        out << obj.m_list[i];
-        out << "-----------------------------------------------------------------------------------------------" << std::endl;
-        out << std::endl;
+    if(!obj.m_list.empty()){
+        for(unsigned i = 0; i < obj.m_list.size(); i++){
+            out << "Cage No." << i+1 << std::endl;
+            out << obj.m_list[i];
+            out << "-----------------------------------------------------------------------------------------------" << std::endl;
+        }
+    }else{
+        out << "No cages." << std::endl;
     }
+    out << std::endl;
+    out << "===============================================================================================" << std::endl;
+    out << std::endl;
+    out << obj.m_storehouse;
     return out;
 }
