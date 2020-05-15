@@ -46,17 +46,23 @@ void str_add_one(char*& str, unsigned& size, char symbol){
     temp[size-1] = symbol;
     temp[size] = '\0';
     ++size;
+    delete[] str;
+    str = temp;
 }
 
-char* MySpace::read_stream(std::istream& in, char breaker){
+char* MySpace::read_stream(std::istream& in, char breaker, bool ignoreAtStart){
     unsigned size = 0;// with '\0'
     char* readed = nullptr;
     for(;;){
         char symbol;
         in.get(symbol);
-        if(symbol == breaker){
+        if(symbol == breaker || symbol == '\n'){
+            if(ignoreAtStart){
+                continue;
+            }
             return readed;
         }
+        ignoreAtStart = false;
         str_add_one(readed, size, symbol);
     }
 }

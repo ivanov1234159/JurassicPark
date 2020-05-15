@@ -15,7 +15,7 @@ namespace MySpace {
 
     void mem_copy(char *&to, char const *from = nullptr, bool canDeleteTo = true);
 
-    char *read_stream(std::istream &in = std::cin, char breaker = '\n');
+    char *read_stream(std::istream &in = std::cin, char breaker = '\n', bool ignoreAtStart = true);
 
     unsigned rand(unsigned max, unsigned min = 0);
 
