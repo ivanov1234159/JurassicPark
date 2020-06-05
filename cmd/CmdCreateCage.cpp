@@ -24,11 +24,13 @@ bool CmdCreateCage::action(std::ostream& out, RunnerType &runner, std::istringst
         out << "Some error. Cannot read the size." << std::endl;
         return false;
     }
-    if(Cage::getCageSize(size) != Cage::DEFAULT_CAGE_SIZE){
+    if(Cage::getCageSize(size) == Cage::DEFAULT_CAGE_SIZE){
+        out << "Couldn't build the cage. Unknown size." << std::endl;
         runner.buildCage(climate, size);
+    }else if(runner.buildCage(climate, size)){
         out << "Cage build successfully!" << std::endl;
     }else{
-        out << "Couldn't build the cage. Unknown size." << std::endl;
+        out << "Couldn't build the cage. Not enough staff. Please, hire more." << std::endl;
     }
     return true;
 }

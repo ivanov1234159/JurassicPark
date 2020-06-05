@@ -5,6 +5,7 @@
 #include "JurassicPark.hpp"
 //#include <ctime>
 
+static char const* UNIT_NAME_STAFF = "Staff";
 
 JurassicPark::JurassicPark(unsigned limit) {
     m_list = Vector<Cage>(limit);
@@ -70,8 +71,14 @@ bool JurassicPark::unserialize(std::ifstream &ifs) {
     return !(!ifs);
 }
 
-void JurassicPark::buildCage(String const& climate, String const& size){
+bool JurassicPark::buildCage(String const& climate, String const& size){
+    UnitAmount amount = Cage::getCageSize(size);
+    if(!m_storehouse.has(UNIT_NAME_STAFF, amount)){
+        return false;
+    }
+    m_storehouse.remove(UNIT_NAME_STAFF, amount);
     m_list.push(Cage(climate, size));
+    return true;
 }
 
 bool JurassicPark::addAnimal(const Dinosaur& dinosaur){
@@ -95,7 +102,7 @@ bool JurassicPark::addFood(String const& food_name, const UnitAmount food_amount
 }
 
 bool JurassicPark::addStaff(const UnitAmount amount){
-    return m_storehouse.add("Staff", amount, true);
+    return m_storehouse.add(UNIT_NAME_STAFF, amount, true);
 }
 
 bool JurassicPark::hasDinosaur(String const &name) const {
