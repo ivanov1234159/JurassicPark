@@ -10,23 +10,77 @@
 #include "StorageUnit.hpp"
 #include "Vector.hpp"
 
+/// @class Storehouse
 class Storehouse {
-    Vector<StorageUnit> m_list;// list of all storage unit (food)
+    /// list of all storage units (food and staff)
+    Vector<StorageUnit> m_list;
 public:
+    /// default constructor and constructor with argument limit
     Storehouse(unsigned limit = 2);
 
-    bool has(String const& unit_name) const;// returns false if no such unit name
-    bool has(const StorageUnit& unit) const;// same as has(String const& unit_name, const UnitAmount unit_amount)
-    bool has(String const& unit_name, const UnitAmount unit_amount) const;// returns false if has(unit_name) returns false OR current amount < unit_amount
+    /**
+     * check if exists a storage unit with the given name
+     * @param unit_name
+     * @return false if there is no unit with that name
+     */
+    bool has(String const& unit_name) const;
 
-    bool add(const StorageUnit& unit);// same as add(String const& unit_name, const UnitAmount unit_amount)
-    bool add(String const& unit_name, const UnitAmount unit_amount, bool whole_number = false);// returns false if unit_amount < 0 and remove() returns false
+    /**
+     * check if exists a storage unit like the given one;
+     * calls has(String const&, const UnitAmount) method
+     * @param unit
+     * @return false if there is no unit with that name OR there isn't enough amount
+     */
+    bool has(const StorageUnit& unit) const;
 
-    bool remove(const StorageUnit& unit);// same as remove(String const& unit_name, const UnitAmount unit_amount)
-    bool remove(String const& unit_name, const UnitAmount unit_amount);// returns false if(!has(unit_name, unit_amount))
+    /**
+     * check if exists a storage unit with the given name and enough amount
+     * @param unit_name
+     * @param unit_amount
+     * @return false if there is no unit with that name OR there isn't enough amount OR <unit_amount> is negative
+     */
+    bool has(String const& unit_name, const UnitAmount unit_amount) const;
+
+    /**
+     * add a new storage unit using <unit>;
+     * calls add(String const&, const UnitAmount, bool) method
+     * @param unit
+     * @return false if can't remove the amount (reason: not enough amount)
+     */
+    bool add(const StorageUnit& unit);
+
+    /**
+     * add a new storage unit with name and amount
+     * @param unit_name
+     * @param unit_amount - can be negative
+     * @param whole_number - by default is false
+     * @return false if can't remove the amount (reason: not enough amount OR there is no unit with that name)
+     */
+    bool add(String const& unit_name, const UnitAmount unit_amount, bool whole_number = false);
+
+    /**
+     * remove amount from a storage unit using <unit>;
+     * calls remove(String const&, const UnitAmount) method
+     * @param unit
+     * @return false if can't remove the amount (reason: not enough amount OR there is no unit with that name)
+     */
+    bool remove(const StorageUnit& unit);
+
+    /**
+     * remove amount from a storage unit with <name>
+     * @param unit_name
+     * @param unit_amount
+     * @return false if can't remove the amount (reason: not enough amount OR there is no unit with that name)
+     */
+    bool remove(String const& unit_name, const UnitAmount unit_amount);
 
     friend std::ostream& operator<<(std::ostream& out, Storehouse const& obj);
 private:
+    /**
+     * search for a storage unit by name
+     * @param unit_name
+     * @return nullptr if NOT found OR a pointer to the first match
+     */
     StorageUnit const* find(String const& unit_name) const;
 };
 
