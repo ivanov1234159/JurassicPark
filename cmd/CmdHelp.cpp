@@ -2,8 +2,6 @@
 // Created by toi on 02/05/2020.
 //
 
-#include <iostream>
-//for: cout, endl
 #include "CmdHelp.hpp"
 #include "../Commander.hpp"
 

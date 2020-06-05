@@ -2,8 +2,6 @@
 // Created by toi on 15/05/2020.
 //
 
-#include <iostream>
-//for: cout, endl
 #include "CmdSupplyFood.hpp"
 #include "../String.hpp"
 #include "../StorageUnit.hpp"

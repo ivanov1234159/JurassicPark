@@ -2,8 +2,6 @@
 // Created by toi on 07/05/2020.
 //
 
-#include <iostream>
-//for: cout
 #include "CmdStatus.hpp"
 #include "../Cage.hpp"
 #include "../Dinosaur.hpp"

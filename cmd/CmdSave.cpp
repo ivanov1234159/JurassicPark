@@ -2,8 +2,6 @@
 // Created by toi on 02/05/2020.
 //
 
-#include <iostream>
-//for: cout, endl
 #include "CmdSave.hpp"
 
 CmdSave::CmdSave(): Command("save", "", "save the current state of the program") {}

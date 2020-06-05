@@ -2,8 +2,6 @@
 // Created by toi on 07/05/2020.
 //
 
-#include <iostream>
-//for: cout, endl
 #include "CmdCreateCage.hpp"
 #include "../Commander.hpp"
 #include "../Cage.hpp"
