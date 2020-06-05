@@ -8,6 +8,7 @@
 #include "CmdExit.hpp"
 #include "CmdFeedAnimals.hpp"
 #include "CmdHelp.hpp"
+#include "CmdHire.hpp"
 #include "CmdRemoveAnimal.hpp"
 #include "CmdSave.hpp"
 #include "CmdStatus.hpp"
@@ -19,9 +20,9 @@ void build_commands(){
     Commander::add(new CmdExit);
     Commander::add(new CmdFeedAnimals);
     Commander::add(new CmdHelp);
+    Commander::add(new CmdHire);
     Commander::add(new CmdRemoveAnimal);
     Commander::add(new CmdSave);
     Commander::add(new CmdStatus);
     Commander::add(new CmdSupplyFood);
-    //TODO: add some people (to work in the zoopark)
 }
