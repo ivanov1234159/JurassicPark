@@ -8,12 +8,12 @@
 
 CmdSave::CmdSave(): Command("save", "", "save the current state of the program") {}
 
-bool CmdSave::action(RunnerType &runner, std::istringstream&) const {
-    std::cout << "Trying to save ... ";
+bool CmdSave::action(std::ostream& out, RunnerType &runner, std::istringstream&) const {
+    out << "Trying to save ... ";
     if(runner.save()) {
-        std::cout << "done" << std::endl << "Successfully saved!" << std::endl;
+        out << "done" << std::endl << "Successfully saved!" << std::endl;
         return true;
     }
-    std::cout << std::endl << "Couldn't save the file." << std::endl;
+    out << std::endl << "Couldn't save the file." << std::endl;
     return true;
 }

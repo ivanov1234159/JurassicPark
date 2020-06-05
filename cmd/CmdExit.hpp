@@ -10,7 +10,7 @@
 class CmdExit : public Command {
 public:
     CmdExit();
-    virtual bool action(RunnerType& runner, std::istringstream& iss) const override;
+    virtual bool action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const override;
 };
 
 #endif //JURASSICPARK_CMDEXIT_HPP

@@ -10,7 +10,7 @@
 
 CmdStatus::CmdStatus(): Command("status", "", "print the current state of the program") {}
 
-bool CmdStatus::action(RunnerType &runner, std::istringstream&) const {
-    std::cout << runner;
+bool CmdStatus::action(std::ostream& out, RunnerType &runner, std::istringstream&) const {
+    out << runner;
     return true;
 }

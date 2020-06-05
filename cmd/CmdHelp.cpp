@@ -9,10 +9,10 @@
 
 CmdHelp::CmdHelp(): Command("help", "", "prints this information") {}
 
-bool CmdHelp::action(RunnerType&, std::istringstream&) const {
-    std::cout << "Support the following commands:" << std::endl;
+bool CmdHelp::action(std::ostream& out, RunnerType&, std::istringstream&) const {
+    out << "Support the following commands:" << std::endl;
     for(unsigned i = 0; i < Commander::cmd_list.size(); i++){
-        std::cout << *Commander::cmd_list[i];
+        out << *Commander::cmd_list[i];
     }
     return true;
 }

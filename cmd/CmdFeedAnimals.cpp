@@ -8,12 +8,12 @@
 
 CmdFeedAnimals::CmdFeedAnimals(): Command("feed", "", "feeds all animals in the zoopark") {}
 
-bool CmdFeedAnimals::action(RunnerType &runner, std::istringstream&) const {
-    std::cout << "Starting to feed the animals ..." << std::endl;
+bool CmdFeedAnimals::action(std::ostream& out, RunnerType &runner, std::istringstream&) const {
+    out << "Starting to feed the animals ..." << std::endl;
     if(runner.feedAllAnimals()){
-        std::cout << "All animals were fed up successfully." << std::endl;
+        out << "All animals were fed up successfully." << std::endl;
     }else{
-        std::cout << "There was a problem in one of the cages. The rest of the animals aren't feed up." << std::endl;
+        out << "There was a problem in one of the cages. The rest of the animals aren't feed up." << std::endl;
     }
     return true;
 }

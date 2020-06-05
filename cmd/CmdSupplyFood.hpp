@@ -10,7 +10,7 @@
 class CmdSupplyFood : public Command {
 public:
     CmdSupplyFood();
-    virtual bool action(RunnerType& runner, std::istringstream& iss) const override;
+    virtual bool action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const override;
 };
 
 #endif //JURASSICPARK_CMDSUPPLYFOOD_HPP

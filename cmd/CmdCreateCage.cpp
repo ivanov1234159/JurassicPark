@@ -13,24 +13,24 @@ CmdCreateCage::CmdCreateCage(): Command("create", "<climate> <size>",
         "create a cage with given <climate> and <size>\n<size> can be 'small' (for 1), 'medium' (for 3)\nor 'large' (for 10)")
 {}
 
-bool CmdCreateCage::action(RunnerType &runner, std::istringstream& iss) const {
+bool CmdCreateCage::action(std::ostream& out, RunnerType &runner, std::istringstream& iss) const {
     String climate;
     iss >> climate;
     if(!iss){
-        std::cout << "Some error. Cannot read the climate." << std::endl;//TODO: fix message
+        out << "Some error. Cannot read the climate." << std::endl;
         return false;
     }
     String size;
     iss >> size;
     if(!iss){
-        std::cout << "Some error. Cannot read the size." << std::endl;//TODO: fix message
+        out << "Some error. Cannot read the size." << std::endl;
         return false;
     }
     if(Cage::getCageSize(size) != Cage::DEFAULT_CAGE_SIZE){
         runner.buildCage(climate, size);
-        std::cout << "Cage builded successfully!" << std::endl;
+        out << "Cage build successfully!" << std::endl;
     }else{
-        std::cout << "Couldn't build the cage. Unknown size." << std::endl;
+        out << "Couldn't build the cage. Unknown size." << std::endl;
     }
     return true;
 }

@@ -10,7 +10,7 @@
 class CmdSave : public Command {
 public:
     CmdSave();
-    virtual bool action(RunnerType& runner, std::istringstream& iss) const override;
+    virtual bool action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const override;
 };
 
 #endif //JURASSICPARK_CMDSAVE_HPP
