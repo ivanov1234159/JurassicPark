@@ -30,7 +30,7 @@ public:
     bool save() const;
     bool serialize(std::ofstream& ofs) const;
     bool unserialize(std::ifstream& ifs);
-    void buildCage(String const& climate, String const& size);
+    bool buildCage(String const& climate, String const& size);
     bool addAnimal(const Dinosaur& dinosaur);
     bool removeAnimal(String const& dinosaur_name);
     bool addFood(String const& food_name, const UnitAmount food_amount);
