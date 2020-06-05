@@ -8,6 +8,7 @@
 #include "CmdExit.hpp"
 #include "CmdFeedAnimals.hpp"
 #include "CmdHelp.hpp"
+#include "CmdRemoveAnimal.hpp"
 #include "CmdSave.hpp"
 #include "CmdStatus.hpp"
 #include "CmdSupplyFood.hpp"
@@ -18,6 +19,7 @@ void build_commands(){
     Commander::add(new CmdExit);
     Commander::add(new CmdFeedAnimals);
     Commander::add(new CmdHelp);
+    Commander::add(new CmdRemoveAnimal);
     Commander::add(new CmdSave);
     Commander::add(new CmdStatus);
     Commander::add(new CmdSupplyFood);
