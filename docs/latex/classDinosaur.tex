@@ -1,0 +1,179 @@
+\hypertarget{classDinosaur}{}\section{Dinosaur Class Reference}
+\label{classDinosaur}\index{Dinosaur@{Dinosaur}}
+
+
+{\ttfamily \#include $<$Dinosaur.\+hpp$>$}
+
+
+
+Inheritance diagram for Dinosaur\+:
+% FIG 0
+
+
+Collaboration diagram for Dinosaur\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classDinosaur_a2f7fcf6777178a077176140f9ce024c5}{set\+Name} (\hyperlink{classString}{String} const \&name)
+\item 
+bool \hyperlink{classDinosaur_a7fa4a358709db5379e21065b050a6e1c}{set\+Gender} (\hyperlink{classString}{String} const \&gender)
+\item 
+\hyperlink{classString}{String} const  \& \hyperlink{classDinosaur_a9ee70963c582cdba5f502f238eeaf2ed}{get\+Name} () const
+\item 
+\hyperlink{classString}{String} const  \& \hyperlink{classDinosaur_ad0c54cc970fc58243d2815250ec758c1}{get\+Gender} () const
+\item 
+virtual bool \hyperlink{classDinosaur_a9dc25dc1d834210d869641893695de22}{serialize} (std\+::ofstream \&ofs) const override final
+\item 
+virtual bool \hyperlink{classDinosaur_aa84990b3102df65a9573117dec077518}{unserialize} (std\+::ifstream \&ifs) override final
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classDinosaur_ac307419cb074f2919f76abdf0e0c2b3e}{valid\+Gender} (\hyperlink{classString}{String} const \&gender)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classString}{String} \hyperlink{classDinosaur_a831287eff2c7e12fb223bc417a03a28b}{m\+\_\+name}
+\item 
+\hyperlink{classString}{String} \hyperlink{classDinosaur_a62c9e910de13f41b3c536d1f05360e88}{m\+\_\+gender}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classDinosaur_ab91168c044595ffe09ebf71e598517ca}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classDinosaur}{Dinosaur} const \&obj)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+a child of \hyperlink{classDinoBasic}{Dino\+Basic} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDinosaur_ad0c54cc970fc58243d2815250ec758c1}\label{classDinosaur_ad0c54cc970fc58243d2815250ec758c1}} 
+\index{Dinosaur@{Dinosaur}!get\+Gender@{get\+Gender}}
+\index{get\+Gender@{get\+Gender}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{get\+Gender()}{getGender()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} const  \& Dinosaur\+::get\+Gender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+getter for m\+\_\+gender \begin{DoxyReturn}{Returns}
+m\+\_\+gender 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinosaur_a9ee70963c582cdba5f502f238eeaf2ed}\label{classDinosaur_a9ee70963c582cdba5f502f238eeaf2ed}} 
+\index{Dinosaur@{Dinosaur}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} const  \& Dinosaur\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+getter for m\+\_\+name \begin{DoxyReturn}{Returns}
+m\+\_\+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinosaur_a9dc25dc1d834210d869641893695de22}\label{classDinosaur_a9dc25dc1d834210d869641893695de22}} 
+\index{Dinosaur@{Dinosaur}!serialize@{serialize}}
+\index{serialize@{serialize}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily bool Dinosaur\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+serialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ofs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDinoFoodType_a3654985e0619a24a19bda8280557651e}{Dino\+Food\+Type}.
+
+\mbox{\Hypertarget{classDinosaur_a7fa4a358709db5379e21065b050a6e1c}\label{classDinosaur_a7fa4a358709db5379e21065b050a6e1c}} 
+\index{Dinosaur@{Dinosaur}!set\+Gender@{set\+Gender}}
+\index{set\+Gender@{set\+Gender}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{set\+Gender()}{setGender()}}
+{\footnotesize\ttfamily bool Dinosaur\+::set\+Gender (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{gender }\end{DoxyParamCaption})}
+
+setter for m\+\_\+gender 
+\begin{DoxyParams}{Parameters}
+{\em gender} & -\/ M\+U\+ST be \textquotesingle{}male\textquotesingle{} or \textquotesingle{}female\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if $<$gender$>$ is N\+OT valid one 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinosaur_a2f7fcf6777178a077176140f9ce024c5}\label{classDinosaur_a2f7fcf6777178a077176140f9ce024c5}} 
+\index{Dinosaur@{Dinosaur}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}}
+{\footnotesize\ttfamily bool Dinosaur\+::set\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{name }\end{DoxyParamCaption})}
+
+setter for m\+\_\+name 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true (always) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinosaur_aa84990b3102df65a9573117dec077518}\label{classDinosaur_aa84990b3102df65a9573117dec077518}} 
+\index{Dinosaur@{Dinosaur}!unserialize@{unserialize}}
+\index{unserialize@{unserialize}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{unserialize()}{unserialize()}}
+{\footnotesize\ttfamily bool Dinosaur\+::unserialize (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+deserialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classDinoFoodType_a05018adfc6e5cbf1e7a28d77eab5cf84}{Dino\+Food\+Type}.
+
+\mbox{\Hypertarget{classDinosaur_ac307419cb074f2919f76abdf0e0c2b3e}\label{classDinosaur_ac307419cb074f2919f76abdf0e0c2b3e}} 
+\index{Dinosaur@{Dinosaur}!valid\+Gender@{valid\+Gender}}
+\index{valid\+Gender@{valid\+Gender}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{valid\+Gender()}{validGender()}}
+{\footnotesize\ttfamily bool Dinosaur\+::valid\+Gender (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{gender }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+check if $<$gender$>$ is a valid one 
+\begin{DoxyParams}{Parameters}
+{\em gender} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it is and false if it\textquotesingle{}s N\+OT 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classDinosaur_ab91168c044595ffe09ebf71e598517ca}\label{classDinosaur_ab91168c044595ffe09ebf71e598517ca}} 
+\index{Dinosaur@{Dinosaur}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classDinosaur}{Dinosaur} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classDinosaur_a62c9e910de13f41b3c536d1f05360e88}\label{classDinosaur_a62c9e910de13f41b3c536d1f05360e88}} 
+\index{Dinosaur@{Dinosaur}!m\+\_\+gender@{m\+\_\+gender}}
+\index{m\+\_\+gender@{m\+\_\+gender}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{m\+\_\+gender}{m\_gender}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Dinosaur\+::m\+\_\+gender\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDinosaur_a831287eff2c7e12fb223bc417a03a28b}\label{classDinosaur_a831287eff2c7e12fb223bc417a03a28b}} 
+\index{Dinosaur@{Dinosaur}!m\+\_\+name@{m\+\_\+name}}
+\index{m\+\_\+name@{m\+\_\+name}!Dinosaur@{Dinosaur}}
+\subsubsection{\texorpdfstring{m\+\_\+name}{m\_name}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Dinosaur\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Dinosaur_8hpp}{Dinosaur.\+hpp}\item 
+\hyperlink{Dinosaur_8cpp}{Dinosaur.\+cpp}\end{DoxyCompactItemize}

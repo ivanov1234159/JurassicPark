@@ -1,0 +1,440 @@
+\hypertarget{classVector}{}\section{Vector$<$ T $>$ Class Template Reference}
+\label{classVector}\index{Vector$<$ T $>$@{Vector$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Vector.\+hpp$>$}
+
+
+
+Collaboration diagram for Vector$<$ T $>$\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector_a2d2738e562188d3c4e08c3fc7075dc0a}{Vector} (unsigned limit=2, bool resizable=true)
+\begin{DoxyCompactList}\small\item\em default constructor and constructor with arguments limit (and resizable) \end{DoxyCompactList}\item 
+\hyperlink{classVector_a363b28b2093e32cb4ee93148c065782b}{Vector} (T const $\ast$other, unsigned \hyperlink{classVector_a7eef7a769093f4486f3b2083436bf270}{size}, bool resizable=true)
+\begin{DoxyCompactList}\small\item\em constructor with arguments other, size (and resizable) \end{DoxyCompactList}\item 
+\hyperlink{classVector_a857e13a3af4fb6e3eea77935cfcd4ef2}{Vector} (\hyperlink{classVector}{Vector}$<$ T $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\hyperlink{classVector}{Vector} \& \hyperlink{classVector_a0feef299594680034402e23ff28b9f45}{operator=} (\hyperlink{classVector}{Vector}$<$ T $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em operator = \end{DoxyCompactList}\item 
+\hyperlink{classVector_afd524fac19e6d3d69db5198ffe2952b0}{$\sim$\+Vector} ()
+\begin{DoxyCompactList}\small\item\em destructor; calls \hyperlink{classVector_a32ad98b135472b0ebc5d6cb3ae5d0085}{clear()} method \end{DoxyCompactList}\item 
+bool \hyperlink{classVector_adb54584983bf6750f60d5ad375f6c603}{shift} (T const \&item)
+\item 
+T \hyperlink{classVector_a4fda2f9168cac24815062130bada9a8d}{unshift} ()
+\item 
+bool \hyperlink{classVector_ad15116a272b1924dc11e3543a8fc95d8}{push} (T const \&item)
+\item 
+T \hyperlink{classVector_aef4a3e10a9844ea17cdd89cee17e495a}{pop} ()
+\item 
+void \hyperlink{classVector_abc1ce95078c61fd5826583b0de7279b4}{remove} (int index)
+\item 
+bool \hyperlink{classVector_ad688a8a0dfbd07ea63d838058a436f79}{empty} () const
+\item 
+bool \hyperlink{classVector_a31a67e97a324510bff15ea79c64839af}{full} () const
+\item 
+unsigned \hyperlink{classVector_a7eef7a769093f4486f3b2083436bf270}{size} () const
+\item 
+unsigned \hyperlink{classVector_a1c11aef701f6eb3194946594d064af09}{free} () const
+\item 
+unsigned \hyperlink{classVector_a30435b1635ae160705f53755d25a407b}{capacity} () const
+\item 
+bool \hyperlink{classVector_ada65b076d4102d21479cdb00fec6b6a1}{fixed} () const
+\item 
+T \& \hyperlink{classVector_a0a53d8de64ae7cc1e388df4e46ab06bf}{at} (int index)
+\item 
+T \& \hyperlink{classVector_a2054758707c08325ef160fd4dfc48ff7}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\item 
+T const  \& \hyperlink{classVector_a2539a2d9ca64fd4e400d1bdc23dc292c}{at} (int index) const
+\item 
+T const  \& \hyperlink{classVector_a491327d90df15af7ee79c6705f005491}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$\& \hyperlink{classVector_aad3f85e26470d99139e3f96053bdacc4}{list} ()
+\item 
+T const  $\ast$ \hyperlink{classVector_a2aaf129778179680e5932d96aa5471eb}{list} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{classVector_a63f7ddd7328b13bc30b2243b50f70ec9}{normalize\+Index} (int index) const
+\item 
+void \hyperlink{classVector_a32ad98b135472b0ebc5d6cb3ae5d0085}{clear} ()
+\begin{DoxyCompactList}\small\item\em free the memory and set m\+\_\+list to nullptr \end{DoxyCompactList}\item 
+void \hyperlink{classVector_a13238db900a2c169c9fea56118fb33dd}{copy} (\hyperlink{classVector}{Vector}$<$ T $>$ const \&other)
+\item 
+bool \hyperlink{classVector_a4f139733691594adab6343c9647ad318}{resize} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classVector_a6fa56a7d1cfb087e8caa82f071334e7c}{m\+\_\+list}
+\item 
+unsigned \hyperlink{classVector_a827694a58c1ed73287b2321de5ec433a}{m\+\_\+size}
+\item 
+unsigned \hyperlink{classVector_ae1d33e9478276ba3c9ecb5c1c9c19e51}{m\+\_\+limit}
+\item 
+bool \hyperlink{classVector_a99069135ae43a1ba51be987183079dc2}{m\+\_\+resizable}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Vector$<$ T $>$}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVector_a2d2738e562188d3c4e08c3fc7075dc0a}\label{classVector_a2d2738e562188d3c4e08c3fc7075dc0a}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classVector}{Vector}$<$ T $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{unsigned}]{limit = {\ttfamily 2},  }\item[{bool}]{resizable = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+default constructor and constructor with arguments limit (and resizable) 
+
+\mbox{\Hypertarget{classVector_a363b28b2093e32cb4ee93148c065782b}\label{classVector_a363b28b2093e32cb4ee93148c065782b}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classVector}{Vector}$<$ T $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{T const $\ast$}]{other,  }\item[{unsigned}]{size,  }\item[{bool}]{resizable = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+constructor with arguments other, size (and resizable) 
+
+\mbox{\Hypertarget{classVector_a857e13a3af4fb6e3eea77935cfcd4ef2}\label{classVector_a857e13a3af4fb6e3eea77935cfcd4ef2}} 
+\index{Vector@{Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classVector}{Vector}$<$ T $>$\+::\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}\item[{\hyperlink{classVector}{Vector}$<$ T $>$ const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+copy constructor 
+
+\mbox{\Hypertarget{classVector_afd524fac19e6d3d69db5198ffe2952b0}\label{classVector_afd524fac19e6d3d69db5198ffe2952b0}} 
+\index{Vector@{Vector}!````~Vector@{$\sim$\+Vector}}
+\index{````~Vector@{$\sim$\+Vector}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{$\sim$\+Vector()}{~Vector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classVector}{Vector}$<$ T $>$\+::$\sim$\hyperlink{classVector}{Vector} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor; calls \hyperlink{classVector_a32ad98b135472b0ebc5d6cb3ae5d0085}{clear()} method 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVector_a0a53d8de64ae7cc1e388df4e46ab06bf}\label{classVector_a0a53d8de64ae7cc1e388df4e46ab06bf}} 
+\index{Vector@{Vector}!at@{at}}
+\index{at@{at}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \hyperlink{classVector}{Vector}$<$ T $>$\+::at (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+get the element at position index critical if list is empty 
+\begin{DoxyParams}{Parameters}
+{\em index} & -\/ processed by \hyperlink{classVector_a63f7ddd7328b13bc30b2243b50f70ec9}{normalize\+Index()} method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element at position index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a2539a2d9ca64fd4e400d1bdc23dc292c}\label{classVector_a2539a2d9ca64fd4e400d1bdc23dc292c}} 
+\index{Vector@{Vector}!at@{at}}
+\index{at@{at}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T const  \& \hyperlink{classVector}{Vector}$<$ T $>$\+::at (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get the element at position index critical if list is empty 
+\begin{DoxyParams}{Parameters}
+{\em index} & -\/ processed by \hyperlink{classVector_a63f7ddd7328b13bc30b2243b50f70ec9}{normalize\+Index()} method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element at position index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a30435b1635ae160705f53755d25a407b}\label{classVector_a30435b1635ae160705f53755d25a407b}} 
+\index{Vector@{Vector}!capacity@{capacity}}
+\index{capacity@{capacity}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned \hyperlink{classVector}{Vector}$<$ T $>$\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+limit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a32ad98b135472b0ebc5d6cb3ae5d0085}\label{classVector_a32ad98b135472b0ebc5d6cb3ae5d0085}} 
+\index{Vector@{Vector}!clear@{clear}}
+\index{clear@{clear}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classVector}{Vector}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+free the memory and set m\+\_\+list to nullptr 
+
+\mbox{\Hypertarget{classVector_a13238db900a2c169c9fea56118fb33dd}\label{classVector_a13238db900a2c169c9fea56118fb33dd}} 
+\index{Vector@{Vector}!copy@{copy}}
+\index{copy@{copy}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classVector}{Vector}$<$ T $>$\+::copy (\begin{DoxyParamCaption}\item[{\hyperlink{classVector}{Vector}$<$ T $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+copy other into this 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_ad688a8a0dfbd07ea63d838058a436f79}\label{classVector_ad688a8a0dfbd07ea63d838058a436f79}} 
+\index{Vector@{Vector}!empty@{empty}}
+\index{empty@{empty}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classVector}{Vector}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+true if m\+\_\+size is 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_ada65b076d4102d21479cdb00fec6b6a1}\label{classVector_ada65b076d4102d21479cdb00fec6b6a1}} 
+\index{Vector@{Vector}!fixed@{fixed}}
+\index{fixed@{fixed}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{fixed()}{fixed()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classVector}{Vector}$<$ T $>$\+::fixed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+!m\+\_\+resizable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a1c11aef701f6eb3194946594d064af09}\label{classVector_a1c11aef701f6eb3194946594d064af09}} 
+\index{Vector@{Vector}!free@{free}}
+\index{free@{free}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned \hyperlink{classVector}{Vector}$<$ T $>$\+::free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+limit -\/ m\+\_\+size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a31a67e97a324510bff15ea79c64839af}\label{classVector_a31a67e97a324510bff15ea79c64839af}} 
+\index{Vector@{Vector}!full@{full}}
+\index{full@{full}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{full()}{full()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classVector}{Vector}$<$ T $>$\+::full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+true if m\+\_\+size is equal to m\+\_\+limit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_aad3f85e26470d99139e3f96053bdacc4}\label{classVector_aad3f85e26470d99139e3f96053bdacc4}} 
+\index{Vector@{Vector}!list@{list}}
+\index{list@{list}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$\& \hyperlink{classVector}{Vector}$<$ T $>$\+::list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a2aaf129778179680e5932d96aa5471eb}\label{classVector_a2aaf129778179680e5932d96aa5471eb}} 
+\index{Vector@{Vector}!list@{list}}
+\index{list@{list}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T const  $\ast$ \hyperlink{classVector}{Vector}$<$ T $>$\+::list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a63f7ddd7328b13bc30b2243b50f70ec9}\label{classVector_a63f7ddd7328b13bc30b2243b50f70ec9}} 
+\index{Vector@{Vector}!normalize\+Index@{normalize\+Index}}
+\index{normalize\+Index@{normalize\+Index}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{normalize\+Index()}{normalizeIndex()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned \hyperlink{classVector}{Vector}$<$ T $>$\+::normalize\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+set the index in bounders between 0 and m\+\_\+size-\/1 
+\begin{DoxyParams}{Parameters}
+{\em index} & -\/ if is negative, then counts from the end; and if is positive, then counts from the begining \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the remainder when divided by m\+\_\+size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a0feef299594680034402e23ff28b9f45}\label{classVector_a0feef299594680034402e23ff28b9f45}} 
+\index{Vector@{Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classVector}{Vector}$<$ T $>$ \& \hyperlink{classVector}{Vector}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classVector}{Vector}$<$ T $>$ const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+operator = 
+
+\mbox{\Hypertarget{classVector_a2054758707c08325ef160fd4dfc48ff7}\label{classVector_a2054758707c08325ef160fd4dfc48ff7}} 
+\index{Vector@{Vector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \hyperlink{classVector}{Vector}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+get the element at position index critical if list is empty 
+\begin{DoxyParams}{Parameters}
+{\em index} & -\/ processed by \hyperlink{classVector_a63f7ddd7328b13bc30b2243b50f70ec9}{normalize\+Index()} method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element at position index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a491327d90df15af7ee79c6705f005491}\label{classVector_a491327d90df15af7ee79c6705f005491}} 
+\index{Vector@{Vector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T const  \& \hyperlink{classVector}{Vector}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+get the element at position index critical if list is empty 
+\begin{DoxyParams}{Parameters}
+{\em index} & -\/ processed by \hyperlink{classVector_a63f7ddd7328b13bc30b2243b50f70ec9}{normalize\+Index()} method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element at position index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_aef4a3e10a9844ea17cdd89cee17e495a}\label{classVector_aef4a3e10a9844ea17cdd89cee17e495a}} 
+\index{Vector@{Vector}!pop@{pop}}
+\index{pop@{pop}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \hyperlink{classVector}{Vector}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove the last element and return it \begin{DoxyReturn}{Returns}
+the last element or the \char`\"{}empty\char`\"{} element if list is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_ad15116a272b1924dc11e3543a8fc95d8}\label{classVector_ad15116a272b1924dc11e3543a8fc95d8}} 
+\index{Vector@{Vector}!push@{push}}
+\index{push@{push}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \hyperlink{classVector}{Vector}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T const \&}]{item }\end{DoxyParamCaption})}
+
+add at the end the new item 
+\begin{DoxyParams}{Parameters}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if full and cannot resize 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_abc1ce95078c61fd5826583b0de7279b4}\label{classVector_abc1ce95078c61fd5826583b0de7279b4}} 
+\index{Vector@{Vector}!remove@{remove}}
+\index{remove@{remove}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classVector}{Vector}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+remove the element at position index 
+\begin{DoxyParams}{Parameters}
+{\em index} & -\/ processed by \hyperlink{classVector_a63f7ddd7328b13bc30b2243b50f70ec9}{normalize\+Index()} method \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVector_a4f139733691594adab6343c9647ad318}\label{classVector_a4f139733691594adab6343c9647ad318}} 
+\index{Vector@{Vector}!resize@{resize}}
+\index{resize@{resize}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classVector}{Vector}$<$ T $>$\+::resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+try to resize the list \begin{DoxyReturn}{Returns}
+false on fail (if is fixed size) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_adb54584983bf6750f60d5ad375f6c603}\label{classVector_adb54584983bf6750f60d5ad375f6c603}} 
+\index{Vector@{Vector}!shift@{shift}}
+\index{shift@{shift}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \hyperlink{classVector}{Vector}$<$ T $>$\+::shift (\begin{DoxyParamCaption}\item[{T const \&}]{item }\end{DoxyParamCaption})}
+
+add in the beginning the new item 
+\begin{DoxyParams}{Parameters}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if full and cannot resize 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a7eef7a769093f4486f3b2083436bf270}\label{classVector_a7eef7a769093f4486f3b2083436bf270}} 
+\index{Vector@{Vector}!size@{size}}
+\index{size@{size}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+unsigned \hyperlink{classVector}{Vector}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVector_a4fda2f9168cac24815062130bada9a8d}\label{classVector_a4fda2f9168cac24815062130bada9a8d}} 
+\index{Vector@{Vector}!unshift@{unshift}}
+\index{unshift@{unshift}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{unshift()}{unshift()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \hyperlink{classVector}{Vector}$<$ T $>$\+::unshift (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+remove the first element and return it \begin{DoxyReturn}{Returns}
+the first element or the \char`\"{}empty\char`\"{} element if list is empty 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classVector_ae1d33e9478276ba3c9ecb5c1c9c19e51}\label{classVector_ae1d33e9478276ba3c9ecb5c1c9c19e51}} 
+\index{Vector@{Vector}!m\+\_\+limit@{m\+\_\+limit}}
+\index{m\+\_\+limit@{m\+\_\+limit}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{m\+\_\+limit}{m\_limit}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+unsigned \hyperlink{classVector}{Vector}$<$ T $>$\+::m\+\_\+limit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVector_a6fa56a7d1cfb087e8caa82f071334e7c}\label{classVector_a6fa56a7d1cfb087e8caa82f071334e7c}} 
+\index{Vector@{Vector}!m\+\_\+list@{m\+\_\+list}}
+\index{m\+\_\+list@{m\+\_\+list}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{m\+\_\+list}{m\_list}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T$\ast$ \hyperlink{classVector}{Vector}$<$ T $>$\+::m\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVector_a99069135ae43a1ba51be987183079dc2}\label{classVector_a99069135ae43a1ba51be987183079dc2}} 
+\index{Vector@{Vector}!m\+\_\+resizable@{m\+\_\+resizable}}
+\index{m\+\_\+resizable@{m\+\_\+resizable}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{m\+\_\+resizable}{m\_resizable}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \hyperlink{classVector}{Vector}$<$ T $>$\+::m\+\_\+resizable\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVector_a827694a58c1ed73287b2321de5ec433a}\label{classVector_a827694a58c1ed73287b2321de5ec433a}} 
+\index{Vector@{Vector}!m\+\_\+size@{m\+\_\+size}}
+\index{m\+\_\+size@{m\+\_\+size}!Vector@{Vector}}
+\subsubsection{\texorpdfstring{m\+\_\+size}{m\_size}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+unsigned \hyperlink{classVector}{Vector}$<$ T $>$\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Vector_8hpp}{Vector.\+hpp}\end{DoxyCompactItemize}

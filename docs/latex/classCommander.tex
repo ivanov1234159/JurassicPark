@@ -1,0 +1,170 @@
+\hypertarget{classCommander}{}\section{Commander Class Reference}
+\label{classCommander}\index{Commander@{Commander}}
+
+
+{\ttfamily \#include $<$Commander.\+hpp$>$}
+
+
+
+Collaboration diagram for Commander\+:
+% FIG 0
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classCommander_a467f6a4ceeb5dab750cf3f4821b5db90}{add} (\hyperlink{classCommand}{Command} $\ast$item)
+\item 
+static void \hyperlink{classCommander_afea1bfe2bc8dbeea0d0523f369c9539e}{run} (\hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&runner)
+\item 
+static bool \hyperlink{classCommander_a28323e9560f01aba51869d54832ca987}{call} (char const $\ast$cmd, \hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&runner, std\+::istringstream \&iss, std\+::ostream \&out)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned \hyperlink{classCommander_a9e1b32d844b2d8080e51c4e8a4ca0442}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE} = 256
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCommander_accd2048a7f1b8aa3a2b362493d546495}{Commander} ()=delete
+\item 
+\hyperlink{classCommander_aaf951ebc1b2909dbdccfb3ab7bd80b0d}{Commander} (\hyperlink{classCommander}{Commander} const \&other)=delete
+\item 
+\hyperlink{classCommander}{Commander} \& \hyperlink{classCommander_a505015f2c954a48742acec695d1559dc}{operator=} (\hyperlink{classCommander}{Commander} const \&other)=delete
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCommand}{Command} $\ast$ \hyperlink{classCommander_a544dc076c0f448ebf284585cfcd68fcb}{find} (char const $\ast$cmd)
+\item 
+static void \hyperlink{classCommander_a4c16aa1bbc5ec2045d3e66f146d54884}{clear} ()
+\begin{DoxyCompactList}\small\item\em free the memory and removes the commands \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classVector}{Vector}$<$ \hyperlink{classCommand}{Command} $\ast$ $>$ \hyperlink{classCommander_a9ea9e51d41b21de3a637090eaea7558b}{cmd\+\_\+list} = \hyperlink{classVector}{Vector}$<$\hyperlink{classCommand}{Command}$\ast$$>$()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCommander_aaf5700242631ebac67a8b2f6eaf9c730}{Cmd\+Help}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommander_accd2048a7f1b8aa3a2b362493d546495}\label{classCommander_accd2048a7f1b8aa3a2b362493d546495}} 
+\index{Commander@{Commander}!Commander@{Commander}}
+\index{Commander@{Commander}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{Commander()}{Commander()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Commander\+::\+Commander (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classCommander_aaf951ebc1b2909dbdccfb3ab7bd80b0d}\label{classCommander_aaf951ebc1b2909dbdccfb3ab7bd80b0d}} 
+\index{Commander@{Commander}!Commander@{Commander}}
+\index{Commander@{Commander}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{Commander()}{Commander()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Commander\+::\+Commander (\begin{DoxyParamCaption}\item[{\hyperlink{classCommander}{Commander} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommander_a467f6a4ceeb5dab750cf3f4821b5db90}\label{classCommander_a467f6a4ceeb5dab750cf3f4821b5db90}} 
+\index{Commander@{Commander}!add@{add}}
+\index{add@{add}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Commander\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{classCommand}{Command} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+add the command in the list (cmd\+\_\+list) 
+\begin{DoxyParams}{Parameters}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommander_a28323e9560f01aba51869d54832ca987}\label{classCommander_a28323e9560f01aba51869d54832ca987}} 
+\index{Commander@{Commander}!call@{call}}
+\index{call@{call}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{call()}{call()}}
+{\footnotesize\ttfamily bool Commander\+::call (\begin{DoxyParamCaption}\item[{char const $\ast$}]{cmd,  }\item[{\hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+calls the command named $<$cmd$>$; if no such command, uses the \char`\"{}empty\char`\"{} (\char`\"{}default\char`\"{}) command 
+\begin{DoxyParams}{Parameters}
+{\em cmd} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+{\em out} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the command can quit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommander_a4c16aa1bbc5ec2045d3e66f146d54884}\label{classCommander_a4c16aa1bbc5ec2045d3e66f146d54884}} 
+\index{Commander@{Commander}!clear@{clear}}
+\index{clear@{clear}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Commander\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+free the memory and removes the commands 
+
+\mbox{\Hypertarget{classCommander_a544dc076c0f448ebf284585cfcd68fcb}\label{classCommander_a544dc076c0f448ebf284585cfcd68fcb}} 
+\index{Commander@{Commander}!find@{find}}
+\index{find@{find}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \hyperlink{classCommand}{Command} $\ast$ Commander\+::find (\begin{DoxyParamCaption}\item[{char const $\ast$}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+search for a command called $<$cmd$>$ 
+\begin{DoxyParams}{Parameters}
+{\em cmd} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommander_a505015f2c954a48742acec695d1559dc}\label{classCommander_a505015f2c954a48742acec695d1559dc}} 
+\index{Commander@{Commander}!operator=@{operator=}}
+\index{operator=@{operator=}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classCommander}{Commander}\& Commander\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classCommander}{Commander} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classCommander_afea1bfe2bc8dbeea0d0523f369c9539e}\label{classCommander_afea1bfe2bc8dbeea0d0523f369c9539e}} 
+\index{Commander@{Commander}!run@{run}}
+\index{run@{run}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Commander\+::run (\begin{DoxyParamCaption}\item[{\hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&}]{runner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+base function for the class 
+\begin{DoxyParams}{Parameters}
+{\em runner} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCommander_aaf5700242631ebac67a8b2f6eaf9c730}\label{classCommander_aaf5700242631ebac67a8b2f6eaf9c730}} 
+\index{Commander@{Commander}!Cmd\+Help@{Cmd\+Help}}
+\index{Cmd\+Help@{Cmd\+Help}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{Cmd\+Help}{CmdHelp}}
+{\footnotesize\ttfamily friend class \hyperlink{classCmdHelp}{Cmd\+Help}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCommander_a9e1b32d844b2d8080e51c4e8a4ca0442}\label{classCommander_a9e1b32d844b2d8080e51c4e8a4ca0442}} 
+\index{Commander@{Commander}!B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}{BUFFER\_SIZE}}
+{\footnotesize\ttfamily const unsigned Commander\+::\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE = 256\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classCommander_a9ea9e51d41b21de3a637090eaea7558b}\label{classCommander_a9ea9e51d41b21de3a637090eaea7558b}} 
+\index{Commander@{Commander}!cmd\+\_\+list@{cmd\+\_\+list}}
+\index{cmd\+\_\+list@{cmd\+\_\+list}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{cmd\+\_\+list}{cmd\_list}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{classCommand}{Command} $\ast$ $>$ Commander\+::cmd\+\_\+list = \hyperlink{classVector}{Vector}$<$\hyperlink{classCommand}{Command}$\ast$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Commander_8hpp}{Commander.\+hpp}\item 
+\hyperlink{Commander_8cpp}{Commander.\+cpp}\end{DoxyCompactItemize}

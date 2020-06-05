@@ -1,0 +1,223 @@
+\hypertarget{classCage}{}\section{Cage Class Reference}
+\label{classCage}\index{Cage@{Cage}}
+
+
+{\ttfamily \#include $<$Cage.\+hpp$>$}
+
+
+
+Collaboration diagram for Cage\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCage_afbe886c9ec6a09ad2d8a00d46678f9af}{Cage} (\hyperlink{classString}{String} const \&climate=nullptr, \hyperlink{classString}{String} const \&size=nullptr)
+\begin{DoxyCompactList}\small\item\em default constructor and constructor with arguments climate (and size) \end{DoxyCompactList}\item 
+bool \hyperlink{classCage_acfe1a0e71ede403be924d0f95dca9d6b}{can\+Handle} (const \hyperlink{classDinosaur}{Dinosaur} \&dinosaur)
+\item 
+bool \hyperlink{classCage_af02dee37ba338f304219806d52b93b02}{add} (const \hyperlink{classDinosaur}{Dinosaur} \&dinosaur)
+\item 
+bool \hyperlink{classCage_aab085c5842eea748279b9a4593b8a076}{remove} (\hyperlink{classString}{String} const \&dinosaur\+\_\+name)
+\item 
+int \hyperlink{classCage_a0e06d978eb325ece904e6511ff41dd6a}{find\+Index} (\hyperlink{classString}{String} const \&dinosaur\+\_\+name) const
+\item 
+bool \hyperlink{classCage_a06119d2cf7fbff869584c09c5708d8a2}{feed\+Animals} (\hyperlink{classStorehouse}{Storehouse} \&store) const
+\item 
+bool \hyperlink{classCage_a1bcba33e73227c00ff1b6b5c13046f06}{serialize} (std\+::ofstream \&ofs) const
+\item 
+bool \hyperlink{classCage_af59c76e3bd8c691c19fee15ce4cb5b83}{unserialize} (std\+::ifstream \&ifs)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned \hyperlink{classCage_a2a8bc76e8e6e82510afef3384b4f4099}{get\+Cage\+Size} (\hyperlink{classString}{String} const \&size)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned \hyperlink{classCage_a3d4801616b5e775d58a89f0f06c839e8}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+G\+E\+\_\+\+S\+I\+ZE} = 0
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classString}{String} \hyperlink{classCage_a4c493c1794fadd15d5e972bd9094e7b6}{m\+\_\+climate}
+\item 
+\hyperlink{classString}{String} \hyperlink{classCage_af378135c2ac9806108d09890f2c076ae}{m\+\_\+era}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classDinosaur}{Dinosaur} $>$ \hyperlink{classCage_a7c2cb11aa36b13c8bc4288266ac74301}{m\+\_\+list}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classCage_a9ee62677a8398c9bd4021b3dc8644a72}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classCage}{Cage} const \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCage_afbe886c9ec6a09ad2d8a00d46678f9af}\label{classCage_afbe886c9ec6a09ad2d8a00d46678f9af}} 
+\index{Cage@{Cage}!Cage@{Cage}}
+\index{Cage@{Cage}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{Cage()}{Cage()}}
+{\footnotesize\ttfamily Cage\+::\+Cage (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{climate = {\ttfamily nullptr},  }\item[{\hyperlink{classString}{String} const \&}]{size = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+default constructor and constructor with arguments climate (and size) 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCage_af02dee37ba338f304219806d52b93b02}\label{classCage_af02dee37ba338f304219806d52b93b02}} 
+\index{Cage@{Cage}!add@{add}}
+\index{add@{add}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily bool Cage\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classDinosaur}{Dinosaur} \&}]{dinosaur }\end{DoxyParamCaption})}
+
+add the dinosaur 
+\begin{DoxyParams}{Parameters}
+{\em dinosaur} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it can\textquotesingle{}t handle the dinosaur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCage_acfe1a0e71ede403be924d0f95dca9d6b}\label{classCage_acfe1a0e71ede403be924d0f95dca9d6b}} 
+\index{Cage@{Cage}!can\+Handle@{can\+Handle}}
+\index{can\+Handle@{can\+Handle}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{can\+Handle()}{canHandle()}}
+{\footnotesize\ttfamily bool Cage\+::can\+Handle (\begin{DoxyParamCaption}\item[{const \hyperlink{classDinosaur}{Dinosaur} \&}]{dinosaur }\end{DoxyParamCaption})}
+
+check if this cage can handle the dinosaur 
+\begin{DoxyParams}{Parameters}
+{\em dinosaur} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it can\textquotesingle{}t handle the dinosaur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCage_a06119d2cf7fbff869584c09c5708d8a2}\label{classCage_a06119d2cf7fbff869584c09c5708d8a2}} 
+\index{Cage@{Cage}!feed\+Animals@{feed\+Animals}}
+\index{feed\+Animals@{feed\+Animals}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{feed\+Animals()}{feedAnimals()}}
+{\footnotesize\ttfamily bool Cage\+::feed\+Animals (\begin{DoxyParamCaption}\item[{\hyperlink{classStorehouse}{Storehouse} \&}]{store }\end{DoxyParamCaption}) const}
+
+feed all animals in the cage 
+\begin{DoxyParams}{Parameters}
+{\em store} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t feed all (reason\+: not enough food) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCage_a0e06d978eb325ece904e6511ff41dd6a}\label{classCage_a0e06d978eb325ece904e6511ff41dd6a}} 
+\index{Cage@{Cage}!find\+Index@{find\+Index}}
+\index{find\+Index@{find\+Index}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{find\+Index()}{findIndex()}}
+{\footnotesize\ttfamily int Cage\+::find\+Index (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{dinosaur\+\_\+name }\end{DoxyParamCaption}) const}
+
+find position of a dinosaur by its name 
+\begin{DoxyParams}{Parameters}
+{\em dinosaur\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative number if its N\+OT found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCage_a2a8bc76e8e6e82510afef3384b4f4099}\label{classCage_a2a8bc76e8e6e82510afef3384b4f4099}} 
+\index{Cage@{Cage}!get\+Cage\+Size@{get\+Cage\+Size}}
+\index{get\+Cage\+Size@{get\+Cage\+Size}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{get\+Cage\+Size()}{getCageSize()}}
+{\footnotesize\ttfamily unsigned Cage\+::get\+Cage\+Size (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+get the cage size from the size name 
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number -\/ the cage size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCage_aab085c5842eea748279b9a4593b8a076}\label{classCage_aab085c5842eea748279b9a4593b8a076}} 
+\index{Cage@{Cage}!remove@{remove}}
+\index{remove@{remove}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily bool Cage\+::remove (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{dinosaur\+\_\+name }\end{DoxyParamCaption})}
+
+remove a dinosaur by its name 
+\begin{DoxyParams}{Parameters}
+{\em dinosaur\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there isn\textquotesingle{}t a dinosaur with the given name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCage_a1bcba33e73227c00ff1b6b5c13046f06}\label{classCage_a1bcba33e73227c00ff1b6b5c13046f06}} 
+\index{Cage@{Cage}!serialize@{serialize}}
+\index{serialize@{serialize}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily bool Cage\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const}
+
+serialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ofs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCage_af59c76e3bd8c691c19fee15ce4cb5b83}\label{classCage_af59c76e3bd8c691c19fee15ce4cb5b83}} 
+\index{Cage@{Cage}!unserialize@{unserialize}}
+\index{unserialize@{unserialize}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{unserialize()}{unserialize()}}
+{\footnotesize\ttfamily bool Cage\+::unserialize (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs }\end{DoxyParamCaption})}
+
+deserialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCage_a9ee62677a8398c9bd4021b3dc8644a72}\label{classCage_a9ee62677a8398c9bd4021b3dc8644a72}} 
+\index{Cage@{Cage}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classCage}{Cage} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCage_a3d4801616b5e775d58a89f0f06c839e8}\label{classCage_a3d4801616b5e775d58a89f0f06c839e8}} 
+\index{Cage@{Cage}!D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+G\+E\+\_\+\+S\+I\+ZE@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+G\+E\+\_\+\+S\+I\+ZE}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+G\+E\+\_\+\+S\+I\+ZE@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+G\+E\+\_\+\+S\+I\+ZE}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+G\+E\+\_\+\+S\+I\+ZE}{DEFAULT\_CAGE\_SIZE}}
+{\footnotesize\ttfamily const unsigned Cage\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+A\+G\+E\+\_\+\+S\+I\+ZE = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+default cage size M\+U\+ST be different from the other cage sizes \mbox{\Hypertarget{classCage_a4c493c1794fadd15d5e972bd9094e7b6}\label{classCage_a4c493c1794fadd15d5e972bd9094e7b6}} 
+\index{Cage@{Cage}!m\+\_\+climate@{m\+\_\+climate}}
+\index{m\+\_\+climate@{m\+\_\+climate}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{m\+\_\+climate}{m\_climate}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Cage\+::m\+\_\+climate\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCage_af378135c2ac9806108d09890f2c076ae}\label{classCage_af378135c2ac9806108d09890f2c076ae}} 
+\index{Cage@{Cage}!m\+\_\+era@{m\+\_\+era}}
+\index{m\+\_\+era@{m\+\_\+era}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{m\+\_\+era}{m\_era}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Cage\+::m\+\_\+era\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCage_a7c2cb11aa36b13c8bc4288266ac74301}\label{classCage_a7c2cb11aa36b13c8bc4288266ac74301}} 
+\index{Cage@{Cage}!m\+\_\+list@{m\+\_\+list}}
+\index{m\+\_\+list@{m\+\_\+list}!Cage@{Cage}}
+\subsubsection{\texorpdfstring{m\+\_\+list}{m\_list}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$\hyperlink{classDinosaur}{Dinosaur}$>$ Cage\+::m\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Cage_8hpp}{Cage.\+hpp}\item 
+\hyperlink{Cage_8cpp}{Cage.\+cpp}\end{DoxyCompactItemize}

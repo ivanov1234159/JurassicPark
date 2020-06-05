@@ -1,0 +1,212 @@
+Може да видите {\itshape документацията} на кода, генерирана от {\bfseries Doxy\+Gen} \href{https://ivanov1234159.github.io/JurassicPark/html/index.html}{\tt тук}
+
+{\bfseries Автор\+:} Веселин Иванов
+
+\subsection*{Описанире на проекта}
+
+Ванката беше изключително впечатлен от последната лекция в историческия музей и има нова хрумка -\/ ще става палеонтолог! Не, още по-\/добре, ще си отвори ферма за динозаври! Въпреки безумните убеждения на майка си, Ванката вече има план как ще изглежда новият домашен зоопарк за праисторически влечуги\+: динозаврите могат да са няколко вида\+:
+
+
+\begin{DoxyItemize}
+\item месоядни
+\item тревопасни
+\item водни
+\item летящи
+\end{DoxyItemize}
+
+от книгите знае, че те не съжителстват заедно, затова трябва да са разделени
+
+необходимо е да има достатъчно храна за всички
+
+необходимо е да има достатъчно персонал в парка, за да се грижат за всички.
+
+{\itshape Вашата основна задача е да наподобите модела на успешен развъдник на динозаври.}
+
+Всеки {\bfseries динозавър} се характеризира чрез\+:
+
+
+\begin{DoxyItemize}
+\item име
+\item пол
+\item ера
+\begin{DoxyItemize}
+\item Триас
+\item Креда
+\item Юра
+\end{DoxyItemize}
+\item разред
+\begin{DoxyItemize}
+\item тревопасен
+\item месояде
+\item летящ
+\item воден
+\end{DoxyItemize}
+\item вид
+\begin{DoxyItemize}
+\item плезиозавър
+\item бронтозавър
+\item тиранозавър
+\item и т.\+н.
+\end{DoxyItemize}
+\item храна
+\begin{DoxyItemize}
+\item трева
+\item месо
+\item риба
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Те са разпределени в клетки, като заедно могат да съжителстват единствено животни от една ера и един разред (но не задължително от един вид).
+
+Важна информация за {\bfseries клетката} е\+:
+
+
+\begin{DoxyItemize}
+\item размер
+\begin{DoxyItemize}
+\item малка (за 1 животно)
+\item средна (до 3 животни)
+\item голема (до 10 животни)
+\end{DoxyItemize}
+\item климат
+\begin{DoxyItemize}
+\item сухоземен
+\item въздушен
+\item воден
+\item и т.\+н.
+\end{DoxyItemize}
+\item животни, които я обитават
+\item ера на животните вътре (ако има такива)
+\end{DoxyItemize}
+
+В нашия зоопарк отначало има произволно количество клетки и без никакви животни. Ново животно може да се приеме, ако има подходяща клетка за него с празно място в нея. Ако няма, то такава може да бъде построена, посочвайки съответния климат и размер.
+
+\subsubsection*{Напишете система за управление на зоопарк, която може да\+:}
+
+
+\begin{DoxyItemize}
+\item приема ново животно
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+add <name> <gender> <era> <type> <species> <food>
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item строи нова клетка
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+create <climate> <size>
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item премахва вече налично животно
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+remove <name>
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item зарежда склада с храна
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+supply <food\_name> <amount>
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item нахранва всички животни
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+feed
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item наема нов персонал
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+hire <count>
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item запазва сегашното състояние на програмата
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+save
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item показва сегашното състояние на програмата
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+status
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item показва информация за възможностите на приграмата
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+help
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item затваряне на приграмата
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+exit [ <save> = Yes ]
+\end{DoxyCode}
+
+
+\subsection*{Забележки\+:}
+
+
+\begin{DoxyItemize}
+\item Може ли в началото клетките за динозаврите да са наистина случайно генерирани и като брой, и като вид?
+\item Не искаме при затваряне на програмата информацията да се губи.
+\item Летящите динозаври са в по-\/голямата си част хищни \+:)
+\end{DoxyItemize}
+
+\subsection*{}
+
+\subsection*{Външни източници}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/onqtam/doctest}{\tt doctest} -\/ за тестването на проекта (програмата) 
+\end{DoxyItemize}

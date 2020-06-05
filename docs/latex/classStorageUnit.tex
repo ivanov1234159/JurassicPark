@@ -1,0 +1,168 @@
+\hypertarget{classStorageUnit}{}\section{Storage\+Unit Class Reference}
+\label{classStorageUnit}\index{Storage\+Unit@{Storage\+Unit}}
+
+
+{\ttfamily \#include $<$Storage\+Unit.\+hpp$>$}
+
+
+
+Collaboration diagram for Storage\+Unit\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStorageUnit_aea07bc751e6ffc42161fb52724a3a1a4}{Storage\+Unit} (\hyperlink{classString}{String} const \&name=nullptr, \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} amount=0, bool integer=false)
+\begin{DoxyCompactList}\small\item\em default constructor and constructor with arguments name (and amount (and integer) ) \end{DoxyCompactList}\item 
+\hyperlink{classString}{String} const  \& \hyperlink{classStorageUnit_acdc901c1def8c1937524d20d645e8738}{get\+Name} () const
+\item 
+\hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} \hyperlink{classStorageUnit_ae089fb2cb93956bfe209c0801a685252}{get\+Amount} () const
+\item 
+bool \hyperlink{classStorageUnit_a36c88992cc1346c082b9905a018ddace}{is\+Whole\+Number} () const
+\item 
+bool \hyperlink{classStorageUnit_aa454fd2b3fc333e7487327b77d9f9321}{add} (const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} amount)
+\item 
+bool \hyperlink{classStorageUnit_a790ca821c741cdf98d83d10ee68fe7e4}{remove} (const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} amount)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classStorageUnit_a21699592d4c02bdf864e06c615a7f0c7}{are\+Equal} (const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} amount1, const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} amount2)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classString}{String} \hyperlink{classStorageUnit_a5cef8bd3450e37f27989a329fda7da83}{m\+\_\+name}
+\item 
+\hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} \hyperlink{classStorageUnit_a7347d44416bdc5c46ad14cc6df8649e1}{m\+\_\+amount}
+\item 
+bool \hyperlink{classStorageUnit_a6079df4176f8367dc53a97f5445646a4}{m\+\_\+integer}
+\begin{DoxyCompactList}\small\item\em used to get amount as a whole number \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} \hyperlink{classStorageUnit_af43ba3a77fda788aae3a6b2065d590a3}{E\+PS} = 1\+E-\/4
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStorageUnit_aea07bc751e6ffc42161fb52724a3a1a4}\label{classStorageUnit_aea07bc751e6ffc42161fb52724a3a1a4}} 
+\index{Storage\+Unit@{Storage\+Unit}!Storage\+Unit@{Storage\+Unit}}
+\index{Storage\+Unit@{Storage\+Unit}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{Storage\+Unit()}{StorageUnit()}}
+{\footnotesize\ttfamily Storage\+Unit\+::\+Storage\+Unit (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{name = {\ttfamily nullptr},  }\item[{\hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{amount = {\ttfamily 0},  }\item[{bool}]{integer = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+default constructor and constructor with arguments name (and amount (and integer) ) 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classStorageUnit_aa454fd2b3fc333e7487327b77d9f9321}\label{classStorageUnit_aa454fd2b3fc333e7487327b77d9f9321}} 
+\index{Storage\+Unit@{Storage\+Unit}!add@{add}}
+\index{add@{add}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily bool Storage\+Unit\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{amount }\end{DoxyParamCaption})}
+
+add $<$amount$>$ to m\+\_\+amount 
+\begin{DoxyParams}{Parameters}
+{\em amount} & -\/ if is negative, then removes; calls \hyperlink{classStorageUnit_a790ca821c741cdf98d83d10ee68fe7e4}{remove()} method \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t remove the $<$amount$>$ (reason\+: not enough) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorageUnit_a21699592d4c02bdf864e06c615a7f0c7}\label{classStorageUnit_a21699592d4c02bdf864e06c615a7f0c7}} 
+\index{Storage\+Unit@{Storage\+Unit}!are\+Equal@{are\+Equal}}
+\index{are\+Equal@{are\+Equal}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{are\+Equal()}{areEqual()}}
+{\footnotesize\ttfamily bool Storage\+Unit\+::are\+Equal (\begin{DoxyParamCaption}\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{amount1,  }\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{amount2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+check if amount1 and amount2 are equal (using \hyperlink{classStorageUnit_af43ba3a77fda788aae3a6b2065d590a3}{Storage\+Unit\+::\+E\+PS}) 
+\begin{DoxyParams}{Parameters}
+{\em amount1} & \\
+\hline
+{\em amount2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if they are N\+OT equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorageUnit_ae089fb2cb93956bfe209c0801a685252}\label{classStorageUnit_ae089fb2cb93956bfe209c0801a685252}} 
+\index{Storage\+Unit@{Storage\+Unit}!get\+Amount@{get\+Amount}}
+\index{get\+Amount@{get\+Amount}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{get\+Amount()}{getAmount()}}
+{\footnotesize\ttfamily \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} Storage\+Unit\+::get\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+getter for m\+\_\+amount \begin{DoxyReturn}{Returns}
+m\+\_\+amount 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorageUnit_acdc901c1def8c1937524d20d645e8738}\label{classStorageUnit_acdc901c1def8c1937524d20d645e8738}} 
+\index{Storage\+Unit@{Storage\+Unit}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} const  \& Storage\+Unit\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+getter for m\+\_\+name \begin{DoxyReturn}{Returns}
+m\+\_\+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorageUnit_a36c88992cc1346c082b9905a018ddace}\label{classStorageUnit_a36c88992cc1346c082b9905a018ddace}} 
+\index{Storage\+Unit@{Storage\+Unit}!is\+Whole\+Number@{is\+Whole\+Number}}
+\index{is\+Whole\+Number@{is\+Whole\+Number}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{is\+Whole\+Number()}{isWholeNumber()}}
+{\footnotesize\ttfamily bool Storage\+Unit\+::is\+Whole\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+getter for m\+\_\+integer \begin{DoxyReturn}{Returns}
+m\+\_\+integer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorageUnit_a790ca821c741cdf98d83d10ee68fe7e4}\label{classStorageUnit_a790ca821c741cdf98d83d10ee68fe7e4}} 
+\index{Storage\+Unit@{Storage\+Unit}!remove@{remove}}
+\index{remove@{remove}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily bool Storage\+Unit\+::remove (\begin{DoxyParamCaption}\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{amount }\end{DoxyParamCaption})}
+
+remove $<$amount$>$ form m\+\_\+amount 
+\begin{DoxyParams}{Parameters}
+{\em amount} & -\/ if is negative, then adds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t remove the $<$amount$>$ (reason\+: not enough) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classStorageUnit_af43ba3a77fda788aae3a6b2065d590a3}\label{classStorageUnit_af43ba3a77fda788aae3a6b2065d590a3}} 
+\index{Storage\+Unit@{Storage\+Unit}!E\+PS@{E\+PS}}
+\index{E\+PS@{E\+PS}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{E\+PS}{EPS}}
+{\footnotesize\ttfamily const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} Storage\+Unit\+::\+E\+PS = 1\+E-\/4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+used if Unit\+Amount is a floating point number, but is still valid and for whole numbers \mbox{\Hypertarget{classStorageUnit_a7347d44416bdc5c46ad14cc6df8649e1}\label{classStorageUnit_a7347d44416bdc5c46ad14cc6df8649e1}} 
+\index{Storage\+Unit@{Storage\+Unit}!m\+\_\+amount@{m\+\_\+amount}}
+\index{m\+\_\+amount@{m\+\_\+amount}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{m\+\_\+amount}{m\_amount}}
+{\footnotesize\ttfamily \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} Storage\+Unit\+::m\+\_\+amount\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classStorageUnit_a6079df4176f8367dc53a97f5445646a4}\label{classStorageUnit_a6079df4176f8367dc53a97f5445646a4}} 
+\index{Storage\+Unit@{Storage\+Unit}!m\+\_\+integer@{m\+\_\+integer}}
+\index{m\+\_\+integer@{m\+\_\+integer}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{m\+\_\+integer}{m\_integer}}
+{\footnotesize\ttfamily bool Storage\+Unit\+::m\+\_\+integer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+used to get amount as a whole number 
+
+\mbox{\Hypertarget{classStorageUnit_a5cef8bd3450e37f27989a329fda7da83}\label{classStorageUnit_a5cef8bd3450e37f27989a329fda7da83}} 
+\index{Storage\+Unit@{Storage\+Unit}!m\+\_\+name@{m\+\_\+name}}
+\index{m\+\_\+name@{m\+\_\+name}!Storage\+Unit@{Storage\+Unit}}
+\subsubsection{\texorpdfstring{m\+\_\+name}{m\_name}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Storage\+Unit\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{StorageUnit_8hpp}{Storage\+Unit.\+hpp}\item 
+\hyperlink{StorageUnit_8cpp}{Storage\+Unit.\+cpp}\end{DoxyCompactItemize}

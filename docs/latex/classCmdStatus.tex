@@ -1,0 +1,61 @@
+\hypertarget{classCmdStatus}{}\section{Cmd\+Status Class Reference}
+\label{classCmdStatus}\index{Cmd\+Status@{Cmd\+Status}}
+
+
+{\ttfamily \#include $<$Cmd\+Status.\+hpp$>$}
+
+
+
+Inheritance diagram for Cmd\+Status\+:
+% FIG 0
+
+
+Collaboration diagram for Cmd\+Status\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCmdStatus_ab7765ce2246b3a90c7d394e2bb6e92cc}{Cmd\+Status} ()
+\item 
+virtual bool \hyperlink{classCmdStatus_addfd30518dd62c345c2abc555fee78d0}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&runner, std\+::istringstream \&iss) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCmdStatus_ab7765ce2246b3a90c7d394e2bb6e92cc}\label{classCmdStatus_ab7765ce2246b3a90c7d394e2bb6e92cc}} 
+\index{Cmd\+Status@{Cmd\+Status}!Cmd\+Status@{Cmd\+Status}}
+\index{Cmd\+Status@{Cmd\+Status}!Cmd\+Status@{Cmd\+Status}}
+\subsubsection{\texorpdfstring{Cmd\+Status()}{CmdStatus()}}
+{\footnotesize\ttfamily Cmd\+Status\+::\+Cmd\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCmdStatus_addfd30518dd62c345c2abc555fee78d0}\label{classCmdStatus_addfd30518dd62c345c2abc555fee78d0}} 
+\index{Cmd\+Status@{Cmd\+Status}!action@{action}}
+\index{action@{action}!Cmd\+Status@{Cmd\+Status}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily bool Cmd\+Status\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+depending from the child class do different things 
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if cannot read the params of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cmd/\hyperlink{CmdStatus_8hpp}{Cmd\+Status.\+hpp}\item 
+cmd/\hyperlink{CmdStatus_8cpp}{Cmd\+Status.\+cpp}\end{DoxyCompactItemize}

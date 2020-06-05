@@ -1,0 +1,208 @@
+\hypertarget{classStorehouse}{}\section{Storehouse Class Reference}
+\label{classStorehouse}\index{Storehouse@{Storehouse}}
+
+
+{\ttfamily \#include $<$Storehouse.\+hpp$>$}
+
+
+
+Collaboration diagram for Storehouse\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStorehouse_ac669678b559e7c33b980e80fc0d80d05}{Storehouse} (unsigned limit=2)
+\begin{DoxyCompactList}\small\item\em default constructor and constructor with argument limit \end{DoxyCompactList}\item 
+bool \hyperlink{classStorehouse_a6eeb0b35715de38d45e92d207928323a}{has} (\hyperlink{classString}{String} const \&unit\+\_\+name) const
+\item 
+bool \hyperlink{classStorehouse_a0b06fb6fa2819193775c2aba04e8ff5c}{has} (const \hyperlink{classStorageUnit}{Storage\+Unit} \&unit) const
+\item 
+bool \hyperlink{classStorehouse_a757d0c9fccad409c6f5bdd502e081e7b}{has} (\hyperlink{classString}{String} const \&unit\+\_\+name, const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} unit\+\_\+amount) const
+\item 
+bool \hyperlink{classStorehouse_abd7448c73850f9281174e13a918e4c14}{add} (const \hyperlink{classStorageUnit}{Storage\+Unit} \&unit)
+\item 
+bool \hyperlink{classStorehouse_aeb07631e19d9fa3306b49988ce8ce6fb}{add} (\hyperlink{classString}{String} const \&unit\+\_\+name, const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} unit\+\_\+amount, bool whole\+\_\+number=false)
+\item 
+bool \hyperlink{classStorehouse_abce48d8f965079715a4c93f1702ffcbf}{remove} (const \hyperlink{classStorageUnit}{Storage\+Unit} \&unit)
+\item 
+bool \hyperlink{classStorehouse_a1c65143fca17ea7fda18e0b9b10b4d70}{remove} (\hyperlink{classString}{String} const \&unit\+\_\+name, const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} unit\+\_\+amount)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStorageUnit}{Storage\+Unit} const  $\ast$ \hyperlink{classStorehouse_aca171c012833fcee541b5c36833034be}{find} (\hyperlink{classString}{String} const \&unit\+\_\+name) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classStorageUnit}{Storage\+Unit} $>$ \hyperlink{classStorehouse_aa5d81c208f66eb440d807aa9a769a2fd}{m\+\_\+list}
+\begin{DoxyCompactList}\small\item\em list of all storage units (food and staff) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classStorehouse_a2849e8095f3745a8766e4d3f7f0fba1f}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classStorehouse}{Storehouse} const \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStorehouse_ac669678b559e7c33b980e80fc0d80d05}\label{classStorehouse_ac669678b559e7c33b980e80fc0d80d05}} 
+\index{Storehouse@{Storehouse}!Storehouse@{Storehouse}}
+\index{Storehouse@{Storehouse}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{Storehouse()}{Storehouse()}}
+{\footnotesize\ttfamily Storehouse\+::\+Storehouse (\begin{DoxyParamCaption}\item[{unsigned}]{limit = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+default constructor and constructor with argument limit 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classStorehouse_abd7448c73850f9281174e13a918e4c14}\label{classStorehouse_abd7448c73850f9281174e13a918e4c14}} 
+\index{Storehouse@{Storehouse}!add@{add}}
+\index{add@{add}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Storehouse\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{classStorageUnit}{Storage\+Unit} \&}]{unit }\end{DoxyParamCaption})}
+
+add a new storage unit using $<$unit$>$; calls \hyperlink{classStorehouse_aeb07631e19d9fa3306b49988ce8ce6fb}{add(\+String const\&, const Unit\+Amount, bool)} method 
+\begin{DoxyParams}{Parameters}
+{\em unit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t remove the amount (reason\+: not enough amount) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorehouse_aeb07631e19d9fa3306b49988ce8ce6fb}\label{classStorehouse_aeb07631e19d9fa3306b49988ce8ce6fb}} 
+\index{Storehouse@{Storehouse}!add@{add}}
+\index{add@{add}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Storehouse\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{unit\+\_\+name,  }\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{unit\+\_\+amount,  }\item[{bool}]{whole\+\_\+number = {\ttfamily false} }\end{DoxyParamCaption})}
+
+add a new storage unit with name and amount 
+\begin{DoxyParams}{Parameters}
+{\em unit\+\_\+name} & \\
+\hline
+{\em unit\+\_\+amount} & -\/ can be negative \\
+\hline
+{\em whole\+\_\+number} & -\/ by default is false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t remove the amount (reason\+: not enough amount OR there is no unit with that name) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorehouse_aca171c012833fcee541b5c36833034be}\label{classStorehouse_aca171c012833fcee541b5c36833034be}} 
+\index{Storehouse@{Storehouse}!find@{find}}
+\index{find@{find}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \hyperlink{classStorageUnit}{Storage\+Unit} const  $\ast$ Storehouse\+::find (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{unit\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+search for a storage unit by name 
+\begin{DoxyParams}{Parameters}
+{\em unit\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr if N\+OT found OR a pointer to the first match 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorehouse_a6eeb0b35715de38d45e92d207928323a}\label{classStorehouse_a6eeb0b35715de38d45e92d207928323a}} 
+\index{Storehouse@{Storehouse}!has@{has}}
+\index{has@{has}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{has()}{has()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Storehouse\+::has (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{unit\+\_\+name }\end{DoxyParamCaption}) const}
+
+check if exists a storage unit with the given name 
+\begin{DoxyParams}{Parameters}
+{\em unit\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there is no unit with that name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorehouse_a0b06fb6fa2819193775c2aba04e8ff5c}\label{classStorehouse_a0b06fb6fa2819193775c2aba04e8ff5c}} 
+\index{Storehouse@{Storehouse}!has@{has}}
+\index{has@{has}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{has()}{has()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Storehouse\+::has (\begin{DoxyParamCaption}\item[{const \hyperlink{classStorageUnit}{Storage\+Unit} \&}]{unit }\end{DoxyParamCaption}) const}
+
+check if exists a storage unit like the given one; calls has(\+String const\&, const Unit\+Amount) method 
+\begin{DoxyParams}{Parameters}
+{\em unit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there is no unit with that name OR there isn\textquotesingle{}t enough amount 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorehouse_a757d0c9fccad409c6f5bdd502e081e7b}\label{classStorehouse_a757d0c9fccad409c6f5bdd502e081e7b}} 
+\index{Storehouse@{Storehouse}!has@{has}}
+\index{has@{has}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{has()}{has()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Storehouse\+::has (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{unit\+\_\+name,  }\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{unit\+\_\+amount }\end{DoxyParamCaption}) const}
+
+check if exists a storage unit with the given name and enough amount 
+\begin{DoxyParams}{Parameters}
+{\em unit\+\_\+name} & \\
+\hline
+{\em unit\+\_\+amount} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there is no unit with that name OR there isn\textquotesingle{}t enough amount OR $<$unit\+\_\+amount$>$ is negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorehouse_abce48d8f965079715a4c93f1702ffcbf}\label{classStorehouse_abce48d8f965079715a4c93f1702ffcbf}} 
+\index{Storehouse@{Storehouse}!remove@{remove}}
+\index{remove@{remove}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Storehouse\+::remove (\begin{DoxyParamCaption}\item[{const \hyperlink{classStorageUnit}{Storage\+Unit} \&}]{unit }\end{DoxyParamCaption})}
+
+remove amount from a storage unit using $<$unit$>$; calls \hyperlink{classStorehouse_a1c65143fca17ea7fda18e0b9b10b4d70}{remove(\+String const\&, const Unit\+Amount)} method 
+\begin{DoxyParams}{Parameters}
+{\em unit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t remove the amount (reason\+: not enough amount OR there is no unit with that name) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorehouse_a1c65143fca17ea7fda18e0b9b10b4d70}\label{classStorehouse_a1c65143fca17ea7fda18e0b9b10b4d70}} 
+\index{Storehouse@{Storehouse}!remove@{remove}}
+\index{remove@{remove}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Storehouse\+::remove (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{unit\+\_\+name,  }\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{unit\+\_\+amount }\end{DoxyParamCaption})}
+
+remove amount from a storage unit with $<$name$>$ 
+\begin{DoxyParams}{Parameters}
+{\em unit\+\_\+name} & \\
+\hline
+{\em unit\+\_\+amount} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t remove the amount (reason\+: not enough amount OR there is no unit with that name) 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classStorehouse_a2849e8095f3745a8766e4d3f7f0fba1f}\label{classStorehouse_a2849e8095f3745a8766e4d3f7f0fba1f}} 
+\index{Storehouse@{Storehouse}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classStorehouse}{Storehouse} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classStorehouse_aa5d81c208f66eb440d807aa9a769a2fd}\label{classStorehouse_aa5d81c208f66eb440d807aa9a769a2fd}} 
+\index{Storehouse@{Storehouse}!m\+\_\+list@{m\+\_\+list}}
+\index{m\+\_\+list@{m\+\_\+list}!Storehouse@{Storehouse}}
+\subsubsection{\texorpdfstring{m\+\_\+list}{m\_list}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$\hyperlink{classStorageUnit}{Storage\+Unit}$>$ Storehouse\+::m\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+list of all storage units (food and staff) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Storehouse_8hpp}{Storehouse.\+hpp}\item 
+\hyperlink{Storehouse_8cpp}{Storehouse.\+cpp}\end{DoxyCompactItemize}

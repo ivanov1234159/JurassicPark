@@ -1,0 +1,306 @@
+\hypertarget{classString}{}\section{String Class Reference}
+\label{classString}\index{String@{String}}
+
+
+{\ttfamily \#include $<$String.\+hpp$>$}
+
+
+
+Inheritance diagram for String\+:
+% FIG 0
+
+
+Collaboration diagram for String\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classString_a33582c77a4e6b03f950082593cc57de4}{String} (char const $\ast$str=nullptr)
+\begin{DoxyCompactList}\small\item\em default constructor and constructor with argument str \end{DoxyCompactList}\item 
+bool \hyperlink{classString_a809addfc91485db4c89baad03ff12b18}{set} (char const $\ast$str)
+\item 
+char const  $\ast$ \hyperlink{classString_ac7459c7a9d75bdcc53d44a0c5ec7a182}{get} () const
+\item 
+bool \hyperlink{classString_ad11aaf7841686006dd6840a5fab5664e}{get} (char $\ast$\&str) const
+\item 
+void \hyperlink{classString_a8a191fafb7af689d86f50423e97e60d7}{append} (\hyperlink{classString}{String} const \&other)
+\item 
+void \hyperlink{classString_ab0c13e38cf91f55bb6eaedd513f124db}{read} (std\+::istream \&from, char until=\textquotesingle{} \textquotesingle{})
+\item 
+bool \hyperlink{classString_a16b809e6c0a80889b2ee8e753003ab70}{contains} (\hyperlink{classString}{String} const \&other) const
+\item 
+bool \hyperlink{classString_a3a8304a7fe06a23f1750629a9186d346}{operator!} () const
+\item 
+bool \hyperlink{classString_a2525ca0e0fd8e1a63d947f39ebc5e4d0}{operator==} (\hyperlink{classString}{String} const \&other) const
+\item 
+bool \hyperlink{classString_abfb25af8317420d71b0d54603d049383}{operator!=} (\hyperlink{classString}{String} const \&other) const
+\item 
+bool \hyperlink{classString_a4b9b4c9eab5759a848229a8209ac3ddf}{operator$>$} (\hyperlink{classString}{String} const \&other) const
+\item 
+bool \hyperlink{classString_a21e5e59295a87f0af5b082c294c12f11}{operator$>$=} (\hyperlink{classString}{String} const \&other) const
+\item 
+bool \hyperlink{classString_a223bf46daeb4d9b4a7000feea4d7a6b3}{operator$<$} (\hyperlink{classString}{String} const \&other) const
+\item 
+bool \hyperlink{classString_a2ee4e8d42626851256a5432bf838d5f9}{operator$<$=} (\hyperlink{classString}{String} const \&other) const
+\item 
+\hyperlink{classString}{String} \& \hyperlink{classString_acdfa6ad1771ff7c9f9a9dacc177e6661}{operator+=} (\hyperlink{classString}{String} const \&other)
+\item 
+bool \hyperlink{classString_a05ec329796015f98719b6a924c0f0eb4}{serialize} (std\+::ofstream \&ofs) const
+\item 
+bool \hyperlink{classString_a66de7cb14dd606a96dbe3fa8b6aff065}{unserialize} (std\+::ifstream \&ifs)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classString}{String} \hyperlink{classString_a52f9352ece5a5266018539183b0de85c}{to\+\_\+string} (int num)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+child of \hyperlink{classVector}{Vector$<$char$>$} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classString_a33582c77a4e6b03f950082593cc57de4}\label{classString_a33582c77a4e6b03f950082593cc57de4}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{\texorpdfstring{String()}{String()}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{char const $\ast$}]{str = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+default constructor and constructor with argument str 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classString_a8a191fafb7af689d86f50423e97e60d7}\label{classString_a8a191fafb7af689d86f50423e97e60d7}} 
+\index{String@{String}!append@{append}}
+\index{append@{append}!String@{String}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily void String\+::append (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption})}
+
+join both strings (this as first and other as second) also it cares about the determining zero \textquotesingle{}\textbackslash{}0\textquotesingle{} 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classString_a16b809e6c0a80889b2ee8e753003ab70}\label{classString_a16b809e6c0a80889b2ee8e753003ab70}} 
+\index{String@{String}!contains@{contains}}
+\index{contains@{contains}!String@{String}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool String\+::contains (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption}) const}
+
+check if this string contains other one 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it does 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_ac7459c7a9d75bdcc53d44a0c5ec7a182}\label{classString_ac7459c7a9d75bdcc53d44a0c5ec7a182}} 
+\index{String@{String}!get@{get}}
+\index{get@{get}!String@{String}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char const  $\ast$ String\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+pointer to the list of characters 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_ad11aaf7841686006dd6840a5fab5664e}\label{classString_ad11aaf7841686006dd6840a5fab5664e}} 
+\index{String@{String}!get@{get}}
+\index{get@{get}!String@{String}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool String\+::get (\begin{DoxyParamCaption}\item[{char $\ast$\&}]{str }\end{DoxyParamCaption}) const}
+
+get a pointer to the list of characters 
+\begin{DoxyParams}{Parameters}
+{\em str} & -\/ used to return a copy of the list of characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if str is N\+OT nullptr or the object is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a3a8304a7fe06a23f1750629a9186d346}\label{classString_a3a8304a7fe06a23f1750629a9186d346}} 
+\index{String@{String}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!String@{String}}
+\subsubsection{\texorpdfstring{operator"!()}{operator!()}}
+{\footnotesize\ttfamily bool String\+::operator! (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+true if is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_abfb25af8317420d71b0d54603d049383}\label{classString_abfb25af8317420d71b0d54603d049383}} 
+\index{String@{String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!String@{String}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool \hyperlink{classString_a3a8304a7fe06a23f1750629a9186d346}{String\+::operator!}= (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption}) const}
+
+compare the two strings 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if they are N\+OT equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_acdfa6ad1771ff7c9f9a9dacc177e6661}\label{classString_acdfa6ad1771ff7c9f9a9dacc177e6661}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} \& String\+::operator+= (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption})}
+
+join both strings (this as first and other as second) calls \hyperlink{classString_a8a191fafb7af689d86f50423e97e60d7}{append()} method 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a223bf46daeb4d9b4a7000feea4d7a6b3}\label{classString_a223bf46daeb4d9b4a7000feea4d7a6b3}} 
+\index{String@{String}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!String@{String}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool String\+::operator$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption}) const}
+
+compare the two strings 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the first is smaller than the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a2ee4e8d42626851256a5432bf838d5f9}\label{classString_a2ee4e8d42626851256a5432bf838d5f9}} 
+\index{String@{String}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!String@{String}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool String\+::operator$<$= (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption}) const}
+
+compare the two strings 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the first is smaller than the second or they are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a2525ca0e0fd8e1a63d947f39ebc5e4d0}\label{classString_a2525ca0e0fd8e1a63d947f39ebc5e4d0}} 
+\index{String@{String}!operator==@{operator==}}
+\index{operator==@{operator==}!String@{String}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool String\+::operator== (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption}) const}
+
+compare the two strings 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if they are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a4b9b4c9eab5759a848229a8209ac3ddf}\label{classString_a4b9b4c9eab5759a848229a8209ac3ddf}} 
+\index{String@{String}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!String@{String}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool String\+::operator$>$ (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption}) const}
+
+compare the two strings 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the first is bigger than the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a21e5e59295a87f0af5b082c294c12f11}\label{classString_a21e5e59295a87f0af5b082c294c12f11}} 
+\index{String@{String}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!String@{String}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool String\+::operator$>$= (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{other }\end{DoxyParamCaption}) const}
+
+compare the two strings 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the first is bigger than the second or they are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_ab0c13e38cf91f55bb6eaedd513f124db}\label{classString_ab0c13e38cf91f55bb6eaedd513f124db}} 
+\index{String@{String}!read@{read}}
+\index{read@{read}!String@{String}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void String\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{from,  }\item[{char}]{until = {\ttfamily \textquotesingle{}~\textquotesingle{}} }\end{DoxyParamCaption})}
+
+read fromm the source and set the read with \hyperlink{classString_a809addfc91485db4c89baad03ff12b18}{set()} method calls \hyperlink{namespaceMySpace_acfe71ee08c30cdafde43d7db1cd34aff}{My\+Space\+::read\+\_\+stream()} 
+\begin{DoxyParams}{Parameters}
+{\em from} & -\/ the source \\
+\hline
+{\em until} & -\/ reads until this character is read \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classString_a05ec329796015f98719b6a924c0f0eb4}\label{classString_a05ec329796015f98719b6a924c0f0eb4}} 
+\index{String@{String}!serialize@{serialize}}
+\index{serialize@{serialize}!String@{String}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily bool String\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const}
+
+serialize this object calls \hyperlink{namespaceMySpace_ad2ec85a91c9b7fb281271a88f0ce9ef4}{My\+Space\+::serialize()} method 
+\begin{DoxyParams}{Parameters}
+{\em ofs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a809addfc91485db4c89baad03ff12b18}\label{classString_a809addfc91485db4c89baad03ff12b18}} 
+\index{String@{String}!set@{set}}
+\index{set@{set}!String@{String}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily bool String\+::set (\begin{DoxyParamCaption}\item[{char const $\ast$}]{str }\end{DoxyParamCaption})}
+
+set str to the object char by char 
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if str is nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a52f9352ece5a5266018539183b0de85c}\label{classString_a52f9352ece5a5266018539183b0de85c}} 
+\index{String@{String}!to\+\_\+string@{to\+\_\+string}}
+\index{to\+\_\+string@{to\+\_\+string}!String@{String}}
+\subsubsection{\texorpdfstring{to\+\_\+string()}{to\_string()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} String\+::to\+\_\+string (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+generate string from integer 
+\begin{DoxyParams}{Parameters}
+{\em num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object from type \hyperlink{classString}{String} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classString_a66de7cb14dd606a96dbe3fa8b6aff065}\label{classString_a66de7cb14dd606a96dbe3fa8b6aff065}} 
+\index{String@{String}!unserialize@{unserialize}}
+\index{unserialize@{unserialize}!String@{String}}
+\subsubsection{\texorpdfstring{unserialize()}{unserialize()}}
+{\footnotesize\ttfamily bool String\+::unserialize (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs }\end{DoxyParamCaption})}
+
+deserialize this object calls \hyperlink{namespaceMySpace_a99c49bdb6efc496c35e1e3ca0167da2b}{My\+Space\+::unserialize()} method 
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{String_8hpp}{String.\+hpp}\item 
+\hyperlink{String_8cpp}{String.\+cpp}\end{DoxyCompactItemize}

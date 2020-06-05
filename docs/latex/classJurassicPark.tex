@@ -1,0 +1,351 @@
+\hypertarget{classJurassicPark}{}\section{Jurassic\+Park Class Reference}
+\label{classJurassicPark}\index{Jurassic\+Park@{Jurassic\+Park}}
+
+
+class for the project  
+
+
+
+
+{\ttfamily \#include $<$Jurassic\+Park.\+hpp$>$}
+
+
+
+Collaboration diagram for Jurassic\+Park\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classJurassicPark_a45c3966b859c4925e001592b121f02c5}{open} ()
+\item 
+bool \hyperlink{classJurassicPark_a89a93a8592bad0dbfd3862bb404f6b80}{save} () const
+\item 
+bool \hyperlink{classJurassicPark_afd86a84e8f5916fa06b6e3766ea3f656}{serialize} (std\+::ofstream \&ofs) const
+\item 
+bool \hyperlink{classJurassicPark_a69199d5340680686ab8d8a11329431db}{unserialize} (std\+::ifstream \&ifs)
+\item 
+bool \hyperlink{classJurassicPark_a99a269ca6c92887ac396c9aad0e971d5}{build\+Cage} (\hyperlink{classString}{String} const \&climate, \hyperlink{classString}{String} const \&size)
+\item 
+bool \hyperlink{classJurassicPark_a6301a06db0d3c61b8823ed99585903f7}{add\+Animal} (const \hyperlink{classDinosaur}{Dinosaur} \&dinosaur)
+\item 
+bool \hyperlink{classJurassicPark_aac9409ebb9d2a782ffe0c74eac887b42}{remove\+Animal} (\hyperlink{classString}{String} const \&dinosaur\+\_\+name)
+\item 
+bool \hyperlink{classJurassicPark_a56eb91d1acfcf61925b9fe599d878b05}{add\+Food} (\hyperlink{classString}{String} const \&food\+\_\+name, const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} food\+\_\+amount)
+\item 
+bool \hyperlink{classJurassicPark_ae8e4c7c8073b6820dcef893b55cccb7e}{add\+Staff} (const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount} amount)
+\item 
+bool \hyperlink{classJurassicPark_a6f5d45e9f908589e8946d6a0395cc06a}{has\+Dinosaur} (\hyperlink{classString}{String} const \&name) const
+\item 
+bool \hyperlink{classJurassicPark_a85762e64aeed4b9b145d48dff410e5f5}{supply} (\hyperlink{classStorageUnit}{Storage\+Unit} const \&food)
+\item 
+bool \hyperlink{classJurassicPark_af19a3800b00cf1d9b96d2e334bc95fb4}{feed\+All\+Animals} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classJurassicPark}{Jurassic\+Park} \& \hyperlink{classJurassicPark_ae6cd7ff3eaec5f2e52b7dab2dfb7b5df}{self} (unsigned limit=4)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ \hyperlink{classJurassicPark_a0997428c12ee5be9fb69c87415cab85b}{F\+I\+L\+E\+\_\+\+P\+A\+TH} = \char`\"{}data.\+bin\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJurassicPark_afe445635eccef6d51146e3cc519644ef}{Jurassic\+Park} (unsigned limit=4)
+\begin{DoxyCompactList}\small\item\em default constructor and constructor with argument limit \end{DoxyCompactList}\item 
+\hyperlink{classJurassicPark_a8d267bb3de6c8047b3502167c6889ab3}{Jurassic\+Park} (const \hyperlink{classJurassicPark}{Jurassic\+Park} \&other)=delete
+\begin{DoxyCompactList}\small\item\em D\+E\+L\+E\+TE copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classJurassicPark}{Jurassic\+Park} \& \hyperlink{classJurassicPark_ab229e57fe698d5916b6197fb05742b9d}{operator=} (const \hyperlink{classJurassicPark}{Jurassic\+Park} \&other)=delete
+\begin{DoxyCompactList}\small\item\em D\+E\+L\+E\+TE operator =. \end{DoxyCompactList}\item 
+\hyperlink{classCage}{Cage} $\ast$ \hyperlink{classJurassicPark_af96203bbb3eea734f56ca1c0e61904a8}{find\+Cage} (const \hyperlink{classDinosaur}{Dinosaur} \&dinosaur)
+\item 
+\hyperlink{classCage}{Cage} const  $\ast$ \hyperlink{classJurassicPark_a73388ce7377a823a73ce912a342c89b6}{find\+Dinosaurs\+Cage} (\hyperlink{classString}{String} const \&dinosaur\+\_\+name) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classCage}{Cage} $>$ \hyperlink{classJurassicPark_aff664f70b0ab4d0287107b83f1c5e89a}{m\+\_\+list}
+\item 
+\hyperlink{classStorehouse}{Storehouse} \hyperlink{classJurassicPark_af0c4958aa71443927e7fcb9e5da545d3}{m\+\_\+storehouse}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classJurassicPark_a6f52feef02787591567009e3e5d18bd9}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classJurassicPark}{Jurassic\+Park} const \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class for the project 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJurassicPark_afe445635eccef6d51146e3cc519644ef}\label{classJurassicPark_afe445635eccef6d51146e3cc519644ef}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!Jurassic\+Park@{Jurassic\+Park}}
+\index{Jurassic\+Park@{Jurassic\+Park}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{Jurassic\+Park()}{JurassicPark()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Jurassic\+Park\+::\+Jurassic\+Park (\begin{DoxyParamCaption}\item[{unsigned}]{limit = {\ttfamily 4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+default constructor and constructor with argument limit 
+
+\mbox{\Hypertarget{classJurassicPark_a8d267bb3de6c8047b3502167c6889ab3}\label{classJurassicPark_a8d267bb3de6c8047b3502167c6889ab3}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!Jurassic\+Park@{Jurassic\+Park}}
+\index{Jurassic\+Park@{Jurassic\+Park}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{Jurassic\+Park()}{JurassicPark()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Jurassic\+Park\+::\+Jurassic\+Park (\begin{DoxyParamCaption}\item[{const \hyperlink{classJurassicPark}{Jurassic\+Park} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+D\+E\+L\+E\+TE copy constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJurassicPark_a6301a06db0d3c61b8823ed99585903f7}\label{classJurassicPark_a6301a06db0d3c61b8823ed99585903f7}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!add\+Animal@{add\+Animal}}
+\index{add\+Animal@{add\+Animal}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{add\+Animal()}{addAnimal()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::add\+Animal (\begin{DoxyParamCaption}\item[{const \hyperlink{classDinosaur}{Dinosaur} \&}]{dinosaur }\end{DoxyParamCaption})}
+
+add an animal (dinosaur) 
+\begin{DoxyParams}{Parameters}
+{\em dinosaur} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there isn\textquotesingle{}t a suitable cage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_a56eb91d1acfcf61925b9fe599d878b05}\label{classJurassicPark_a56eb91d1acfcf61925b9fe599d878b05}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!add\+Food@{add\+Food}}
+\index{add\+Food@{add\+Food}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{add\+Food()}{addFood()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::add\+Food (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{food\+\_\+name,  }\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{food\+\_\+amount }\end{DoxyParamCaption})}
+
+add food in the storehouse; calls \hyperlink{classStorehouse_abd7448c73850f9281174e13a918e4c14}{Storehouse\+::add()} method 
+\begin{DoxyParams}{Parameters}
+{\em food\+\_\+name} & \\
+\hline
+{\em food\+\_\+amount} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t add the food (see\+: \hyperlink{classStorehouse_abd7448c73850f9281174e13a918e4c14}{Storehouse\+::add()} method) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_ae8e4c7c8073b6820dcef893b55cccb7e}\label{classJurassicPark_ae8e4c7c8073b6820dcef893b55cccb7e}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!add\+Staff@{add\+Staff}}
+\index{add\+Staff@{add\+Staff}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{add\+Staff()}{addStaff()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::add\+Staff (\begin{DoxyParamCaption}\item[{const \hyperlink{StorageUnit_8hpp_a13b2ba6b0400e1aa0b57282bd1228f20}{Unit\+Amount}}]{amount }\end{DoxyParamCaption})}
+
+hire new staff; calls \hyperlink{classStorehouse_abd7448c73850f9281174e13a918e4c14}{Storehouse\+::add()} method 
+\begin{DoxyParams}{Parameters}
+{\em amount} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t add the food (see\+: \hyperlink{classStorehouse_abd7448c73850f9281174e13a918e4c14}{Storehouse\+::add()} method) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_a99a269ca6c92887ac396c9aad0e971d5}\label{classJurassicPark_a99a269ca6c92887ac396c9aad0e971d5}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!build\+Cage@{build\+Cage}}
+\index{build\+Cage@{build\+Cage}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{build\+Cage()}{buildCage()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::build\+Cage (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{climate,  }\item[{\hyperlink{classString}{String} const \&}]{size }\end{DoxyParamCaption})}
+
+build a cage 
+\begin{DoxyParams}{Parameters}
+{\em climate} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there isn\textquotesingle{}t enough staff 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_af19a3800b00cf1d9b96d2e334bc95fb4}\label{classJurassicPark_af19a3800b00cf1d9b96d2e334bc95fb4}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!feed\+All\+Animals@{feed\+All\+Animals}}
+\index{feed\+All\+Animals@{feed\+All\+Animals}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{feed\+All\+Animals()}{feedAllAnimals()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::feed\+All\+Animals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t feed all animals in one (any) cage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_af96203bbb3eea734f56ca1c0e61904a8}\label{classJurassicPark_af96203bbb3eea734f56ca1c0e61904a8}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!find\+Cage@{find\+Cage}}
+\index{find\+Cage@{find\+Cage}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{find\+Cage()}{findCage()}}
+{\footnotesize\ttfamily \hyperlink{classCage}{Cage} $\ast$ Jurassic\+Park\+::find\+Cage (\begin{DoxyParamCaption}\item[{const \hyperlink{classDinosaur}{Dinosaur} \&}]{dinosaur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+search for a cage which is suitable for the given dinosaur 
+\begin{DoxyParams}{Parameters}
+{\em dinosaur} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr if N\+OT found OR a pointer to the first match 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_a73388ce7377a823a73ce912a342c89b6}\label{classJurassicPark_a73388ce7377a823a73ce912a342c89b6}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!find\+Dinosaurs\+Cage@{find\+Dinosaurs\+Cage}}
+\index{find\+Dinosaurs\+Cage@{find\+Dinosaurs\+Cage}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{find\+Dinosaurs\+Cage()}{findDinosaursCage()}}
+{\footnotesize\ttfamily \hyperlink{classCage}{Cage} const  $\ast$ Jurassic\+Park\+::find\+Dinosaurs\+Cage (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{dinosaur\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+search for a cage by the dinosaur in it 
+\begin{DoxyParams}{Parameters}
+{\em dinosaur\+\_\+name} & -\/ used to identify the dinosaur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr if N\+OT found OR a pointer to the first match 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_a6f5d45e9f908589e8946d6a0395cc06a}\label{classJurassicPark_a6f5d45e9f908589e8946d6a0395cc06a}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!has\+Dinosaur@{has\+Dinosaur}}
+\index{has\+Dinosaur@{has\+Dinosaur}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{has\+Dinosaur()}{hasDinosaur()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::has\+Dinosaur (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{name }\end{DoxyParamCaption}) const}
+
+check if exists a dinosaur with the given name 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_a45c3966b859c4925e001592b121f02c5}\label{classJurassicPark_a45c3966b859c4925e001592b121f02c5}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!open@{open}}
+\index{open@{open}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+open the file at location \hyperlink{classJurassicPark_a0997428c12ee5be9fb69c87415cab85b}{Jurassic\+Park\+::\+F\+I\+L\+E\+\_\+\+P\+A\+TH} \begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t deserialize the object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_ab229e57fe698d5916b6197fb05742b9d}\label{classJurassicPark_ab229e57fe698d5916b6197fb05742b9d}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!operator=@{operator=}}
+\index{operator=@{operator=}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classJurassicPark}{Jurassic\+Park}\& Jurassic\+Park\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classJurassicPark}{Jurassic\+Park} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+D\+E\+L\+E\+TE operator =. 
+
+\mbox{\Hypertarget{classJurassicPark_aac9409ebb9d2a782ffe0c74eac887b42}\label{classJurassicPark_aac9409ebb9d2a782ffe0c74eac887b42}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!remove\+Animal@{remove\+Animal}}
+\index{remove\+Animal@{remove\+Animal}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{remove\+Animal()}{removeAnimal()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::remove\+Animal (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{dinosaur\+\_\+name }\end{DoxyParamCaption})}
+
+remove an animal (dinosaur) by its name 
+\begin{DoxyParams}{Parameters}
+{\em dinosaur\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t find an animal with the given name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_a89a93a8592bad0dbfd3862bb404f6b80}\label{classJurassicPark_a89a93a8592bad0dbfd3862bb404f6b80}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!save@{save}}
+\index{save@{save}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+save the file at location \hyperlink{classJurassicPark_a0997428c12ee5be9fb69c87415cab85b}{Jurassic\+Park\+::\+F\+I\+L\+E\+\_\+\+P\+A\+TH} \begin{DoxyReturn}{Returns}
+false if can\textquotesingle{}t serialize the object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_ae6cd7ff3eaec5f2e52b7dab2dfb7b5df}\label{classJurassicPark_ae6cd7ff3eaec5f2e52b7dab2dfb7b5df}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!self@{self}}
+\index{self@{self}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{self()}{self()}}
+{\footnotesize\ttfamily \hyperlink{classJurassicPark}{Jurassic\+Park} \& Jurassic\+Park\+::self (\begin{DoxyParamCaption}\item[{unsigned}]{limit = {\ttfamily 4} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+used to hold the O\+N\+LY instance of this object 
+\begin{DoxyParams}{Parameters}
+{\em limit} & -\/ used for the constructor (O\+N\+LY at the first call of the function) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the O\+N\+LY instance of this object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_afd86a84e8f5916fa06b6e3766ea3f656}\label{classJurassicPark_afd86a84e8f5916fa06b6e3766ea3f656}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!serialize@{serialize}}
+\index{serialize@{serialize}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const}
+
+serialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ofs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_a85762e64aeed4b9b145d48dff410e5f5}\label{classJurassicPark_a85762e64aeed4b9b145d48dff410e5f5}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!supply@{supply}}
+\index{supply@{supply}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{supply()}{supply()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::supply (\begin{DoxyParamCaption}\item[{\hyperlink{classStorageUnit}{Storage\+Unit} const \&}]{food }\end{DoxyParamCaption})}
+
+make a food supply 
+\begin{DoxyParams}{Parameters}
+{\em food} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it\textquotesingle{}s N\+OT a valid food name OR can\textquotesingle{}t add the food (see\+: \hyperlink{classStorehouse_abd7448c73850f9281174e13a918e4c14}{Storehouse\+::add()} method) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJurassicPark_a69199d5340680686ab8d8a11329431db}\label{classJurassicPark_a69199d5340680686ab8d8a11329431db}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!unserialize@{unserialize}}
+\index{unserialize@{unserialize}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{unserialize()}{unserialize()}}
+{\footnotesize\ttfamily bool Jurassic\+Park\+::unserialize (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs }\end{DoxyParamCaption})}
+
+deserialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classJurassicPark_a6f52feef02787591567009e3e5d18bd9}\label{classJurassicPark_a6f52feef02787591567009e3e5d18bd9}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classJurassicPark}{Jurassic\+Park} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classJurassicPark_a0997428c12ee5be9fb69c87415cab85b}\label{classJurassicPark_a0997428c12ee5be9fb69c87415cab85b}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!F\+I\+L\+E\+\_\+\+P\+A\+TH@{F\+I\+L\+E\+\_\+\+P\+A\+TH}}
+\index{F\+I\+L\+E\+\_\+\+P\+A\+TH@{F\+I\+L\+E\+\_\+\+P\+A\+TH}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{F\+I\+L\+E\+\_\+\+P\+A\+TH}{FILE\_PATH}}
+{\footnotesize\ttfamily const char $\ast$ Jurassic\+Park\+::\+F\+I\+L\+E\+\_\+\+P\+A\+TH = \char`\"{}data.\+bin\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classJurassicPark_aff664f70b0ab4d0287107b83f1c5e89a}\label{classJurassicPark_aff664f70b0ab4d0287107b83f1c5e89a}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!m\+\_\+list@{m\+\_\+list}}
+\index{m\+\_\+list@{m\+\_\+list}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{m\+\_\+list}{m\_list}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$\hyperlink{classCage}{Cage}$>$ Jurassic\+Park\+::m\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJurassicPark_af0c4958aa71443927e7fcb9e5da545d3}\label{classJurassicPark_af0c4958aa71443927e7fcb9e5da545d3}} 
+\index{Jurassic\+Park@{Jurassic\+Park}!m\+\_\+storehouse@{m\+\_\+storehouse}}
+\index{m\+\_\+storehouse@{m\+\_\+storehouse}!Jurassic\+Park@{Jurassic\+Park}}
+\subsubsection{\texorpdfstring{m\+\_\+storehouse}{m\_storehouse}}
+{\footnotesize\ttfamily \hyperlink{classStorehouse}{Storehouse} Jurassic\+Park\+::m\+\_\+storehouse\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{JurassicPark_8hpp}{Jurassic\+Park.\+hpp}\item 
+\hyperlink{JurassicPark_8cpp}{Jurassic\+Park.\+cpp}\end{DoxyCompactItemize}

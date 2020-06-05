@@ -1,0 +1,168 @@
+\hypertarget{classDinoBasic}{}\section{Dino\+Basic Class Reference}
+\label{classDinoBasic}\index{Dino\+Basic@{Dino\+Basic}}
+
+
+{\ttfamily \#include $<$Dino\+Basic.\+hpp$>$}
+
+
+
+Inheritance diagram for Dino\+Basic\+:
+% FIG 0
+
+
+Collaboration diagram for Dino\+Basic\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classDinoBasic_a46451b705931279712c8203384e50c7d}{set\+Era} (\hyperlink{classString}{String} const \&\hyperlink{classDinoBasic_a7ff093a0761137d2f6790c601615369e}{era})
+\item 
+bool \hyperlink{classDinoBasic_aa2ee84eb530c70058c4b81ec6c879f85}{set\+Species} (\hyperlink{classString}{String} const \&\hyperlink{classDinoBasic_a8d6be833bf21a18219bb65258f8a4eb8}{species})
+\item 
+\hyperlink{classString}{String} const  \& \hyperlink{classDinoBasic_ad257a3c268719162ac06ba2973386bf7}{get\+Era} () const
+\item 
+\hyperlink{classString}{String} const  \& \hyperlink{classDinoBasic_ac110aeb95cf5dd50c27c16097f2e46e1}{get\+Species} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static char const  $\ast$ \hyperlink{classDinoBasic_a7ff093a0761137d2f6790c601615369e}{era} \mbox{[}$\,$\mbox{]} = \{ \char`\"{}triassic\char`\"{}, \char`\"{}cretaceous\char`\"{}, \char`\"{}jurassic\char`\"{}, nullptr \}
+\begin{DoxyCompactList}\small\item\em list of all valid era \end{DoxyCompactList}\item 
+static char const  $\ast$ \hyperlink{classDinoBasic_a8d6be833bf21a18219bb65258f8a4eb8}{species} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em list of all valid species \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classString}{String} \hyperlink{classDinoBasic_aed65c06db4fe56f7a460e0b202ac8023}{m\+\_\+era}
+\item 
+\hyperlink{classString}{String} \hyperlink{classDinoBasic_a4579f8f1e6565f5a5f12a86d6b199044}{m\+\_\+species}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classDinoBasic_ac76def9187ceb6c2546809c6a9cb0327}{valid\+Era} (\hyperlink{classString}{String} const \&\+\_\+era)
+\item 
+static bool \hyperlink{classDinoBasic_ac3b7303ce6b953511db08ae189fd42b7}{valid\+Species} (\hyperlink{classString}{String} const \&\+\_\+species)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+class a child of \hyperlink{classDinoFoodType}{Dino\+Food\+Type} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDinoBasic_ad257a3c268719162ac06ba2973386bf7}\label{classDinoBasic_ad257a3c268719162ac06ba2973386bf7}} 
+\index{Dino\+Basic@{Dino\+Basic}!get\+Era@{get\+Era}}
+\index{get\+Era@{get\+Era}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{get\+Era()}{getEra()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} const  \& Dino\+Basic\+::get\+Era (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+getter for m\+\_\+era \begin{DoxyReturn}{Returns}
+m\+\_\+era 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinoBasic_ac110aeb95cf5dd50c27c16097f2e46e1}\label{classDinoBasic_ac110aeb95cf5dd50c27c16097f2e46e1}} 
+\index{Dino\+Basic@{Dino\+Basic}!get\+Species@{get\+Species}}
+\index{get\+Species@{get\+Species}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{get\+Species()}{getSpecies()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} const  \& Dino\+Basic\+::get\+Species (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+getter for m\+\_\+species \begin{DoxyReturn}{Returns}
+m\+\_\+species 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinoBasic_a46451b705931279712c8203384e50c7d}\label{classDinoBasic_a46451b705931279712c8203384e50c7d}} 
+\index{Dino\+Basic@{Dino\+Basic}!set\+Era@{set\+Era}}
+\index{set\+Era@{set\+Era}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{set\+Era()}{setEra()}}
+{\footnotesize\ttfamily bool Dino\+Basic\+::set\+Era (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{era }\end{DoxyParamCaption})}
+
+setter for m\+\_\+era 
+\begin{DoxyParams}{Parameters}
+{\em era} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if $<$era$>$ is N\+OT valid one 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinoBasic_aa2ee84eb530c70058c4b81ec6c879f85}\label{classDinoBasic_aa2ee84eb530c70058c4b81ec6c879f85}} 
+\index{Dino\+Basic@{Dino\+Basic}!set\+Species@{set\+Species}}
+\index{set\+Species@{set\+Species}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{set\+Species()}{setSpecies()}}
+{\footnotesize\ttfamily bool Dino\+Basic\+::set\+Species (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{species }\end{DoxyParamCaption})}
+
+setter for m\+\_\+species 
+\begin{DoxyParams}{Parameters}
+{\em species} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if $<$species$>$ is N\+OT valid one 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinoBasic_ac76def9187ceb6c2546809c6a9cb0327}\label{classDinoBasic_ac76def9187ceb6c2546809c6a9cb0327}} 
+\index{Dino\+Basic@{Dino\+Basic}!valid\+Era@{valid\+Era}}
+\index{valid\+Era@{valid\+Era}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{valid\+Era()}{validEra()}}
+{\footnotesize\ttfamily bool Dino\+Basic\+::valid\+Era (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{\+\_\+era }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+check if $<$\+\_\+era$>$ is a valid one 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+era} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it is and false if it\textquotesingle{}s N\+OT 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDinoBasic_ac3b7303ce6b953511db08ae189fd42b7}\label{classDinoBasic_ac3b7303ce6b953511db08ae189fd42b7}} 
+\index{Dino\+Basic@{Dino\+Basic}!valid\+Species@{valid\+Species}}
+\index{valid\+Species@{valid\+Species}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{valid\+Species()}{validSpecies()}}
+{\footnotesize\ttfamily bool Dino\+Basic\+::valid\+Species (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{\+\_\+species }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+check if $<$\+\_\+species$>$ is a valid one 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+species} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it is and false if it\textquotesingle{}s N\+OT 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classDinoBasic_a7ff093a0761137d2f6790c601615369e}\label{classDinoBasic_a7ff093a0761137d2f6790c601615369e}} 
+\index{Dino\+Basic@{Dino\+Basic}!era@{era}}
+\index{era@{era}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{era}{era}}
+{\footnotesize\ttfamily char const  $\ast$ Dino\+Basic\+::era = \{ \char`\"{}triassic\char`\"{}, \char`\"{}cretaceous\char`\"{}, \char`\"{}jurassic\char`\"{}, nullptr \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+list of all valid era 
+
+\mbox{\Hypertarget{classDinoBasic_aed65c06db4fe56f7a460e0b202ac8023}\label{classDinoBasic_aed65c06db4fe56f7a460e0b202ac8023}} 
+\index{Dino\+Basic@{Dino\+Basic}!m\+\_\+era@{m\+\_\+era}}
+\index{m\+\_\+era@{m\+\_\+era}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{m\+\_\+era}{m\_era}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Dino\+Basic\+::m\+\_\+era\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classDinoBasic_a4579f8f1e6565f5a5f12a86d6b199044}\label{classDinoBasic_a4579f8f1e6565f5a5f12a86d6b199044}} 
+\index{Dino\+Basic@{Dino\+Basic}!m\+\_\+species@{m\+\_\+species}}
+\index{m\+\_\+species@{m\+\_\+species}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{m\+\_\+species}{m\_species}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Dino\+Basic\+::m\+\_\+species\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classDinoBasic_a8d6be833bf21a18219bb65258f8a4eb8}\label{classDinoBasic_a8d6be833bf21a18219bb65258f8a4eb8}} 
+\index{Dino\+Basic@{Dino\+Basic}!species@{species}}
+\index{species@{species}!Dino\+Basic@{Dino\+Basic}}
+\subsubsection{\texorpdfstring{species}{species}}
+{\footnotesize\ttfamily char const  $\ast$ Dino\+Basic\+::species\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+list of all valid species 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DinoBasic_8hpp}{Dino\+Basic.\+hpp}\item 
+\hyperlink{DinoBasic_8cpp}{Dino\+Basic.\+cpp}\end{DoxyCompactItemize}

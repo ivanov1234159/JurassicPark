@@ -1,0 +1,61 @@
+\hypertarget{classCmdSave}{}\section{Cmd\+Save Class Reference}
+\label{classCmdSave}\index{Cmd\+Save@{Cmd\+Save}}
+
+
+{\ttfamily \#include $<$Cmd\+Save.\+hpp$>$}
+
+
+
+Inheritance diagram for Cmd\+Save\+:
+% FIG 0
+
+
+Collaboration diagram for Cmd\+Save\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCmdSave_a43da9362bbde62dc222f3fb0ba6f2b29}{Cmd\+Save} ()
+\item 
+virtual bool \hyperlink{classCmdSave_a44fb7fe716f0d65f597e7eccb647ba3d}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&runner, std\+::istringstream \&iss) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCmdSave_a43da9362bbde62dc222f3fb0ba6f2b29}\label{classCmdSave_a43da9362bbde62dc222f3fb0ba6f2b29}} 
+\index{Cmd\+Save@{Cmd\+Save}!Cmd\+Save@{Cmd\+Save}}
+\index{Cmd\+Save@{Cmd\+Save}!Cmd\+Save@{Cmd\+Save}}
+\subsubsection{\texorpdfstring{Cmd\+Save()}{CmdSave()}}
+{\footnotesize\ttfamily Cmd\+Save\+::\+Cmd\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCmdSave_a44fb7fe716f0d65f597e7eccb647ba3d}\label{classCmdSave_a44fb7fe716f0d65f597e7eccb647ba3d}} 
+\index{Cmd\+Save@{Cmd\+Save}!action@{action}}
+\index{action@{action}!Cmd\+Save@{Cmd\+Save}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily bool Cmd\+Save\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+depending from the child class do different things 
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if cannot read the params of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cmd/\hyperlink{CmdSave_8hpp}{Cmd\+Save.\+hpp}\item 
+cmd/\hyperlink{CmdSave_8cpp}{Cmd\+Save.\+cpp}\end{DoxyCompactItemize}

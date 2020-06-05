@@ -1,0 +1,61 @@
+\hypertarget{classCmdRemoveAnimal}{}\section{Cmd\+Remove\+Animal Class Reference}
+\label{classCmdRemoveAnimal}\index{Cmd\+Remove\+Animal@{Cmd\+Remove\+Animal}}
+
+
+{\ttfamily \#include $<$Cmd\+Remove\+Animal.\+hpp$>$}
+
+
+
+Inheritance diagram for Cmd\+Remove\+Animal\+:
+% FIG 0
+
+
+Collaboration diagram for Cmd\+Remove\+Animal\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCmdRemoveAnimal_ac7702f06507f52d7e62aaf70a894cb13}{Cmd\+Remove\+Animal} ()
+\item 
+virtual bool \hyperlink{classCmdRemoveAnimal_aac8fb67ec5515e686ff16b1a495c5b80}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&runner, std\+::istringstream \&iss) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCmdRemoveAnimal_ac7702f06507f52d7e62aaf70a894cb13}\label{classCmdRemoveAnimal_ac7702f06507f52d7e62aaf70a894cb13}} 
+\index{Cmd\+Remove\+Animal@{Cmd\+Remove\+Animal}!Cmd\+Remove\+Animal@{Cmd\+Remove\+Animal}}
+\index{Cmd\+Remove\+Animal@{Cmd\+Remove\+Animal}!Cmd\+Remove\+Animal@{Cmd\+Remove\+Animal}}
+\subsubsection{\texorpdfstring{Cmd\+Remove\+Animal()}{CmdRemoveAnimal()}}
+{\footnotesize\ttfamily Cmd\+Remove\+Animal\+::\+Cmd\+Remove\+Animal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCmdRemoveAnimal_aac8fb67ec5515e686ff16b1a495c5b80}\label{classCmdRemoveAnimal_aac8fb67ec5515e686ff16b1a495c5b80}} 
+\index{Cmd\+Remove\+Animal@{Cmd\+Remove\+Animal}!action@{action}}
+\index{action@{action}!Cmd\+Remove\+Animal@{Cmd\+Remove\+Animal}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily bool Cmd\+Remove\+Animal\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_a3594ceaf3c835811a9a67810e7af19f9}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+depending from the child class do different things 
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if cannot read the params of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cmd/\hyperlink{CmdRemoveAnimal_8hpp}{Cmd\+Remove\+Animal.\+hpp}\item 
+cmd/\hyperlink{CmdRemoveAnimal_8cpp}{Cmd\+Remove\+Animal.\+cpp}\end{DoxyCompactItemize}

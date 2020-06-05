@@ -1,0 +1,33 @@
+\hypertarget{build__commands_8cpp}{}\section{build\+\_\+commands.\+cpp File Reference}
+\label{build__commands_8cpp}\index{build\+\_\+commands.\+cpp@{build\+\_\+commands.\+cpp}}
+{\ttfamily \#include \char`\"{}Commander.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Add\+Animal.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Create\+Cage.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Exit.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Feed\+Animals.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Help.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Hire.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Remove\+Animal.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Save.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Status.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cmd\+Supply\+Food.\+hpp\char`\"{}}\newline
+Include dependency graph for build\+\_\+commands.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{build__commands_8cpp_a0955a410bf1b5456a6bead44a5ab2727}{build\+\_\+commands} ()
+\begin{DoxyCompactList}\small\item\em used to add all commands to the array (cmd\+\_\+list) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{build__commands_8cpp_a0955a410bf1b5456a6bead44a5ab2727}\label{build__commands_8cpp_a0955a410bf1b5456a6bead44a5ab2727}} 
+\index{build\+\_\+commands.\+cpp@{build\+\_\+commands.\+cpp}!build\+\_\+commands@{build\+\_\+commands}}
+\index{build\+\_\+commands@{build\+\_\+commands}!build\+\_\+commands.\+cpp@{build\+\_\+commands.\+cpp}}
+\subsubsection{\texorpdfstring{build\+\_\+commands()}{build\_commands()}}
+{\footnotesize\ttfamily void build\+\_\+commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+used to add all commands to the array (cmd\+\_\+list) 
+
