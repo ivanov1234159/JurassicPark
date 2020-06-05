@@ -94,6 +94,10 @@ bool JurassicPark::addFood(String const& food_name, const UnitAmount food_amount
     return m_storehouse.add(food_name, food_amount);
 }
 
+bool JurassicPark::addStaff(const UnitAmount amount){
+    return m_storehouse.add("Staff", amount, true);
+}
+
 bool JurassicPark::hasDinosaur(String const &name) const {
     return findDinosaursCage(name) != nullptr;
 }

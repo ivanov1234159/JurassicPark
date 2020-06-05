@@ -34,6 +34,7 @@ public:
     bool addAnimal(const Dinosaur& dinosaur);
     bool removeAnimal(String const& dinosaur_name);
     bool addFood(String const& food_name, const UnitAmount food_amount);
+    bool addStaff(const UnitAmount amount);
     bool hasDinosaur(String const& name) const;
 
     bool supply(StorageUnit const& food);
