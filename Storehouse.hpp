@@ -20,7 +20,7 @@ public:
     bool has(String const& unit_name, const UnitAmount unit_amount) const;// returns false if has(unit_name) returns false OR current amount < unit_amount
 
     bool add(const StorageUnit& unit);// same as add(String const& unit_name, const UnitAmount unit_amount)
-    bool add(String const& unit_name, const UnitAmount unit_amount);// returns false if unit_amount < 0 and remove() returns false
+    bool add(String const& unit_name, const UnitAmount unit_amount, bool whole_number = false);// returns false if unit_amount < 0 and remove() returns false
 
     bool remove(const StorageUnit& unit);// same as remove(String const& unit_name, const UnitAmount unit_amount)
     bool remove(String const& unit_name, const UnitAmount unit_amount);// returns false if(!has(unit_name, unit_amount))

@@ -29,16 +29,16 @@ bool Storehouse::has(String const& unit_name, const UnitAmount unit_amount) cons
 }
 
 bool Storehouse::add(const StorageUnit& unit){
-    return add(unit.getName(), unit.getAmount());
+    return add(unit.getName(), unit.getAmount(), unit.isWholeNumber());
 }
 
-bool Storehouse::add(String const& unit_name, const UnitAmount unit_amount){
+bool Storehouse::add(String const& unit_name, const UnitAmount unit_amount, bool whole_number){
     if(unit_amount < 0){
         return remove(unit_name, -unit_amount);
     }
     StorageUnit const* search = find(unit_name);
     if(search == nullptr){
-        m_list.push(StorageUnit(unit_name, unit_amount));
+        m_list.push(StorageUnit(unit_name, unit_amount, whole_number));
         return true;
     }
     return const_cast<StorageUnit*>(search)->add(unit_amount);

@@ -15,13 +15,15 @@ class StorageUnit {
     static const UnitAmount EPS;
     String m_name;
     UnitAmount m_amount;
+    bool m_integer;
 public:
     static bool areEqual(const UnitAmount amount1, const UnitAmount amount2);
 
-    StorageUnit(String const& name = nullptr, UnitAmount amount = 0);
+    StorageUnit(String const& name = nullptr, UnitAmount amount = 0, bool integer = false);
 
     String const& getName() const;
     UnitAmount getAmount() const;
+    bool isWholeNumber() const;
 
     bool add(const UnitAmount amount);
     bool remove(const UnitAmount amount);
