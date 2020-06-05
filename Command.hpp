@@ -25,15 +25,31 @@ public:
     Command& operator=(Command const& other);
     virtual ~Command();
 
+    ///@return true if the commands has the same names
     bool operator==(char const* cmd);
+
+    /// @return m_quit_when_done
     bool canQuit() const;
 
-    virtual bool action(RunnerType& runner, std::istringstream& iss) const;
+    /**
+     * depending from the child class do different things
+     * @param out
+     * @param runner
+     * @param iss
+     * @return false if cannot read the params of the command
+     */
+    virtual bool action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const;
 
     friend std::ostream& operator<<(std::ostream& out, Command const& obj);
 
 private:
+    /// free the memory of m_name, m_params and m_notes
     void clear();
+
+    /**
+     * copy <other> into this
+     * @param other
+     */
     void copy(Command const& other);
 };
 

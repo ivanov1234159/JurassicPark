@@ -8,6 +8,10 @@
 #include <ostream>
 //for: ostream
 
+/**
+ * @class Vector
+ * @tparam T
+ */
 template<typename T>
 class Vector {
     T* m_list;
@@ -15,39 +19,131 @@ class Vector {
     unsigned m_limit;
     bool m_resizable;
 public:
+    ///default constructor and constructor with arguments limit (and resizable)
     Vector(unsigned limit = 2, bool resizable = true);
+
+    /// constructor with arguments other, size (and resizable)
     Vector(T const* other, unsigned size, bool resizable = true);
+
+    /// copy constructor
     Vector(Vector<T> const& other);
+
+    /// operator =
     Vector& operator=(Vector<T> const& other);
+
+    ///destructor; calls clear() method
     ~Vector();
 
+    /**
+     * add in the beginning the new item
+     * @param item
+     * @return false if full and cannot resize
+     */
     bool shift(T const& item);
+
+    /**
+     * remove the first element and return it
+     * @return the first element or the "empty" element if list is empty
+     */
     T unshift();
+
+    /**
+     * add at the end the new item
+     * @param item
+     * @return false if full and cannot resize
+     */
     bool push(T const& item);
+
+    /**
+     * remove the last element and return it
+     * @return the last element or the "empty" element if list is empty
+     */
     T pop();
+
+    /**
+     * remove the element at position index
+     * @param index - processed by normalizeIndex() method
+     */
     void remove(int index);
 
+    /// @return true if m_size is 0
     bool empty() const;
+
+    /// @return true if m_size is equal to m_limit
     bool full() const;
+
+    /// @return m_size
     unsigned size() const;
+
+    /// @return m_limit - m_size
     unsigned free() const;
+
+    /// @return m_limit
     unsigned capacity() const;
+
+    /// @return !m_resizable
     bool fixed() const;// fixed size = !resizable
 
+    /**
+     * get the element at position index
+     * critical if list is empty
+     * @param index - processed by normalizeIndex() method
+     * @return the element at position index
+     */
     T& at(int index);
+
+    /**
+     * get the element at position index
+     * critical if list is empty
+     * @param index - processed by normalizeIndex() method
+     * @return the element at position index
+     */
     T& operator[](int index);
 
+    /**
+     * get the element at position index
+     * critical if list is empty
+     * @param index - processed by normalizeIndex() method
+     * @return the element at position index
+     */
     T const& at(int index) const;
+
+    /**
+     * get the element at position index
+     * critical if list is empty
+     * @param index - processed by normalizeIndex() method
+     * @return the element at position index
+     */
     T const& operator[](int index) const;
 
 protected:
+    /// @return m_list
     T*& list();
+
+    /// @return m_list
     T const* list() const;
 
 private:
+    /**
+     * set the index in bounders between 0 and m_size-1
+     * @param index - if is negative, then counts from the end; and if is positive, then counts from the begining
+     * @return the remainder when divided by m_size
+     */
     unsigned normalizeIndex(int index) const;
+
+    /// free the memory and set m_list to nullptr
     void clear();
+
+    /**
+     * copy other into this
+     * @param other
+     */
     void copy(Vector<T> const& other);
+
+    /**
+     * try to resize the list
+     * @return false on fail (if is fixed size)
+     */
     bool resize();
 };
 
@@ -213,6 +309,9 @@ T const* Vector<T>::list() const {
 
 template<typename T>
 unsigned Vector<T>::normalizeIndex(int index) const {
+    if(m_size == 1){
+        return 0;
+    }
     if(index < 0){
         return m_size - ((-index) % m_size);
     }

@@ -17,16 +17,43 @@ private:
     Commander(Commander const& other) = delete;
     Commander& operator=(Commander const& other) = delete;
 
-    static Command* find(char const* cmd);// returns nullptr if not found
+    /**
+     * search for a command called <cmd>
+     * @param cmd
+     * @return nullptr if not found
+     */
+    static Command* find(char const* cmd);
+
+    /// free the memory and removes the commands
     static void clear();
 public:
     static const unsigned BUFFER_SIZE = 256;
     friend class CmdHelp;
+
+    /**
+     * add the command in the list (cmd_list)
+     * @param item
+     */
     static void add(Command* item);
+
+    /**
+     * base function for the class
+     * @param runner
+     */
     static void run(RunnerType& runner);
-    static bool call(char const* cmd, RunnerType& runner, std::istringstream& iss);
+
+    /**
+     * calls the command named <cmd>; if no such command, uses the "empty" ("default") command
+     * @param cmd
+     * @param runner
+     * @param iss
+     * @param out
+     * @return false if the command can quit
+     */
+    static bool call(char const* cmd, RunnerType& runner, std::istringstream& iss, std::ostream& out);
 };
 
+/// used to add all commands to the array (cmd_list)
 void build_commands();
 
 #endif //JURASSICPARK_COMMANDER_HPP

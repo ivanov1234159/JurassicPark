@@ -19,6 +19,14 @@ namespace MySpace {
 
     unsigned rand(unsigned max, unsigned min = 0);
 
+    template <typename T>
+    T const& max(T const& first, T const& second){
+        if(second > first){
+            return second;
+        }
+        return first;
+    }
+
     unsigned intToCharPointer(int num, char*& pointer);
 
     bool serialize(std::ofstream& ofs, char const* data);

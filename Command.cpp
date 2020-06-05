@@ -40,8 +40,8 @@ bool Command::canQuit() const {
     return m_quit_when_done;
 }
 
-bool Command::action(RunnerType&, std::istringstream&) const {
-    std::cout << "Invalid command! Type 'help' for more information." << std::endl;
+bool Command::action(std::ostream& out, RunnerType&, std::istringstream&) const {
+    out << "Invalid command! Type 'help' for more information." << std::endl;
     return true;
 }
 
@@ -64,6 +64,7 @@ void Command::copy(Command const &other) {
     MySpace::mem_copy(m_name, other.m_name);
     MySpace::mem_copy(m_params, other.m_params);
     MySpace::mem_copy(m_notes, other.m_notes);
+    m_quit_when_done = other.m_quit_when_done;
 }
 
 std::ostream& operator<<(std::ostream& out, Command const& obj){

@@ -3,9 +3,15 @@
 //
 
 #include <cstring>
-//for: strlen(), strcpy(), strcmp()
+//for: strlen(), strcpy(), strcmp(), strstr()
 #include "String.hpp"
 #include "MySpace.hpp"
+
+String String::to_string(int num) {
+    char* temp = nullptr;
+    MySpace::intToCharPointer(num, temp);
+    return String(temp);
+}
 
 String::String(const char *str) {
     set(str);
@@ -55,6 +61,14 @@ void String::append(String const &other) {
     if(zeroAtEnd && at(-1) != '\0'){
         push('\0');
     }
+}
+
+void String::read(std::istream& from, char until) {
+    set(MySpace::read_stream(from, until));
+}
+
+bool String::contains(String const &other) const {
+    return std::strstr(get(), other.get()) != nullptr;
 }
 
 bool String::operator!() const {
@@ -108,6 +122,6 @@ std::ostream& operator<<(std::ostream& out, String const& obj){
 }
 
 std::istream& operator>>(std::istream& in, String& obj){
-    obj.set(MySpace::read_stream(in, ' '));
+    obj.read(in);
     return in;
 }

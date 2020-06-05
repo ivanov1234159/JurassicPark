@@ -56,6 +56,10 @@ char* MySpace::read_stream(std::istream& in, char breaker, bool ignoreAtStart){
     for(;;){
         char symbol;
         in.get(symbol);
+        if(!in.good()){
+            in.clear();
+            return readed;
+        }
         if(symbol == breaker || symbol == '\n'){
             if(ignoreAtStart){
                 continue;
@@ -90,8 +94,13 @@ unsigned MySpace::intToCharPointer(int num, char*& pointer){
         return 0;
     }
     unsigned length = intLength(num);
+    bool negative = num < 0;
+    length += negative;
     pointer = new char[length+1];
-    for (unsigned i = 0; i < length; i++){
+    if(negative){
+        pointer[0] = '-';
+    }
+    for (unsigned i = 0, max = length - negative; i < max; i++){
         pointer[length-i-1] = '0' + (num % 10);
         num /= 10;
     }
