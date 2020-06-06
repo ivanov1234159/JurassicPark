@@ -9,6 +9,7 @@
 //for: cout, endl, ostream
 #include "Command.hpp"
 #include "Vector.hpp"
+#include "String.hpp"
 
 class Commander {
 private:
@@ -22,7 +23,7 @@ private:
      * @param cmd
      * @return nullptr if not found
      */
-    static Command* find(char const* cmd);
+    static Command* find(String const& cmd);
 
     /// free the memory and removes the commands
     static void clear();
@@ -50,7 +51,7 @@ public:
      * @param out
      * @return false if the command can quit
      */
-    static bool call(char const* cmd, RunnerType& runner, std::istringstream& iss, std::ostream& out);
+    static bool call(String const& cmd, RunnerType& runner, std::istringstream& iss, std::ostream& out);
 };
 
 /// used to add all commands to the array (cmd_list)

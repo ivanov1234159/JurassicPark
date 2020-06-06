@@ -6,7 +6,7 @@
 
 Vector<Command*> Commander::cmd_list = Vector<Command*>();
 
-Command* Commander::find(char const* cmd){
+Command* Commander::find(String const& cmd){
     for (unsigned i = 0; i < Commander::cmd_list.size(); i++){
         if(*Commander::cmd_list[i] == cmd){
             return Commander::cmd_list[i];
@@ -31,7 +31,7 @@ void Commander::run(RunnerType& runner) {
         char buffer[Commander::BUFFER_SIZE];
         std::cin.getline(buffer, Commander::BUFFER_SIZE);
         std::istringstream iss(buffer);
-        char* cmd = buffer;
+        String cmd;
         iss >> cmd;
         if(!Commander::call(cmd, runner, iss, std::cout)){
             break;
@@ -40,7 +40,7 @@ void Commander::run(RunnerType& runner) {
     Commander::clear();
 }
 
-bool Commander::call(char const* cmd, RunnerType& runner, std::istringstream& iss, std::ostream& out) {
+bool Commander::call(String const& cmd, RunnerType& runner, std::istringstream& iss, std::ostream& out) {
     Command* search = Commander::find(cmd);
     bool found = search != nullptr;
     if(!found){
